@@ -1,0 +1,63 @@
+git clone https://github.com/gmaheswaranmca/20220606.git
+
+
+git status			!!!! Check status of the repository 
+git add .			!!!! Stage into git 
+git status 			
+git commit -m "NOTES" !!! to add into local repository from staging index 
+git push origin main !!! to update to remote repository 
+
+---------------------------------------------------------
+journaling keeps all the logs and while writing to the disk rapidly 
+in case of any corruption it can reconstruct too
+---------------------------------------------------------
+case study:
+	"Finance App" -> Loan Processing App
+		- Scheme "Education Loan", "Personal Loan", "Home Loan"
+		- Customer 
+			Portal 
+				Register 
+				Login 
+					Apply for Loan (Loan Application)
+					View Application 
+		- Employee 
+			Scheme - Add, Update 
+			Process Loan from Application 
+				Verification
+				Background Verification 
+				Loan Approval 
+			Loan 
+			
+Objects / Table of Records / Database 
+	Customer
+	Employee
+	Scheme
+	Loan Application
+	Loan Processing 
+	Loan 
+	
+File Database 	
+	Text File (Comma Separated Values)
+	Binary File 
+	
+Project Structure:	
+	(Directory Structure)
+financeapp	
+	header
+	source 
+	object
+	build 
+	
+	
+---------------------------------------------------------
+			
+Hi sir. I am facing some noise at my location. So m sharing here.
+I have familiar with just basic Linux command  and Regarding C 
+as I woeked with FPGA and vhdl language till now 
+I have basics knowledge in C not working experience in C. 
+I can rate myself 2 in C.I need to learn C in detail.
+			
+	
+---------------------------------------------------------
+
+
