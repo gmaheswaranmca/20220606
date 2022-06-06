@@ -1,0 +1,213 @@
+1.type the below program using "vim" editor
+	in the file named "main.c" 
+	under directory named "mylearning_app"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#define SIZE 100
+#include<stdio.h>
+int main()
+{
+int size;
+double salaries[SIZE];
+//Read number of salaries 
+printf("Enter number of salaries:"); scanf("%d",&size);//5
+//Read Salaries
+for(int I=0; I < size; I++)
+{
+printf("Enter salary at index %d:",I); scanf("%lf",&salaries[I]);//{2000.0,1500.0,3000.0,1800.0,2500.0}
+}	
+//Do Sorting
+for(int I=0; I < (size-1); I++)
+{
+int sortIndex = I;
+for(int J=I+1; J < size; J++)
+{
+if(salaries[J] < salaries[sortIndex]
+{
+sortIndex = J;
+}
+}
+if(I != sortIndex)
+{
+float tempSal = salaries[I];
+salaries[I] = salaries[sortIndex];
+salaries[sortIndex] = tempSal;  
+}
+}
+//Display salaries
+printf("\nSalaires(After Sort):\n");
+for(int I=0; I < size; I++)
+{
+printf("%.2lf ", salaries[I]); 
+}	
+return 0;
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2. 
+$mkdir mylearning_app 
+3.
+$cd mylearning_app 
+4.
+$vim main.c
+5.press "i" to go for insertion mode
+6.type the code for the above program as it is 
+7. "Esc" to go for command mode 
+8. ":wq" to save and exit 
+!!!We came from "vim" editor to "prompt"
+9. To display the content of the file "main.c"
+$cat main.c 
+10. To display the content of "main.c" with line number 
+$cat -n main.c 			!!!OR cat main.c -n
+11. To run pre-processor 
+$gcc -E main.c
+12. To compile 
+$gcc -c main.c
+13.
+$ls
+14.To build as executable 
+$gcc main.o -o main
+$ls
+15.To run 
+$./main
+Enter number of salaries:5
+Enter salary at index 0:2000
+Enter salary at index 1:1200
+Enter salary at index 2:3000
+Enter salary at index 3:1800
+Enter salary at index 4:2500
+Salaries(After Sort):
+1200.00 1800.00 2000.00 2500.00 3000.00
+16.
+!!!Task:Copy the below lines of code 
+//Display salaries
+printf("\nSalaires(After Sort):\n");
+for(int I=0; I < size; I++){
+printf("%.2lf ", salaries[I]); 
+}	
+!!!Task:Paste before 
+//Do Sorting 
+!!!Task:And change as 
+//Display salaries
+printf("\nSalaires(Before Sort):\n");
+for(int I=0; I < size; I++){
+printf("%.2lf ", salaries[I]); 
+}	
+17.vim main.c
+go to start of '//Display salaries'
+at command mode "5yy" to copy the five lines 
+use "j" to move up 
+now we have to move before '//Do Sorting'
+use "p" to paste after '//Do Sorting'
+now use "l" to move right 
+go to beginning of 'After Sort'
+use "dw" to delete the word 'After'
+use "i" to go for insert mode 
+type the word 'Before ' in the place of 'After'
+use "Esc" to go to command mode 
+":wq" to save and exit 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#define SIZE 100
+#include<stdio.h>
+int main()
+{
+int size;
+double salaries[SIZE];
+//Read number of salaries 
+printf("Enter number of salaries:"); scanf("%d",&size);//5
+//Read Salaries
+for(int I=0; I < size; I++){
+printf("Enter salary at index %d:",I); scanf("%lf",&salaries[I]);//{2000.0,1500.0,3000.0,1800.0,2500.0}
+}	
+//Display salaries
+printf("\nSalaires(Before Sort):\n");
+for(int I=0; I < size; I++){
+printf("%.2lf ", salaries[I]); 
+}	
+//Do Sorting
+for(int I=0; I < (size-1); I++){
+int sortIndex = I;
+for(int J=I+1; J < size; J++){
+if(salaries[J] < salaries[sortIndex]){
+  sortIndex = J;
+}
+}
+if(I != sortIndex){
+float tempSal = salaries[I];
+salaries[I] = salaries[sortIndex];
+salaries[sortIndex] = tempSal;  
+}
+}
+//Display salaries
+printf("\nSalaires(After Sort):\n");
+for(int I=0; I < size; I++){
+printf("%.2lf ", salaries[I]); 
+}	
+return 0;
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+18. To compile, build and run 
+$gcc -c main.c
+$ls
+$gcc main.o -o main
+$ls
+$./main
+Enter number of salaries:5
+Enter salary at index 0:2000
+Enter salary at index 1:1200
+Enter salary at index 2:3000
+Enter salary at index 3:1800
+Enter salary at index 4:2500
+
+Salaries(Before Sort):
+2000.00 1200.00 3000.00 1800.00 2500.00
+Salaries(After Sort):
+1200.00 1800.00 2000.00 2500.00 3000.00
+
+19. Align as below the code for "readability"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#define SIZE 100
+#include<stdio.h>
+int main(){
+  int size;
+  double salaries[SIZE];
+  //Read number of salaries 
+  printf("Enter number of salaries:"); 
+  scanf("%d",&size);//5
+  //Read Salaries
+  for(int I=0; I < size; I++)
+  {
+    printf("Enter salary at index %d:",I); 
+	scanf("%lf",&salaries[I]);//{2000.0,1500.0,3000.0,1800.0,2500.0}
+  }	
+  //Display salaries
+  printf("\nSalaires(Before Sort):\n");
+  for(int I=0; I < size; I++)
+  {
+    printf("%.2lf ", salaries[I]); 
+  }	
+  //Do Sorting
+  for(int I=0; I < (size-1); I++)
+  {
+    int sortIndex = I;
+    for(int J=I+1; J < size; J++)
+	{
+      if(salaries[J] < salaries[sortIndex])
+	  {
+        sortIndex = J;
+      }
+    }
+    if(I != sortIndex)
+	{
+      float tempSal = salaries[I];
+      salaries[I] = salaries[sortIndex];
+      salaries[sortIndex] = tempSal;  
+    }
+  }
+  //Display salaries
+  printf("\nSalaires(After Sort):\n");
+  for(int I=0; I < size; I++)
+  {
+    printf("%.2lf ", salaries[I]); 
+  }	
+  return 0;
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
