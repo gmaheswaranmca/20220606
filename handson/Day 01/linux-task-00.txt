@@ -1,3 +1,35 @@
+---------------------------------------------------
+Task:
+---------------------------------------------------
+user home direcrory:
+	->financeapp
+		->header
+			scheme_t.h 	!!!!touch 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#pragma once						!!!!vi scheme_t.h
+struct _scheme_t{
+int scheme_id;
+char scheme_name[256];
+double max_loan_amount;
+//...
+};
+typedef struct _scheme_t scheme_t;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^			
+			scheme_db.h !!! cat > 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^			
+#pragma once
+#include"scheme_t.h"
+void scheme_create(scheme_t scheme);
+void scheme_update(scheme_t scheme);
+void scheme_read_all(scheme_t schemes[], int* scheme_size_addr);
+void scheme_read_byid(scheme_t *scheme_addr, int scheme_id);			
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		->source 
+			schme_db.c !!!copied from "header" dir 
+		->object 
+		->build 
+
+---------------------------------------------------
 mahesh@maheshubuntu:~$ pwd
 /home/mahesh
 mahesh@maheshubuntu:~$ ls
@@ -125,3 +157,104 @@ void scheme_update(scheme_t scheme);
 void scheme_read_all(scheme_t schemes[], int* scheme_size_addr);
 void scheme_read_byid(scheme_t *scheme_addr, int scheme_id);
 mahesh@maheshubuntu:~/financeapp/source$
+---------------------------------------------------
+Commands We Explored:
+1. pwd 
+	where we are (current working dir)
+2. whoami
+	who am i (current user name)
+3. ls 
+	listing the contents of the current dir 
+4. mkdir <dirName>
+	creates the directory named "dirName"
+	Examples:
+		mkdir financeapp 
+		#inside financeapp 
+		mkdir source 
+		mkdir header 
+		mkdir object 
+		mkdir build 
+5. cd <dirName>
+	changes to the directory named "dirName"
+   Examples: 
+		cd financeapp 
+		#inside financeapp 
+		cd header 
+6. touch <fileName>		
+	i. creates the file named "fileName"
+	ii. updates the timestamp of the file named "fileName"
+	Example:
+	#/home/mahesh/financeapp/header 
+	touch scheme_t.h 
+	!!!scheme_t.h will be created without the content 
+	
+7. cat > <fileName>
+	creates the file named "fileName"
+	Example: 
+	#/home/mahesh/financeapp/header 
+	cat > scheme_db.h 
+	type here the contenent of the file and raise CTRL+C 
+	!!!scheme_db.h will be created with the given content 
+	
+8. cat <fileName> 
+	displays the content of the file 
+	Example: 
+	#/home/mahesh/financeapp/header 
+	cat scheme_t.h 
+	!!!! displays the contents of file "scheme_t.h"
+	cat scheme_db.h 
+	!!!! displays the contents of file "scheme_db.h"
+
+9. cp <fileName> <directoryName>
+  copies the file named "fileName" to the directory named "directoryName" 
+  Example:
+  #/home/mahesh/financeapp/header 
+  cp scheme_db.h ../source 	
+  !!! copied the file scheme_db.h into directory named source which the sub directory of the parent 
+  !!! copied from /home/mahesh/financeapp/header  to /home/mahesh/financeapp/source 
+  
+10. cp <fileName> <directoryName/newFileName>
+  copies the file named "fileName" to the directory named "directoryName" as new file named "newFileName"
+  Example:
+  #/home/mahesh/financeapp/header 
+  cp scheme_db.h ../source/scheme_db.c  	
+  !!! copied the file scheme_db.h into directory named "source" which the sub directory of the parent 
+	  and copieds as the file named "scheme_db.c" 
+  !!! copied from /home/mahesh/financeapp/header  to /home/mahesh/financeapp/source 
+      from the name "scheme_db.h" to "scheme_db.c" 
+	  
+11. mv <oldFileDirName> <newFileDirName>
+   Renames the old directory or file named "oldFileDirName" into new 
+   directory of file named "newFileDirName"
+   Example:
+	#/home/mahesh/financeapp/header 
+	cp scheme_db.h ../source 	
+	cd ../source 
+	mv scheme_db.h scheme_db.c
+	!!! copied the file scheme_db.h into directory named source which the sub directory of the parent 
+    !!! copied from /home/mahesh/financeapp/header  to /home/mahesh/financeapp/source 
+	!!! Then we changed to the "source" folder of the parent "financeapp" 
+	!!! In "source" folder, we renamed "scheme_db.h" as "scheme_db.c"
+	
+12. vi <fileName>
+	the vi editor will be opened for the old / new file named "fileName" 
+	!!!if "fileName" is not exits, "fileName" will be created at the time of save using command mode 
+	Example:
+		#/home/mahesh/financeapp/header 
+		vi scheme_t.h 	
+		
+		!!!it takes to the "vi" editor 
+		to edit the code use the "insert mode" of the "vi editor"
+		Then we added few lines of code 
+		to save and exit go the "command mode" of the "vi editor"
+			:wq!
+			or 
+			:wq
+		!!!the file is saved with added content of the file 
+---------------------------------------------------		
+		
+		
+		
+   
+  
+

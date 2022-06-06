@@ -21,7 +21,7 @@ for(int I=0; I < (size-1); I++)
 int sortIndex = I;
 for(int J=I+1; J < size; J++)
 {
-if(salaries[J] < salaries[sortIndex]
+if(salaries[J] < salaries[sortIndex])
 {
 sortIndex = J;
 }
@@ -195,11 +195,10 @@ int main(){
         sortIndex = J;
       }
     }
-    if(I != sortIndex)
-	{
-      float tempSal = salaries[I];
-      salaries[I] = salaries[sortIndex];
-      salaries[sortIndex] = tempSal;  
+    if(I != sortIndex){
+        float tempSal = salaries[I];
+        salaries[I] = salaries[sortIndex];
+        salaries[sortIndex] = tempSal;  
     }
   }
   //Display salaries
