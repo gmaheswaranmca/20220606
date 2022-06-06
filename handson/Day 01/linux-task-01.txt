@@ -210,3 +210,115 @@ int main(){
   return 0;
 }
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+vi editor:
+    to write / edit the program or text processing 
+    we use "vi" editor 
+    
+    there are two modes 
+        1. insert mode 
+            to go "insert" mode from "command" mode 
+            "i"
+            
+            to go after the letter from "command" mode 
+            "a"
+            
+            
+        2. command mode 
+            from "command" mode 
+                "^" to move to the begging of the line 
+                "$" to move to the end of the line 
+            move across the code 
+            "h"
+            "j"
+            "k"
+            "l"
+            move from one word to next 
+            "w"
+            edit 
+            copy command 
+            "yy" - its like windows copy | to yank   
+                copies one line
+                
+            "6yy"
+                copies 6 lines 
+            paste command 
+                p
+                   copies "yanked" after the line 
+                P
+                   copies "yanked" before the line 
+            delete 
+            "x" - deletes the character 
+            "dd" - deletes the line 
+            "dw" - deletes the word 
+            "5x" - deletes 5 chars 
+            "5dd" - deletes 5 lines 
+            "5dw" - deletes 5 words 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
+Refactoring into functions 
+    "Compose into Method -> Extract"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+#define SIZE 100
+#include<stdio.h>
+void readNumOfSalaries(int* sizeAddr);
+void readSalaries(double salaries[], int size);
+void displaySalaries(double salaries[], int size, char* caption);
+void doSorting(double salaries[], int size);
+void doSwap(double *firstAddr, double *secondAddr);
+int main(){
+  int size;
+  double salaries[SIZE];
+  readNumOfSalaries(&size);
+  readSalaries(salaries,size);
+  displaySalaries(salaries,size,"Salaires(Before Sort)");
+  doSorting(salaries,size);
+  displaySalaries(salaries,size,"Salaires(After Sort)");
+  return 0;
+}
+void readNumOfSalaries(int* sizeAddr){
+  //Read number of salaries 
+  printf("Enter number of salaries:"); 
+  scanf("%d",sizeAddr);//5
+} 
+void readSalaries(double salaries[], int size){
+  //Read Salaries
+  for(int I=0; I < size; I++)
+  {
+    printf("Enter salary at index %d:",I); 
+	scanf("%lf",&salaries[I]);//{2000.0,1500.0,3000.0,1800.0,2500.0}
+  }	
+}  
+void displaySalaries(double salaries[], int size, char* caption){
+  //Display salaries
+  //printf("\nSalaires(Before Sort):\n");
+  printf("\n%s:\n",caption);
+  for(int I=0; I < size; I++)
+  {
+    printf("%.2lf ", salaries[I]); 
+  }	
+}  
+void doSorting(double salaries[], int size){
+  //Do Sorting
+  for(int I=0; I < (size-1); I++)
+  {
+    int sortIndex = I;
+    for(int J=I+1; J < size; J++)
+	{
+      if(salaries[J] < salaries[sortIndex])
+	  {
+        sortIndex = J;
+      }
+    }
+    if(I != sortIndex){
+        doSwap(&salaries[I], &salaries[sortIndex]);
+    }
+  }
+}  
+
+void doSwap(double *firstAddr, double *secondAddr){
+        //swap two data in value memory 
+        double tempSal = (*firstAddr);
+        (*firstAddr) = (*secondAddr);
+        (*secondAddr) = tempSal;  
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
