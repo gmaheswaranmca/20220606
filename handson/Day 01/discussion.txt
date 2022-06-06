@@ -1,6 +1,7 @@
 git clone https://github.com/gmaheswaranmca/20220606.git
 
 
+
 git status			!!!! Check status of the repository 
 git add .			!!!! Stage into git 
 git status 			
