@@ -235,6 +235,8 @@ vi editor:
             "l"
             move from one word to next 
             "w"
+            move from one word to prev 
+            "b" 
             edit 
             copy command 
             "yy" - its like windows copy | to yank   
@@ -242,6 +244,8 @@ vi editor:
                 
             "6yy"
                 copies 6 lines 
+            "yw" 
+                copies one word 
             paste command 
                 p
                    copies "yanked" after the line 
@@ -254,6 +258,16 @@ vi editor:
             "5x" - deletes 5 chars 
             "5dd" - deletes 5 lines 
             "5dw" - deletes 5 words 
+            
+            to introduce the empty line, use "o"
+            
+            ":set number" will give line numbers for the code 
+            
+            ":n" moves to the line number which is "n"
+            for example 
+            ":17" moves to the line numbered 17
+            
+            
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
 Refactoring into functions 
     "Compose into Method -> Extract"

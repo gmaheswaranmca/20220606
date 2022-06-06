@@ -60,5 +60,13 @@ I can rate myself 2 in C.I need to learn C in detail.
 			
 	
 ---------------------------------------------------------
-
-
+Khurram_1042175
+To indent, we can use indent command. 
+It is not installed by default and 
+hence you have to use the following command to install it 
+"sudo apt-get install indent".  
+Indent can be used from within vi also ujsing command :=
+---------------------------------------------------------
+Bindu Madathil
+alignment is in VIM editor
+---------------------------------------------------------
