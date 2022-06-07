@@ -78,7 +78,10 @@ struct _scheme_t{
 int scheme_id;
 char scheme_name[256];
 double max_loan_amount;
+double rate_of_interest;
+int duration_in_months;
 //...
+char document_details[2000];
 };
 typedef struct _scheme_t scheme_t;
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
