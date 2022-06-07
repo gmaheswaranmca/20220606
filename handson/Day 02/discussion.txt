@@ -53,3 +53,35 @@ why do we go for modularization?
 ---------------------------------------------------------------
 
 
+mahesh@maheshubuntu:~/financeapp/build$ cd ../source
+mahesh@maheshubuntu:~/financeapp/source$ gcc -I../header *.c -c
+mahesh@maheshubuntu:~/financeapp/source$ ls
+employee_app.c  employee_app.o  scheme_add_ux.c  scheme_add_ux.o  scheme_db.c  scheme_db.o
+mahesh@maheshubuntu:~/financeapp/source$ mv *.o ../object
+mahesh@maheshubuntu:~/financeapp/source$ ls
+employee_app.c  scheme_add_ux.c  scheme_db.c
+mahesh@maheshubuntu:~/financeapp/source$ ls ../object
+employee_app.o  scheme_add_ux.o  scheme_db.o
+mahesh@maheshubuntu:~/financeapp/source$ cd ../object
+mahesh@maheshubuntu:~/financeapp/object$ gcc *.o -o ../build/finempapp
+mahesh@maheshubuntu:~/financeapp/object$ cd ../build
+mahesh@maheshubuntu:~/financeapp/build$ ./finempapp 
+Choice (1-Manage Scheme, 2-Process Loan, 3-Release Loan, 0-Exit):
+1
+Choice (1-Add Scheme, 2-Update Loan, 3-Display Schemes, 0-Exit):
+1
+Read scheme details from the user console(keyboard) here... into scheme objectCall scheme_create pass the scheme object as the argumentChoice (1-Add Scheme, 2-Update Loan, 3-Display Schemes, 0-Exit):
+0
+Choice (1-Manage Scheme, 2-Process Loan, 3-Release Loan, 0-Exit):
+0
+
+---------------------------------------------------------------
+Lab: to use gcc with various options 
+
+1. salaries sort /v03
+2. salaries sort /v04
+3. Assignment Task of salaries sort 
+4. Finance App - Case Study 
+---------------------------------------------------------------
+
+
