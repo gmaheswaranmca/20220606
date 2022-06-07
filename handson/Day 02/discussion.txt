@@ -83,5 +83,63 @@ Lab: to use gcc with various options
 3. Assignment Task of salaries sort 
 4. Finance App - Case Study 
 ---------------------------------------------------------------
+locate -> to search in the file system 	
+	Example: 
+		locate main.c 
+		
+find	-> to find the file in the given directory 
+	Example:
+		find main.c 
+		!!! It will find the file in the working dir 
+		find . -name main.c  
+		find . -name salary_sort.c 
+		
+grep 							!!! SEARCH CONTENT of the file 
+								!!! g/re/p
+	grep <searchText> <file> <file> 
+	!!! to find the given phrase (reg expr) in given file(s)	
+	Example: 
+		grep 'size' main.c		!!! to find the word 'size' in the file 'main.c'
+		grep 'size' main.c -i 	!!! to find the word 'size' in the file 'main.c' case is ignored
+		grep 'I'  main.c        !!!  to find the word 'I' in the file 'main.c'
+		grep 'I'  main.c | grep I=0 !!!  to find the word 'I' in the file 'main.c'
+										and then from the result we do further search the phrase "I=0"
+		grep 'I'  main.c  > sample.txt    !!!  to find the word 'I' in the file 'main.c'
+										and then stores the filtered content into 
+										another new file named "sample.txt"
+		grep salaries ver03/main.c ver04/main.c -i 
+		!!! to find the word 'salaries' in the files 'ver03/main.c' and 'ver04/main.c'
+			there case is ignored 
+		grep salaries ver03/* ver04/* -i 	
+		!!! to find the word 'salaries' in all the files of directories 'ver03' and 'ver04'
+			there case is ignored 
+		grep salaries ver03/salary_sort.c ver04/salary_sort.c -i
+		!!! to find the word 'salaries' in the files 'ver03/salary_sort.c' and 'ver04/salary_sort.c'
+			here case is ignored
+			
+diff !!! to find the difference in the contents of the given two files 
+	Example:
+		diff ver03/salary_sort.c ver04/salary_sort.c 
+		!!!The differences in the files are all printed 
+			
+vi 
+	search / replace 
+		:%s/search/replace/g Search and replace in file
+		Example:
+		
+	copy 
+	move 
+	delete 
+	
+	
+from Bindu Madathil to everyone:    3:43 PM
+Commenting Multiple Lines
+Follow the steps given below for commenting multiple using the terminal.
 
-
+First, press ESC
+Go to the line from which you want to start commenting. 
+Then, press ctrl + v, this will enable the visual block mode.
+use the down arrow to select multiple lines that you want to comment.
+Now, press SHIFT + I to enable insert mode.
+Press # and it will add a comment to the first line. 
+Then press ECS and wait for a second, # will be added to all the lines.	
