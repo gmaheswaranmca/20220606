@@ -143,3 +143,10 @@ use the down arrow to select multiple lines that you want to comment.
 Now, press SHIFT + I to enable insert mode.
 Press # and it will add a comment to the first line. 
 Then press ECS and wait for a second, # will be added to all the lines.	
+
+---------------------------------------------------------------
+to install the gcc if not exists
+---------------------------------------------------------------
+from Suma Vummadsingh to everyone:    3:54 PM
+sudo apt install gcc
+---------------------------------------------------------------
