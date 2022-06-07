@@ -150,3 +150,260 @@ to install the gcc if not exists
 from Suma Vummadsingh to everyone:    3:54 PM
 sudo apt install gcc
 ---------------------------------------------------------------
+
+
+
+---------------------------------------------------------------
+Linux Commands:
+---------------------------------------------------------------
+	$pwd -> print current working directory 
+	$whoami -> current user name 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	$ls -> lists contents(file,direcrory,device) of working directory 
+	$ls dirPath -> 
+	#/home/mahesh/learning_app
+	$ls v03	-> lists contents(file,direcrory,device) of given directory 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app
+	go inside "v03"
+	$cd v03 !!! Change to director "v03" 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app/v03 
+	#/home/mahesh/learning_app has v01 v02 v05(child dirs) as well 
+	to go to "v02" 
+	$cd ../v02 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app/v03 
+	CONTENT of v03: main.c 
+	
+	copy "main.c" to "v05"
+	$cp main.c ../v05 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app/v03 
+	CONTENT of v03: main.c 
+	
+	move "main.c" to "v05"
+	$mv main.c ../v05 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app/v03 
+	CONTENT of v03: main.c 
+	
+	copy "main.c" to "v05" as "mainsal.c"
+	$cp main.c ../v05/mainsal.c  
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app/v03 
+	CONTENT of v03: main.c  
+	
+	move "main.c" to "v05" as "mainsal.c"
+	$mv main.c ../v05/mainsal.c  
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app/v03
+	rename dir "v03" as "ver03"
+	
+	$mv v03 ver03 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app/v03 
+	CONTENT of v03: main.c  
+	
+	rename "main.c" as "mainsal.c"
+	$mv main.c mainsal.c 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app
+	create directories ver08 ver09 ver10 ver11 
+	
+	$mkdir ver08 
+	$mkdir ver09
+	$mkdir ver10
+	$mkdir ver11
+		!!!OR 
+		
+	$mkdir ver08 ver09 ver10 ver11
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app
+	here are empty directories named ver08 ver09 ver10 ver11 
+	
+	to remove those directories 
+	$rmdir ver08 ver09 ver10 ver11 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	#/home/mahesh/learning_app
+	has directory ver12 which has the files "factorial.c" "bubble_sort.c" 
+	
+	to remove ver12 
+	$rm -r ver12 
+		OR 
+		
+	#/home/mahesh/learning_app	
+	$rm ver12/*	
+	$rmdir ver12 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	to create files "factorial.c" "bubble_sort.c"  
+	in 
+	#/home/mahesh/learning_app/ver12 
+	
+	$touch factorial.c bubble_sort.c
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	purpose of cat?
+	i. to display of the content of the file.
+	#/home/mahesh/learning_app/v01
+	$cat main.c 
+	ii. to create the file 
+	$cat > factorial.c 
+	//CODE for factorial program 
+	CTRL+C 
+	To check 
+	$cat factorial.c 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	to combine contents of the two files
+	$ mkdir ver12
+
+	User@WINDOWS-9KGIOCA ~/learn_app
+	$ cat > p01.c
+	#define MAX_SIZE 1250
+
+
+	User@WINDOWS-9KGIOCA ~/learn_app
+	$ cat > p02.c
+	#include<stdio.h>
+
+
+	User@WINDOWS-9KGIOCA ~/learn_app
+	$ cat p01.c p02.c
+	#define MAX_SIZE 1250
+	#include<stdio.h>
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	to combine contents of the two files into one file 
+	
+	$ cat p01.c p02.c > result.c 
+	
+	$ cat result.c 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	locate fileDirName
+	Example 
+	locate main.c 
+	
+	locate v01 
+	
+	!!!It will search from file system 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	find 
+	
+	#/home/mahesh/learning_app
+	CHILD DIRS: v01 v02 ver03 ver04 ver05 
+	
+	search salary_sort.c from current directory 
+	
+	$ find . -name salary_sort.c
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	grep 
+		search the pattern/pharase from file(s) 
+	
+	#/home/mahesh/learning_app	
+	CONTENT: main.c 
+	
+	to search the phrase "salaries" from main.c 
+	
+	grep salaries main.c 
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
+	#/home/mahesh/learning_app/
+	CHILD DIRS: ver03 ver04 ver05 
+	ALL THESE DIRS will have file: "salary_sort.c"
+	
+	to find difference of salary_sort.c of ver04 and ver05 
+
+	$diff ver04/salary_sort.c ver05/salary_sort.c
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+vi editor
+
+purpose:
+	text processing utility 
+options: 
+	two modes are there 
+	1. insert mode 
+		editing for the content 
+	2. command mode 
+		processing for the contents
+		manipulations 
+		move the cursor 
+		delete 
+		copy 
+		move 
+---------------------------------------------------------------
+i -> insert mode after the character 
+a -> insert mode before the character
+
+"h" "j" "k" "l" -> left down up right 
+"^" "$" -> beginning and end of the line 
+"1G" "G" -> beginning and end of the file 
+
+:1,2 co 100 !!! 100 is the last line 
+		!!! lines 1 and 2 are copied after 100 
+		
+:1,2 m 100 !!! 100 is the last line 
+		!!! lines 1 and 2 are moved after 100 
+		
+:1,2 d !!! delete lines 1 and 2 
+
+Step 1
+Go to line 1
+Step 2
+2dd 			!!! Deletes two lines 
+
+
+2dw 		!!! Deletes two words 
+
+x !!! Deletes one character 
+
+10x !!! Deletes 10 characters 
+
+yw !!! yanking 1 word 
+
+yy !!! yanking 1 current line 		
+
+2yw !!! yanking two words 
+
+2yy !!! yanking two lines 
+
+p !!! paste "yanked" after the line 
+P !!! paste "yanked" before the line 
+
+D !!! delete from the cursor till end of the line 
+
+
+:w 					!!! save 
+:q					!!! exit 
+:wq					!!! save & exit 
+:wq!				!!! for save & exit 
+
+:set nu				!!! to display line numbers for the code 		
+:set nonu 			!!! to turn off the line numbers 
+
+to search the phrase "salaries" 
+/salaries 
+
+to move to next search "n"
+to move to previous search "N"
+		
+to find and replace the "salaries" as "employees" 
+:%s/salaries/employees/gc 
+c for confirmation
+we have to give "y" for every replacement !!! this is  safest find and replace 
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+gcc -> compilation, build, execution 
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
