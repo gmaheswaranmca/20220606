@@ -1,0 +1,55 @@
+---------------------------------------------------------------
+int is_logged_in;               //I
+   vs 
+extern int is_logged_in;        //II
+
+declaration definition 
+
+"is_logged_in" with qualifier "extern" means 
+somewhere is_logged_in is going to be "memory allocated" 
+
+
+"is_logged_in" with qualifier "extern" means declaration 
+"is_logged_in" without qualifier "extern" means definition "memory allocation"
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+"extern" keyword we can use for function 
+if we ignore "extern" keyword for function declaration, compiler will provide it 
+for function declaration, "extern" is optional
+---------------------------------------------------------------
+
+---------------------------------------------------------------
+what is the header file?
+	declarations for our source 
+	declarations for variable, type, function 
+	
+	Example for variable declaration(global variable):
+		extern int is_logged_in; 
+		
+	Example for variable definition(global variable): !!! in the source file 
+		int is_logged_in;
+
+what the header file can have?
+	"just names"
+	names may be the variable, type, function 
+	names means "declations" 
+	no memory allocations 
+	
+modularization?
+	migrating code into many files 
+	splitting code into functions and keeping functions in many files 
+
+why do we go for modularization?	
+	1. maintainance
+	   readability - easy to understand 
+			for whom? other programmers and even for us 
+	   easy to debug - testable (unit test)
+	2. reusability
+	3. abstractions -> "hiding" the code at the time of the call 
+		declarations 
+		"ideas" than the "events"
+---------------------------------------------------------------
+
+
