@@ -1,0 +1,67 @@
+---------------------------------------------------------------
+gcc -> compilation, build, execution 
+---------------------------------------------------------------
+	gcc salary_sort.c -E	!!! PREPROCESSING -> the process before compilation 
+	gcc *.c -c 			!!! COMPILE to object files 
+	gcc *.o -o salmain  !!! BUILD from objects files into executable file 
+---------------------------------------------------------------
+	ASSUME : header files in another dir / path 
+	To Compile:
+	
+	gcc -I../header *.c -c !!! COMPILE to object files but the headers are from path "../header" 
+---------------------------------------------------------------
+
+1. indent lines 		Vishal 
+	:7,9>>   !!!!Gives you two tabs 
+	:7,9<<	 !!!Removes two tabs (unindent)
+2. comment lines 		Sandeep 
+	:7,9s/^/#		Between lines 7 and 9 in the beginning the symbol "#" will be added 
+					!!!COMMENT bash script 
+	:7,9s/^/\/\/	Between lines 7 and 9 in the beginning c single line comment ie "//" will be added 
+					!!!COMMENT c 
+	:7,9s/^#/		If there are in the line 7 and 9, the symbol "#" in the beginning 
+					then we replace # by "empty" 
+					!!!UNCOMMENT bash script 
+	:7,9s/^\/\//	!!!UNCOMMENT c code 
+					
+---------------------------------------------------------------
+"bash" scripting: 
+	one of the "shell" scription 
+	interpreter to process/parse the script 
+	
+	"interpreter" -> line by line translation 
+	"compiler" -> entire code tranlation 
+	
+	purpose of "bash shell scripting" 
+		-> automation of the jobs 
+---------------------------------------------------------------	
+script	-> program
+---------------------------------------------------------------	
+which
+	!!! locate the executable 
+Examples:
+	which bash 
+	which gcc 
+	which gdb 
+	which vi 
+---------------------------------------------------------------	
+	shebang 
+		!!! it is the comment 
+		it will tell how to the "bash" interpreter from where 
+			shebang are of two 
+				one is direct path 
+				another one is through env settings
+---------------------------------------------------------------
+ls hello_world.sh -l
+	!!! Long Lising with "ls" command the floag "-l" 
+---------------------------------------------------------------
+-rw-r--r-- 1 mahesh mahesh 39 Jun  9 09:31 hello_world.sh
+---------------------------------------------------------------
+	hello_world.sh
+---------------------------------------------------------------
+$chmod +x hello_world.sh 	
+	!!! we will add the permisssion "executable" for the file "hello_world.sh"
+---------------------------------------------------------------	
+#!/usr/bin/bash	
+echo "Hello World"
+
