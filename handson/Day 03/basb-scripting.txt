@@ -266,14 +266,16 @@ done
 
 echo "Sum of the terms is $SUM_OF_ODD_DIGS"
 -------------------------------------------------------------	
-
+Lab Additional Exercises:
 	  
 1. Find the difference between maximum and minimum of three given numbers 	  
 2. Find factorial of the given number 
 	factorial of 5 = 5 * 4 * 3 * 2 * 1 = 120
 3. Reverse the given number 	
-	
-gmaheswaranmca@gmail.com 
-whatsapp number: +09750592159	
-call number: +07339441598
+
+Send me the "script" for the additional exercises 
+to the mail id or post in the whatsapp given below:	
+	gmaheswaranmca@gmail.com 
+	whatsapp number: +09750592159	
+	call number: +07339441598
 -------------------------------------------------------------
