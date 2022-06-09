@@ -30,13 +30,60 @@ echo "Hello $FULL_NAME!!!"
 ------------------------------------------------
 
 ------------------------------------------------
-**************hello_world.sh********** 			
-chmod +x hello_world.sh !!! GIVE EXECUTABLE PERMISSION
-./hello_world.sh 		!!! To run script
+**************findsum.sh********** 			
+chmod +x findsum.sh !!! GIVE EXECUTABLE PERMISSION
+./findsum.sh 		!!! To run script
 ------------------------------------------------
 #!/usr/bin/bash	
-echo "Hello World!!!"
-echo "Enter Your Full Name:"
-read FULL_NAME
-echo "Hello $FULL_NAME!!!"
+echo "Enter First Number:"
+read FIRST_NUM
+echo "Enter Second Number:"
+read SECOND_NUM
+SUM_NUMS=$(($FIRST_NUM + $SECOND_NUM))
+echo "The sum of $FIRST_NUM and $SECOND_NUM is $SUM_NUMS."
+------------------------------------------------
+
+SUM_NUMS=$(($FIRST_NUM % $SECOND_NUM))
+
+OR
+
+SUM_NUMS=$[$FIRST_NUM + $SECOND_NUM]
+------------------------------------------------
+
+
+------------------------------------------------
+**************do_calc.sh********** 			
+chmod +x do_calc.sh !!! GIVE EXECUTABLE PERMISSION
+./do_calc.sh 		!!! To run script
+------------------------------------------------
+#!/usr/bin/bash	
+echo "Enter First Number:"
+read FIRST_NUM
+echo "Enter Second Number:"
+read SECOND_NUM
+echo "Choice(1-Addition, 2-Subtraction, 3-Multipliaction, 4-Division(Quotient), 5-Division(Remainder)):"
+read CHOICE
+if [ $CHOICE -eq 1 ]
+then
+	RES=$(($FIRST_NUM + $SECOND_NUM))
+	PRINTRES="The sum of $FIRST_NUM and $SECOND_NUM is $RES."
+elif [ $CHOICE -eq 2 ]
+then
+	RES=$(($FIRST_NUM - $SECOND_NUM))
+	PRINTRES="The difference of $FIRST_NUM and $SECOND_NUM is $RES."	
+elif [ $CHOICE -eq 3 ]
+then
+	RES=$(($FIRST_NUM * $SECOND_NUM))
+	PRINTRES="The product of $FIRST_NUM and $SECOND_NUM is $RES."		
+elif [ $CHOICE -eq 4 ]
+then
+	RES=$(($FIRST_NUM / $SECOND_NUM))
+	PRINTRES="The quotient of $FIRST_NUM and $SECOND_NUM is $RES."		
+else
+	RES=$(($FIRST_NUM % $SECOND_NUM))
+	PRINTRES="The remainder of $FIRST_NUM and $SECOND_NUM is $RES."		
+fi	
+echo 
+
+echo $PRINTRES
 ------------------------------------------------
