@@ -146,7 +146,8 @@ do
 done
 ------------------------------------------------
 #!/usr/bin/bash	
-for ((I=1 ; $I < 10; I=$I+1))
+#c-style loop
+for ((I=1 ; $I <= 10; I=$I+1))
 do
 	echo "$I"
 done
