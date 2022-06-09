@@ -1,7 +1,11 @@
-https://devhints.io/bash
+*******************Bash Scripting*******************
 
+Resources for references:
+	1
+	https://devhints.io/bash
 
-https://learnxinyminutes.com/docs/bash/
+	2
+	https://learnxinyminutes.com/docs/bash/
 
 ------------------------------------------------
 **************hello_world.sh********** 			
@@ -293,4 +297,150 @@ to the mail id or post in the whatsapp given below:
 	gmaheswaranmca@gmail.com 
 	whatsapp number: +09750592159	
 	call number: +07339441598
+-------------------------------------------------------------
+
+
+Arrays in bash script 
+
+-------------------------------------------------------------
+static array 
+-------------------------------------------------------------
+#!/usr/bin/bash	
+FILE_NAMES=("hello_world.sh" "findsum.sh" "do_calc.sh" "do_calc_ext.sh")
+
+echo "Number of elements in the array is ${#FILE_NAMES[@]}"
+
+echo "0.Elements are ${FILE_NAMES[@]}"
+
+echo "First Element is ${FILE_NAMES[0]}"
+echo "Third Element is ${FILE_NAMES[2]}"
+echo "Fourth Element is ${FILE_NAMES[3]}"
+
+
+echo "1.Elements are"
+for E in ${FILE_NAMES[@]}
+do
+	echo "$E"	
+done
+
+echo "2.Elements are"
+for((I=0 ; $I < ${#FILE_NAMES[@]}; I=$I+1))
+do
+	echo "${FILE_NAMES[$I]}"	
+done
+
+echo "Content of the files:"
+for((I=0 ; $I < ${#FILE_NAMES[@]}; I=$I+1))
+do
+	echo "***********Start of ${FILE_NAMES[$I]}"
+	cat "${FILE_NAMES[$I]}"	
+	echo "***********End of ${FILE_NAMES[$I]}"
+done
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+dynamic array 
+	read N names from keyboard and print 
+-------------------------------------------------------------
+#!/usr/bin/bash	
+echo "Enter number of names:"
+read SIZE
+
+declare -a NAMES
+
+for((I=0 ; $I < $SIZE ; I=$I+1))
+do
+	read NAME 
+	NAMES+=($NAME) #Push to the array 
+done 
+
+for((I=0 ; $I < $SIZE ; I=$I+1))
+do
+	echo "${NAMES[$I]}"
+done
+
+echo "All the names ${NAMES[@]}"
+echo "Number of names ${#NAMES[@]}"
+
+-------------------------------------------------------------
+
+-------------------------------------------------------------
+dynamic array 
+	read N numbers from keyboard and print 
+-------------------------------------------------------------
+#!/usr/bin/bash	
+echo "Enter number of numbers:"
+read SIZE
+
+declare -a NUMS
+
+for((I=0 ; $I < $SIZE ; I=$I+1))
+do
+	read NUM 
+	NUMS+=($NUM) #Push to the array 
+done 
+
+for((I=0 ; $I < $SIZE ; I=$I+1))
+do
+	echo "${NUMS[$I]}"
+done
+
+echo "All the numbers ${NUMS[@]}"
+echo "Number of numbers ${#NUMS[@]}"
+
+S=0
+for E in ${NUMS[@]}
+do
+	S=$(($S + $E))
+	echo "$E"
+done
+
+echo "Sum of the numbers is $S"
+NUM_OF_POS_TO_ROT=2
+echo "Rotate $NUM_OF_POS_TO_ROT position(s) left ${NUMS[@]:$NUM_OF_POS_TO_ROT} ${NUMS[@]:0:$NUM_OF_POS_TO_ROT}"
+-------------------------------------------------------------
+
+String processing
+-------------------------------------------------------------
+#!/usr/bin/bash
+NAME="Maheswaran"
+echo "${NAME:0:3}"
+echo "${NAME: -3:3}" #we start index -3 and we can read 3 numbers
+echo "${NAME: -3}" #we start index -3 and we can read 3 numbers
+echo "The length of the string ${#NAME}"
+echo "The first letter lower case ${NAME,}"
+echo "The first letter upper case ${NAME^}"
+echo "all letters lower case ${NAME,,}"
+echo "all letters upper case ${NAME^^}"
+echo {'hello','world'}.sh
+
+if [[ "Maheswaran" < "Govindaraju" ]]
+then
+	echo "Maheswaran is alphabetically came first"
+else	
+	echo "Govindaraju is alphabetically came first"
+fi
+
+if [[ "Maheswaran" > "Govindaraju" ]]
+then
+	echo "Maheswaran is alphabetically came last"
+else	
+	echo "Govindaraju is alphabetically came last"
+fi
+
+if [[ "Maheswaran" = "Govindaraju" ]]
+then
+	echo "Equal"
+else	
+	echo "Not Equal"
+fi
+
+
+FIRST="Muralidharan"
+LAST="Maheswaran"
+FULL="$FIRST$LAST"
+echo "$FULL"
+FULL="${FIRST}X${LAST}"
+echo "$FULL"
 -------------------------------------------------------------
