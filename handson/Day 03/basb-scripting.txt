@@ -444,3 +444,17 @@ echo "$FULL"
 FULL="${FIRST}X${LAST}"
 echo "$FULL"
 -------------------------------------------------------------
+
+
+
+Lab Additional Exercises:
+5. Find sum of odd numbers in given N numbers array 
+
+6. Find max of given N numbers array 
+
+7. Rotate given name left k positions 
+
+8. Find number of palindrome strings from the given N strings 
+
+-------------------------------------------------------------
+
