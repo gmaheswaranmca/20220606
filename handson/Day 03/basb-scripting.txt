@@ -83,7 +83,52 @@ else
 	RES=$(($FIRST_NUM % $SECOND_NUM))
 	PRINTRES="The remainder of $FIRST_NUM and $SECOND_NUM is $RES."		
 fi	
-echo 
 
 echo $PRINTRES
+------------------------------------------------
+
+
+
+------------------------------------------------
+**************do_calc_ext.sh********** 			
+chmod +x do_calc_ext.sh !!! GIVE EXECUTABLE PERMISSION
+./do_calc_ext.sh 		!!! To run script
+------------------------------------------------
+#!/usr/bin/bash	
+echo "Enter First Number:"
+read FIRST_NUM
+echo "Enter Second Number:"
+read SECOND_NUM
+while true
+do
+	echo "Choice(1-Addition, 2-Subtraction, 3-Multipliaction, 4-Division(Quotient), 5-Division(Remainder)):"
+	read CHOICE
+	if [ $CHOICE -eq 1 ]
+	then
+		RES=$(($FIRST_NUM + $SECOND_NUM))
+		PRINTRES="The sum of $FIRST_NUM and $SECOND_NUM is $RES."
+	elif [ $CHOICE -eq 2 ]
+	then
+		RES=$(($FIRST_NUM - $SECOND_NUM))
+		PRINTRES="The difference of $FIRST_NUM and $SECOND_NUM is $RES."	
+	elif [ $CHOICE -eq 3 ]
+	then
+		RES=$(($FIRST_NUM * $SECOND_NUM))
+		PRINTRES="The product of $FIRST_NUM and $SECOND_NUM is $RES."		
+	elif [ $CHOICE -eq 4 ]
+	then
+		RES=$(($FIRST_NUM / $SECOND_NUM))
+		PRINTRES="The quotient of $FIRST_NUM and $SECOND_NUM is $RES."		
+	elif [ $CHOICE -eq 5 ]
+	then
+		RES=$(($FIRST_NUM % $SECOND_NUM))
+		PRINTRES="The remainder of $FIRST_NUM and $SECOND_NUM is $RES."		
+	else 
+		break
+	fi	
+
+	echo $PRINTRES
+done
+
+echo "Shutdown the job!!!"
 ------------------------------------------------
