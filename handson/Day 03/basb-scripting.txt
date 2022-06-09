@@ -103,7 +103,7 @@ while true
 do
 	echo "Choice(1-Addition, 2-Subtraction, 3-Multipliaction, 4-Division(Quotient), 5-Division(Remainder)):"
 	read CHOICE
-	if [ $CHOICE -eq 1 ]
+	if [ $CHOICE -eq 1 ] #-eq "equal" | -ne "not equal" | -lt "less than" | -gt "greater than" | -le "less than or equal to" | -ge "greater than or equal to"
 	then
 		RES=$(($FIRST_NUM + $SECOND_NUM))
 		PRINTRES="The sum of $FIRST_NUM and $SECOND_NUM is $RES."
@@ -141,6 +141,12 @@ chmod +x my_script.sh !!! GIVE EXECUTABLE PERMISSION
 ------------------------------------------------
 #!/usr/bin/bash	
 for I in {1..50} #{10..50} -> {10..50..3}
+do
+	echo "$I"
+done
+------------------------------------------------
+#!/usr/bin/bash	
+for ((I=1 ; $I < 10; I=$I+1))
 do
 	echo "$I"
 done
