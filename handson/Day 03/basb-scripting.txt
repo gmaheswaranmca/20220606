@@ -248,6 +248,23 @@ echo "Sum of the terms is $SUM_OF_TERMS"
 	234567
 	3+5+7 -> 15
 -------------------------------------------------------------
+#!/usr/bin/bash	
+echo "Enter a Number:"
+read N
+
+SUM_OF_ODD_DIGS=0
+T=$N
+while [[ $T -gt 0 ]]
+do
+	DIGIT=$(($T % 10))
+	if [[ $(($DIGIT % 2)) -eq 1 ]]
+	then
+		SUM_OF_ODD_DIGS=$(($SUM_OF_ODD_DIGS + $DIGIT))
+	fi
+	T=$(($T / 10))
+done
+
+echo "Sum of the terms is $SUM_OF_ODD_DIGS"
 -------------------------------------------------------------	
 
 	  
