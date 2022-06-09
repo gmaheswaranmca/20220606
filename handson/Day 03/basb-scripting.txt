@@ -1,3 +1,8 @@
+https://devhints.io/bash
+
+
+https://learnxinyminutes.com/docs/bash/
+
 ------------------------------------------------
 **************hello_world.sh********** 			
 chmod +x hello_world.sh !!! GIVE EXECUTABLE PERMISSION
