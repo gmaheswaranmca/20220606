@@ -240,4 +240,39 @@ Choice: 5
 Output:
 2
 -----------------------------------------------
+Format Specifiers:
+-----------------------------------------------
+    %d      int
+    %f      float 
+    %u      unsigned 
+    %l      long 
+    %ll     long long 
+    %f      float 
+    %lf     double 
+    %c      char 
+    %s      string 
+-----------------------------------------------
+
+
+-----------------------------------------------
+Pre Test Responses for "C Programming" 
+-----------------------------------------------
+
+Print the following pattern for given N
+Example:
+Input:
+    N=4
+Output: 
+    4321
+    44332211
+    444333222111
+    4444333322221111
+Input:
+    N=3
+Output: 
+    321
+    332211
+    333222111
+
+    
 
