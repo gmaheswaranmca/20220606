@@ -71,7 +71,7 @@ Language Elements of C
 			a -= b
 			a *= b
 			a /= b
-			a %= b
+			a %= b          // only for integers
 			a &= b
 			a |= b
 			a ^= b
@@ -277,5 +277,165 @@ Output:
     332211
     333222111
 -----------------------------------------------
-    
+-1      0-255 unsigned char 
+-----------------------------------------------
+
+-----------------------------------------------
+Reading unsigned short int 
+and Printing 
+-----------------------------------------------
+#include<stdio.h>
+int main(){
+	unsigned short age;
+	printf("Enter your age:");
+	scanf("%hu",&age);
+	printf("\nGiven age is %hu",age);
+	return 0;
+}
+-----------------------------------------------
+Check for input: -1 Output: MAX_UNSIGNGED_SHORT 
+Check for input: -2 Output: MAX_UNSIGNGED_SHORT-1
+Check for input: -3 Output: MAX_UNSIGNGED_SHORT-2
+-----------------------------------------------
+
+-----------------------------------------------
+Validation of age between 0 and 120
+-----------------------------------------------
+#include<stdio.h>
+int main(){
+	unsigned short age;
+	printf("Enter your age:");//12 121
+	scanf("%hu",&age);
+
+	if(!(0 <= age && age <= 120)){ // 0 <= age <= 120
+	//if(!(0 <= age <= 120)){ //0 <= age <= 120 -> 1 <= 120 	| 0 <= age <= 120 -> 1 <= 120 //Logical error
+		printf("\nInvalid age.");
+		return -1;
+	}
+	printf("\nGiven age is %hu",age);
+	printf("\nThe age is valid.");
+	return 0;
+}
+
+-----------------------------------------------
+Storing high precision data into double/long double 
+and printing we find some loss in the precison
+What it is???????????
+-----------------------------------------------
+#include<stdio.h>
+int main(){
+	long double salary=100000.123456789123456789123456789;
+
+	printf("%.27Lf",salary); //100000.123456789122428745031356812
+	
+	return 0;
+}
+-----------------------------------------------
+
+
+a += b;
+->
+a = a + b; 
+
+-----------------------------------------------
+#include<stdio.h>
+int main(){
+	double firstSalary=0.0;
+	double secondSalary=0.0;
+	printf("Enter two salaries one by one:");
+	scanf("%lf%lf",&firstSalary,&secondSalary);
+	//double sumSalary = firstSalary + secondSalary; // replace the expression using "+="
+	double sumSalary = 0.0;
+	sumSalary += firstSalary; // sumSalary = sumSalary + firstSalary;
+	sumSalary += secondSalary;// sumSalary = sumSalary + secondSalary;
+
+	printf("%.2lf",sumSalary); 
+	
+	return 0;
+}
+-----------------------------------------------
+
+-----------------------------------------------
+A+=1;
+
+A++;
+
+Usage of increment / decrement operators
+-----------------------------------------------
+//Forward Traversal
+for(int I=0; I < SIZE; I++){
+}
+//Same 
+for(int I=0; I < SIZE; ++I){
+} 
+//Backward Traversal   
+for(int I=SIZE-1; I >= 0; I--){
+}
+//Same 
+for(int I=SIZE-1; I >= 0; --I){
+}    
+-----------------------------------------------
+
+-----------------------------------------------
+Difference between pre increment and post increment 
+-----------------------------------------------
+Let us assume
+int I = 10;
+Before going to discuss, we will understand:
+I++;    //meaning of increment operator is I = I + 1;
+        //After this statement I will become 11
+
+int I = 10;
+I+1;    //Just expression, the value of the evaluated expression is not updated back to the variable 
+        //After this statement I is 10 only
+-----------------------------------------------
+int I = 10;
+int A;
+int B;
+int C;
+int D;
+
+A = I++; //post increment:value then increment  equals A=I; I=I+1;  // A=10 and I=11
+B = ++I; //pre increment:increment then value   equals I=I+1; B=I;   // I=12 and B=12 
+C = I--; //post decrement:value then decrement  equals C=I; I=I-1;   // C=12 and I=11
+D = --I; //pre decrement:decrement then value   equals I=I-1; D=I;   // I=10 and D=10
+
+printf("A=%d B=%d C=%d D=%d I=%d\n",A,B,C,D,I);
+-----------------------------------------------
+#include<stdio.h>
+int main(){
+	int I = 10;
+	int A;
+	int B;
+	int C;
+	int D;
+
+	A = I++; //post increment:value then increment  equals A=I; I=I+1;  // A=10 and I=11
+	B = ++I; //pre increment:increment then value   equals I=I+1; B=I;   // I=12 and B=12 
+	C = I--; //post decrement:value then decrement  equals C=I; I=I-1;   // C=12 and I=11
+	D = --I; //pre decrement:decrement then value   equals I=I-1; D=I;   // I=10 and D=10
+
+	printf("A=%d B=%d C=%d D=%d I=%d\n",A,B,C,D,I);
+	
+	return 0;
+}
+-----------------------------------------------
+
+Will the below code work?
+double I = 2.1;
+I++;
+
+Yes. This will work.
+
+Increment/Decrement operators will work for floating point numbers data type as well.
+-----------------------------------------------
+
+
+1. Find area and circumference of the circle for given radius
+2. Find area and circumference of the circle for given diameter
+3. Find area and circumference of the square for given diameter
+4. Find area and circumference of the rectangle for given diameter
+-----------------------------------------------
+
+
 
