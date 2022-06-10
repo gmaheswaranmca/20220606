@@ -433,8 +433,8 @@ Increment/Decrement operators will work for floating point numbers data type as 
 
 1. Find area and circumference of the circle for given radius
 2. Find area and circumference of the circle for given diameter
-3. Find area and circumference of the square for given diameter
-4. Find area and circumference of the rectangle for given diameter
+3. Find area and circumference of the square for given side
+4. Find area and circumference of the rectangle for given length and breath
 -----------------------------------------------
 
 
