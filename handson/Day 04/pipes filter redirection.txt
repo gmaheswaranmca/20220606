@@ -1,0 +1,66 @@
+In linux,
+	pipe | 
+		filtering the output further 
+		For example:
+			cat findsum.sh | wc 
+			!!! "cat" will gives us the contents of the file 
+			!!! then use "wc" to count number of lines, words, chars from the output of "cat"
+			
+			
+			cat myscript.sh | head | tail -5
+			!!! "cat" will give us the contents of the file 
+				one
+				two
+				three
+				four
+				five
+				six
+				seven
+				eight
+				nine
+				ten
+				eleven ....
+			!!! "head" will give first 10 lines from the output of "cat" 
+				one
+				two
+				three
+				four
+				five
+				six
+				seven
+				eight
+				nine
+				ten
+			!!! "tail" will give last 5 lines from the output of "head"
+				six
+				seven
+				eight
+				nine
+				ten
+	redirection > 
+		to move to the output stream (file)
+		For example:
+			cat myscript.sh | head | tail -5 > pro01.txt
+			!!! "cat" will give us the contents of the file 
+			!!! "head" will give first 10 lines from the output of "cat" 
+			!!! "tail" will give last 5 lines from the output of "head"
+			!!! "> pro01.txt"  will override(if exist) or copies(if not exist) 
+				the output to the file "pro01.txt"
+	redirection >>
+		to append to the output stream (file)
+		For example:
+			cat myscript.sh | head | tail -5 >> pro01.txt
+			!!! "cat" will give us the contents of the file 
+			!!! "head" will give first 10 lines from the output of "cat" 
+			!!! "tail" will give last 5 lines from the output of "head"
+			!!! ">> pro01.txt"  will append
+				the output to the file "pro01.txt"
+				
+In linux,
+	~ for home directory 		for example, cd ~ -> change to home dir 
+	. for current directory 	for example, cd . -> stays in the working dir 
+	.. for parent directory 	for example, cd .. -> change to parent dir 
+	/ for root directory 		for example, cd / -> change in the root dir 
+	
+	
+		
