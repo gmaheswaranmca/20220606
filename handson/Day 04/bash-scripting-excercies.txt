@@ -349,3 +349,98 @@ READ_NUMBERS
 FIND_MAX
 echo "The max of numbers of ${NUMBERS[@]} is $MAX"
 ----------------------------------------------------------
+
+
+----------------------------------------------------------
+Diff between single quote and double quotes for the string 
+----------------------------------------------------------
+NAME="Maheswaran";
+echo "$NAME";
+echo "My name is $NAME";
+echo 'My name is $NAME';
+echo "My name is ${NAME}";
+echo 'My name is ${NAME}';
+echo "My name is \n$NAME";
+echo $"My name is \n$NAME";
+echo $'My name is \n$NAME';		#c-like string parsing
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+#Dictionary 
+	"associative array" 
+	"named indexed array" -> name is here the string / number
+	"hash map in STL"
+	key-value pairs
+	
+	key can be number/string
+	
+	key is unique				!!! Arjun
+	
+	and keys are sorted	but not clear how it is?????????*****************	!!! Arjun
+----------------------------------------------------------
+#!/usr/bin/bash	
+#Dictionary "associative array" "named indexed array" -> name is here the string / number
+declare -A sounds
+sounds[dog]="bark"
+sounds[cow]="moo"
+sounds[bird]="tweet"
+sounds[wolf]="howl"
+
+echo ${sounds[@]}
+echo ${sounds[cow]}
+
+key="mahesh"
+sounds[$key]="speak with you"
+echo ${sounds[mahesh]}
+
+key=150
+sounds[$key]="I am 150"
+echo ${sounds[150]}
+
+echo ${sounds[@]}
+----------------------------------------------------------
+
+----------------------------------------------------------
+#frequence of number occruances in the list of numbers
+(10 20 30 10 10 20 10 30 5 40 5 5 5 5 5) 
+10:4
+20:2
+30:2
+5:6
+40:1
+----------------------------------------------------------
+#!/usr/bin/bash	
+#frequence of number occruances in the list of numbers
+NUMBERS=(10 20 30 10 10 20 10 30 5 40 5 5 5 5 5) #10:4,20:2,30:2,5:6,40:1
+declare -A numFreq
+#numFreq[10]=0
+
+for E in ${NUMBERS[@]}
+do
+	if [[ -z ${numFreq[$E]} ]]
+	then
+		numFreq[$E]=1
+	else 
+		numFreq[$E]=$((${numFreq[$E]} + 1))
+	fi
+done
+
+
+#echo ${numFreq[@]}
+
+echo "The number and its frequency of occurance are:"
+
+for NUM in ${!numFreq[@]}	# Prefix "!" to read all the keys. otherwise, we will have the values.
+do
+	echo "$NUM is occurred in ${numFreq[$NUM]} times."
+done
+----------------------------------------------------------
+The number and its frequency of occurance are:
+40 is occurred in 1 times.
+5 is occurred in 6 times.
+10 is occurred in 4 times.
+20 is occurred in 2 times.
+30 is occurred in 2 times.
+----------------------------------------------------------
+

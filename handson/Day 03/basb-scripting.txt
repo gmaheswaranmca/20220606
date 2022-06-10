@@ -458,3 +458,50 @@ Lab Additional Exercises:
 
 -------------------------------------------------------------
 
+
+-------------------------------------------------------------
+case statement
+-------------------------------------------------------------
+#!/usr/bin/bash	
+: '
+echo "CHOICE(0-Zero, 1-One):"
+read Variable
+case "$Variable" in
+    # List patterns for the conditions you want to meet
+    0) echo "There is a zero.";;
+    1) echo "There is a one.";;
+    *) echo "It is not null.";;  # match everything
+esac
+'
+
+NUM1=10
+NUM2=5
+#CHOICE=2 #1-Add, 2-Sub
+echo "CHOICE(1-Add, 2-Sub):"
+read CHOICE
+
+case "$CHOICE" in
+    # List patterns for the conditions you want to meet
+    1) S=$(($NUM1+$NUM2))
+	echo "Sum of $NUM1 and $NUM2 is $S"
+	;;
+    2) DIFF=$(($NUM1-$NUM2))
+       echo "Diff of $NUM1 and $NUM2 is $DIFF"
+	;;
+    *) echo "Wrong Choice."  
+esac
+
+-------------------------------------------------------------
+select statement 
+with loop 
+-------------------------------------------------------------
+#!/usr/bin/bash	
+select CHOICE in "Add" "Substract" "Exit"
+do
+	echo "The given choice is $CHOICE"
+	if [[ $CHOICE = "Exit" ]]
+	then
+		break
+	fi
+done
+-------------------------------------------------------------
