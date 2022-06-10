@@ -444,3 +444,131 @@ The number and its frequency of occurance are:
 30 is occurred in 2 times.
 ----------------------------------------------------------
 
+
+BASH Scripting:
+	Scripting Language for shell programming 
+	Purpose: Job Automation 
+	
+	Scripting Language Elements:
+	1. variables
+	2. assignment statement
+	3. print on console 
+	4. read from keyboard 
+	5. arithmetic operations for the integers 
+	6. arithmetic operations for the floating point !!! ASSIGNMENT 
+	7. conditionals
+		arithmetic data comparisions 
+			-eq -ne -gt -lt -ge -le 
+			Example:
+			[[ $NUM -gt 5 ]]
+		string comparisons 
+			< > = != 
+			Example:
+			[[ $NAME = "Maheswaran" ]] 
+		logical operations 
+			&& || !
+			[[ $NUM -gt 5 ]] && [[ $NUM -lt 50 ]]
+			
+	8. if 
+		if condition 
+		then 
+			#code 
+		[elif condition 
+		then 
+			#code 
+		#...
+		[else
+			#code 
+		]
+		]
+		fi 
+		
+	9. case 
+		case "$CHOICE"
+			LABEL) CODE 
+				;;
+			LABEL) CODE 
+				;;
+			*) 
+				DEFAULT 
+		esac 
+        Example:
+		$CHOICE=3
+		case "$CHOICE"
+			1) 
+				#Do Addition 
+				;;
+			2) #Do Subtraction 
+				;;
+			*) #Invalid Choice 
+		esac 
+	10. Loops 
+		1. while 
+			while [[ codition ]]
+			do 
+				#code here 
+			done 
+				
+		2. for c-like 
+			for((I=1; $I<=10; I=$I+1))
+			do 
+				#code here 
+			done 
+		3. for range 
+			for I in (100..150..5) #start at 100 till before 150 increment by 5
+			do 
+				#code here 
+			done 
+		4. for range for items in the array / dictionary 
+			for I in array/dictionary  
+			do 
+				#I is the element of the array 
+			done 
+		5. to stop the loop we can use "break"
+	11. arrays 
+		1. static array 
+			ARRNAME=(data data data ... )
+		2. dynamic array 					?????Diff bt small a and A in array declare 
+			declare -a ARRAYNAME 	
+			
+		3. associative array (dictionary) 
+			delcare -A ARRAYANAME 
+		
+		${ARRAYNAME[@]}  -> exapansion of the all the elements or values of the array 
+		${#ARRAYNAME[@]}  -> number of elements in the array 
+		${!ARRAYNAME[@]}  -> keys in the associative array 
+		
+		to access the element 
+		${ARRAYNAME[$I]}  for example, $I=0 means first element 
+		
+	12. functions 
+		function FUN_NAME(){
+			#to read the args $1 $2 .. ${10} ${11}
+			#to read all args $@
+			#to know number of args $#
+			#to declare the local variable we use the keyword "local" before variable name 
+			#return RET_CODE  
+		}
+		
+		RET_CODE can be accesssed via $?
+		but RET_CODE is one byte 
+		
+	13. Strings with single quote, $ and single quote, double quote 
+			
+----------------------------------------------------------
+NUMS=(10 20 30)
+function DO_SUM(){
+
+}		
+DO_SUM ${NUMS[@]} #-> DO_SUM 10 20 30 #inside DO_SUM $1 will take 10, $ will take 2 etc 
+----------------------------------------------------------
+
+		
+			
+	
+
+
+
+
+
+
