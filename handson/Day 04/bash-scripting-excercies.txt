@@ -565,9 +565,14 @@ DO_SUM ${NUMS[@]} #-> DO_SUM 10 20 30 #inside DO_SUM $1 will take 10, $ will tak
 
 
 STRUCT kind of data structure in bash ?????
+
+To use call by reference as workaround other than global variables  ??????
 ----------------------------------------------------------
-		
-			
+from Bindu Madathil (privately):    12:58 PM
+Sir, Any file handling?
+from Bindu Madathil (privately):    12:59 PM
+Sir, How to call a c program from bash		
+----------------------------------------------------------			
 	
 
 

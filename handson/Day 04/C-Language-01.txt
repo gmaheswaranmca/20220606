@@ -1,0 +1,243 @@
+Resources 
+	1) https://en.cppreference.com/w/
+	
+	2) https://cplusplus.com/
+
+-----------------------------------------------
+C Language 
+	standard -> Specifications 
+	implementation of the standard -> The compiler will implment the standard
+-----------------------------------------------
+C Language 
+		Procedural High Level Programming Language 
+		- - - - OOPs
+		
+		Procedural
+			- Modularization 
+				Code into multiple modules 
+					Each module has two 
+						header -> declrations 
+						source -> definitions 
+			- Abstraction 
+-----------------------------------------------		
+Language Elements of C 
+-----------------------------------------------		
+	1. Variables 
+		Identifiers: 
+			Names given to the programming elements 
+			such as variables (const), functions, datat types
+			
+			Names: starts with "letter or underscore" followed by "letter digit underscore"
+	2. Keywords 
+		Reserved words in the C 
+	3. Constants (Literals) 
+		int firstNumber=100; //yes
+		double salary=1000.0; //yes 
+		float average = 85.3; //yes -> something wrong 
+		float average = 85.3f; //yes -> valid
+
+		Suffix		Type modifier
+		u or U		unsigned
+		l or L		long
+		ll or LL	long long		
+		
+		f or F		float
+		l or L		long double
+		long long indianProjectDigitalIndia = 1000000000000LL;//1,00,000,00,00,000 INR 1 Lac Crores 
+	4. Data Types 
+		to qualify the variable for knowing data range 
+		Primitive Types 
+			char 			"signed" "unsigned" 	-> to hold a single byte "char" 
+													-> to hold a single byte number
+			int 			"signed" "unsigned" 		"short" "long" "long long" 
+				-> to hold integer numbers 
+			float double 			"long double"
+				-> to hold floating point numbers
+			void 		-> for function return type / argument
+			void* 		-> for generic pointers 
+		Derived Types 
+			User (Programmer) Defined Types 
+				struct 
+				union 
+				enum 
+			pointer 
+				type* 
+			arrays
+			functions 
+	5. Operators
+		assignment	
+			a = b
+			a += b
+			a -= b
+			a *= b
+			a /= b
+			a %= b
+			a &= b
+			a |= b
+			a ^= b
+			a <<= b
+			a >>= b
+		increment
+		decrement	
+			++a
+			--a
+			a++
+			a--
+		arithmetic	
+			+a
+			-a
+			a + b
+			a - b
+			a * b
+			a / b
+			a % b
+			~a
+			a & b
+			a | b
+			a ^ b
+			a << b
+			a >> b
+		logical	
+			!a
+			a && b
+			a || b
+		comparison	
+			a == b
+			a != b
+			a < b
+			a > b
+			a <= b
+			a >= b
+		member
+		access	
+			a[b]
+			*a
+			&a
+			a->b
+			a.b
+		other
+			a(...)
+			a, b
+			(type) a
+			? :
+			sizeof
+			_Alignof (since C11)	
+-----------------------------------------------
+Print Size of Types:
+-----------------------------------------------
+#include<stdio.h>
+int main(){
+	printf("\nchar size %lu",sizeof(char));
+	printf("\nshort size %lu",sizeof(short));
+	printf("\nint size %lu",sizeof(int));
+	printf("\nlong size %lu",sizeof(long));
+	printf("\nlong long size %lu",sizeof(long long));
+	printf("\nfloat size %lu",sizeof(float));
+	printf("\ndouble size %lu",sizeof(double));
+	printf("\nlong double size %lu",sizeof(long double));
+    printf("\nvoid* size %lu",sizeof(void*));
+    printf("\nint* size %lu",sizeof(int*));
+    printf("\ndouble* size %lu",sizeof(double*));
+	return 0;
+}
+-----------------------------------------------
+char size 1
+short size 2
+int size 4
+long size 8
+long long size 8
+float size 4
+double size 8
+long double size 16
+void* size 8
+int* size 8
+double* size 8
+-----------------------------------------------
+
+//NOT INITIALIZED -> garbage -> any value -> default value -> no default value 
+By default, local variable (to function) [declaration] definition is "auto" storage specifier
+-----------------------------------------------
+
+
+-----------------------------------------------	
+//Write a program to read scheme object/record details such as scheme name, max_loan_amount, interest rate, duration_in_months
+//Print on the console
+/*
+	scheme_name
+	max_loan_amount
+	interest_rate
+	duration_in_months
+*/
+#include<stdio.h>
+int main(){
+	char scheme_name[256]="";
+	auto double max_loan_amount=0.0; 
+	float interest_rate=0.0f;
+	int duration_in_months=0;
+
+	printf("\nEnter Schmen Name:"); 
+	scanf("%s",scheme_name);
+	printf("\nEnter Maximum Loan Amount:"); 
+	scanf("%lf",&max_loan_amount);
+	printf("\nEnter Interest Rate:"); 
+	scanf("%f",&interest_rate);
+	printf("\nEnter Duration in Months:"); 
+	scanf("%d",&duration_in_months);
+
+	printf("\nSchmen Name:%s",scheme_name);
+	printf("\nMaximum Loan Amount:%lf",max_loan_amount);
+	printf("\nInterest Rate:%.2f",interest_rate);
+	printf("\nDuration in Months:%.2d",duration_in_months);
+	return 0;
+}	
+
+-----------------------------------------------
+
+-----------------------------------------------
+1. Read your name and say hello for your name 
+Example:
+Input:
+Maheswaran
+Output:
+Hello Maheswaran!!!!
+-----------------------------------------------
+
+-----------------------------------------------
+2. Read two (double) salaries and find the sum of the salaries 
+Example:
+Input:
+2000000
+3000000
+Output:
+5000000.00
+-----------------------------------------------
+
+-----------------------------------------------
+3. Read a choice along with two (unsigned short) ages 
+Find sum(1), difference(2), product(3), quotient(4), remainder(5) of 
+the operations addition, subtraction, multiplication,
+division(quotient), division(remainder) 
+
+Check the inputs which should not negative 
+If negative Print "Invalid Ages"
+Example:
+Input:
+Choice: 1
+78
+13
+Output:
+91
+Input:
+Choice: 4
+78
+13
+Output:
+6
+Input:
+Choice: 5
+80
+13
+Output:
+2
+-----------------------------------------------
+
