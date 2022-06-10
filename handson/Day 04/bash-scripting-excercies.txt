@@ -1,0 +1,217 @@
+Lab Additional Exercises:
+	  
+1. Find the difference between maximum and minimum of three given numbers 	  
+	Example 
+		10 2 3
+		Max 10
+		Min 2
+		Diff is 8
+----------------------------------------------------------		
+#!/usr/bin/bash
+echo "Enter first number:"
+read FIRST_NUM
+echo "Enter second number:"
+read SECOND_NUM
+echo "Enter third number:"
+read THIRD_NUM
+
+if [[ $FIRST_NUM -gt $SECOND_NUM ]] && [[ $FIRST_NUM -gt $THIRD_NUM ]]
+then
+	MAX_OF_NUMS=$FIRST_NUM
+elif [[ $SECOND_NUM -gt $THIRD_NUM ]]
+then
+	MAX_OF_NUMS=$SECOND_NUM
+else
+	MAX_OF_NUMS=$THIRD_NUM
+fi
+
+if [[ $FIRST_NUM -lt $SECOND_NUM ]] && [[ $FIRST_NUM -lt $THIRD_NUM ]]
+then
+	MIN_OF_NUMS=$FIRST_NUM
+elif [[ $SECOND_NUM -lt $THIRD_NUM ]]
+then
+	MIN_OF_NUMS=$SECOND_NUM
+else
+	MIN_OF_NUMS=$THIRD_NUM
+fi
+
+DIFF=$(($MAX_OF_NUMS - $MIN_OF_NUMS))
+echo "Diff of max $MAX_OF_NUMS and min $MIN_OF_NUMS is $DIFF"
+
+----------------------------------------------------------
+
+2. Find factorial of the given number 
+	factorial of 5 = 5 * 4 * 3 * 2 * 1 = 120
+	Note: For negative numbers, print -1
+----------------------------------------------------------
+#!/usr/bin/bash
+echo "Enter the number:"
+read N
+if [[ $N -ge 0 ]]
+then 
+	FACTORIAL=1
+	for((I=$N; $I>1; I=$I-1))
+	do
+		FACTORIAL=$(($FACTORIAL * $I))	
+	done
+
+	echo "Factorial of $N is $FACTORIAL"
+else	
+	echo "-1"	
+fi	
+----------------------------------------------------------	
+
+3. Reverse the given number 	
+	123
+	Reverse is 321
+	Note: For negative numbers, print -1
+----------------------------------------------------------
+#!/usr/bin/bash	
+echo "Enter a Number:" #12345
+read N
+
+if [[ $N -ge 0 ]]
+then 
+	REV=0
+	T=$N
+	while [[ $T -gt 0 ]]	
+	do
+		DIGIT=$(($T % 10)) #5 4 3 2 1 
+		REV=$(($REV * 10 + $DIGIT)) #0*10+5=5 5*10+4=54 543 5432 54321 
+		T=$(($T / 10))
+	done
+
+	echo "Reverse of the $N is $REV"
+else	
+	echo "-1"	
+fi		
+----------------------------------------------------------	
+
+Lab Additional Exercises:
+5. Find sum of odd numbers in given N numbers array 
+----------------------------------------------------------
+#!/usr/bin/bash	
+declare -a NUMBERS
+echo "Enter number of numbers:"
+read N
+echo "Enter numbers one by one:"
+for((I=0; $I<$N; I=$I+1))
+do
+	echo "Enter number at index $I:"
+	read ELEMENT 
+	NUMBERS+=($ELEMENT)
+done
+
+S=0
+for((I=0; $I<$N; I=$I+1))
+do
+	if [[ $((${NUMBERS[$I]} % 2)) -eq 1 ]]
+	then 
+		S=$(($S + ${NUMBERS[$I]}))
+	fi 
+done
+
+echo "The sum of odd numbers of ${NUMBERS[@]} is $S"	
+----------------------------------------------------------
+
+6. Find max of given N numbers array 
+----------------------------------------------------------
+#!/usr/bin/bash	
+declare -a NUMBERS
+echo "Enter number of numbers:"
+read N
+echo "Enter numbers one by one:"
+for((I=0; $I<$N; I=$I+1))
+do
+	echo "Enter number at index $I:"
+	read ELEMENT 
+	NUMBERS+=($ELEMENT)
+done
+
+MAX=${NUMBERS[0]}
+for((I=1; $I<$N; I=$I+1))
+do
+	if [[ ${NUMBERS[$I]} -gt $MAX ]]
+	then 
+		MAX=${NUMBERS[$I]}
+	fi 
+done
+
+echo "The max of numbers of ${NUMBERS[@]} is $MAX"	
+----------------------------------------------------------
+
+7. Rotate given name left k positions 
+#!/usr/bin/bash	
+#NAME="Maheswaran" #aheswaranM -> heswaranMa -> eswaranMah
+#K=3
+echo "Enter name:"
+read NAME
+echo "Number of positions to rotate left:"
+read K
+echo "${NAME:$K}${NAME:0:$K}"	
+----------------------------------------------------------
+Right Rotate K position the given string
+----------------------------------------------------------
+#!/usr/bin/bash	
+NAME="Maheswaran" #nMaheswara -> anMaheswar -> ranMaheswa
+K=3
+: '
+echo "Enter name:"
+read NAME
+echo "Number of positions to rotate left:"
+read K
+'
+echo "${NAME: -$K:$K}${NAME::-$K}"	
+#echo "${NAME: -3:3}${NAME::-3}"
+----------------------------------------------------------
+#!/usr/bin/bash	
+: '
+NAME="Maheswaran" #nMaheswara -> anMaheswar -> ranMaheswa
+K=3
+'
+echo "Enter name:"
+read NAME
+echo "Number of positions to rotate left:"
+read K
+
+echo "${NAME: -$K:$K}${NAME::-$K}"	
+#echo "${NAME: -3:3}${NAME::-3}"
+----------------------------------------------------------
+
+----------------------------------------------------------
+X=$(echo "Maheswaran"|rev);echo $X
+!!!X is reversed of "Maheswaran"
+----------------------------------------------------------
+8. Find number of palindrome strings from the given N strings 	
+----------------------------------------------------------
+#!/usr/bin/bash	
+declare -a NAMES
+echo "Enter number of names:"
+read N
+echo "Enter names one by one:"
+for((I=0; $I<$N; I=$I+1))
+do
+	echo "Enter name at index $I:"
+	read ELEMENT 
+	NAMES+=($ELEMENT)
+done
+echo "The names given are ${NAMES[@]}"
+
+#X=$(echo "Maheswaran"|rev);echo $X
+C=0
+for((I=0; $I<$N; I=$I+1))
+do
+	REV=$(echo "${NAMES[$I]}"|rev)
+	echo "rev of ${NAMES[$I]} is $REV"
+	if [[ ${NAMES[$I]} = $REV ]] #malayalam=malayalam palindrome | maheswaran=narawseham not palindrome
+	then 
+		C=$(($C+1))
+	fi 
+done
+
+echo "The number of palindromes of ${NAMES[@]} is $C"
+
+#palindrome words/names: level, madam, malayalam, radar, racecar, sis, mom, dad, gadag, rotator, nitin
+----------------------------------------------------------
+
+
