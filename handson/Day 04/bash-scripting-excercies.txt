@@ -214,4 +214,25 @@ echo "The number of palindromes of ${NAMES[@]} is $C"
 #palindrome words/names: level, madam, malayalam, radar, racecar, sis, mom, dad, gadag, rotator, nitin
 ----------------------------------------------------------
 
+----------------------------------------------------------
+Functions in bash script 
+local variable and global variable 
+----------------------------------------------------------
+#!/usr/bin/bash	
+A=10
+B=20
+function FIND_SUM(){
+	echo "Number of arguments: $#"
+	echo "arguments: $@"
+	NUM1=$1
+	NUM2=$2
+	SUM=$(($NUM1+$NUM2)) #	SUM=$(($1+$2))
+	return $SUM
+}
+
+FIND_SUM $A $B
+S=$?
+echo "Sum of $A and $B is $S"
+----------------------------------------------------------
+
 
