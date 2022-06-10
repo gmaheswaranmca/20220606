@@ -234,5 +234,118 @@ FIND_SUM $A $B
 S=$?
 echo "Sum of $A and $B is $S"
 ----------------------------------------------------------
+Functions to find sum and diff
+----------------------------------------------------------
+#!/usr/bin/bash	
+A=30
+B=20
+function FIND_SUM(){
+	echo "Number of arguments: $#"
+	echo "arguments: $@"
+	NUM1=$1
+	NUM2=$2
+	SUM=$(($NUM1+$NUM2)) #	SUM=$(($1+$2))
+	return $SUM
+}
+function FIND_DIFF(){
+	echo "Number of arguments: $#"
+	echo "arguments: $@"
+	NUM1=$1
+	NUM2=$2
+	SUM=$(($NUM1-$NUM2)) #	SUM=$(($1-$2))
+	return $SUM
+}
+FIND_SUM $A $B
+S=$?
+FIND_DIFF $A $B
+DIFF=$?
+echo "Sum of $A and $B is $S"
+echo "Diff of $A and $B is $DIFF"
+----------------------------------------------------------
+
+----------------------------------------------------------
+local vs global variable 
+----------------------------------------------------------
+#!/usr/bin/bash	
+C=0
+COUNTER=0
+
+function FIND_SUM(){
+	NUM1=$1
+	NUM2=$2
+	SUM=$(($NUM1+$NUM2)) #	SUM=$(($1+$2))
+	local COUNTER
+	COUNTER=$(($COUNTER + 1))
+	C=$(($C+500))
+	return $SUM
+}
+
+FIND_SUM 20 10
+S=$?
+echo "Sum of $A and $B is $S"
+
+FIND_SUM 40 5
+S=$?
+echo "Sum of $A and $B is $S"
+
+echo "The value of COUNTER is $COUNTER"
+echo "The value of C is $C"
+----------------------------------------------------------
 
 
+6. Find max of given N numbers array 
+----------------------------------------------------------
+#!/usr/bin/bash	
+declare -a NUMBERS
+echo "Enter number of numbers:"
+read N
+echo "Enter numbers one by one:"
+for((I=0; $I<$N; I=$I+1))
+do
+	echo "Enter number at index $I:"
+	read ELEMENT 
+	NUMBERS+=($ELEMENT)
+done
+
+MAX=${NUMBERS[0]}
+for((I=1; $I<$N; I=$I+1))
+do
+	if [[ ${NUMBERS[$I]} -gt $MAX ]]
+	then 
+		MAX=${NUMBERS[$I]}
+	fi 
+done
+
+echo "The max of numbers of ${NUMBERS[@]} is $MAX"	
+----------------------------------------------------------
+Function to modularize (clean / understandable code)
+----------------------------------------------------------
+#!/usr/bin/bash	
+declare -a NUMBERS
+echo "Enter number of numbers:"
+read N
+MAX=0
+function READ_NUMBERS(){
+echo "Enter numbers one by one:"
+for((I=0; $I<$N; I=$I+1))
+do
+	echo "Enter number at index $I:"
+	read ELEMENT 
+	NUMBERS+=($ELEMENT)
+done
+}
+function FIND_MAX(){
+MAX=${NUMBERS[0]}
+for((I=1; $I<$N; I=$I+1))
+do
+	if [[ ${NUMBERS[$I]} -gt $MAX ]]
+	then 
+		MAX=${NUMBERS[$I]}
+	fi 
+done
+}
+
+READ_NUMBERS
+FIND_MAX
+echo "The max of numbers of ${NUMBERS[@]} is $MAX"
+----------------------------------------------------------
