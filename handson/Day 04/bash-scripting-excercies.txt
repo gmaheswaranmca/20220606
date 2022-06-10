@@ -563,6 +563,9 @@ function DO_SUM(){
 DO_SUM ${NUMS[@]} #-> DO_SUM 10 20 30 #inside DO_SUM $1 will take 10, $ will take 2 etc 
 ----------------------------------------------------------
 
+
+STRUCT kind of data structure in bash ?????
+----------------------------------------------------------
 		
 			
 	
