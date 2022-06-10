@@ -258,6 +258,9 @@ Format Specifiers:
 Pre Test Responses for "C Programming" 
 -----------------------------------------------
 
+-----------------------------------------------
+Exercise:
+4.
 Print the following pattern for given N
 Example:
 Input:
@@ -273,6 +276,6 @@ Output:
     321
     332211
     333222111
-
+-----------------------------------------------
     
 
