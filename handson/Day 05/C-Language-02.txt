@@ -417,7 +417,7 @@ Day Assignment:
 1. To find maximum of salaries of the given two employees 	
 ------------------------------------------------------------------------
 #include<stdio.h>
-#include<stdlib.h>
+#include<stdlib.h> 
 int main(){
     double firstSalary=0.0, secondSalary=0.0, maximum=0.0;
     printf("Enter first Salary:");
@@ -452,7 +452,7 @@ argv -> array of strings [vectors]
     at index 2, element will take the second argument 
     ....
 
-Significace of cmd line args:
+Significance of cmd line args:
     1. To supply application level data to initiate the application 
     2. We can think command line arguments 
        as like linux commands 
@@ -554,10 +554,52 @@ The maximum of 6000.00, 4500.00 and 5500.00 is 6000.00
 $ 
    
 ------------------------------------------------------------------------		
-		
+Windows to Ubuntu Vbox 
+       Birectional 
 
+if any issue:
+Run the following two commands in the ubuntu:
+    $sudo apt install virtualbox-guest-x11
+    $sudo VBoxClient --clipboard       
+------------------------------------------------------------------------
+1. How to clone GIT repo in LINUX:
+use command 
+    $git clone https://github.com/gmaheswaranmca/20220606.git
 
-
+Generate Personal Access Token using github account    
+    "
+    It will ask for your e-mail ID that is associated with your 
+    github account as well as credentials. 
+    Please genereate them on github and your problem will be solved.
+    "
+    How to do?
+    1. Have the github account
+    2. Sign in 
+    3. Top Right Corner of the github logged in page 
+        Click DrowDown in user name icon 
+    4. Pick "Settings"
+    5. Pick         -> "Developer Settings"
+    6. Pick                 -> "Personal Access Tokens"
+    7. Give "Generate New Token" command / button 
+    8. "New personal access token" page will be opened 
+        Type the notes
+            "My Learning"
+        Set the Expiration:
+            60 days 
+        Select Scopes:
+            Tick [ ] repo group 
+                All the childs will be set / ticked  
+            admin:public_key
+                Tick [ ] read public key 
+            Tick [ ]admin:repo_hook
+                [ ]read:repo_hook 
+                [ ]write:repo_hook 
+            Tick [ ] delete_repo 
+    9. Click on "Generate Token"
+    10. "Copy" the token to your computer and keep there  
+                
+         Like "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"       
+------------------------------------------------------------------------
 
 				
 	
