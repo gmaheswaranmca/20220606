@@ -767,3 +767,43 @@ void printDayNamev2(int dayNumber){
 	
 	
 			
+Solve:
+1. To find maximum of salaries of the given two employees 		!!!DONE	
+2. To find maximum of salaries of the given three employees     !!!DONE	
+3. To find the given year is leap or not
+4. To print the month name for given month number       
+5. To print the day name for given day number                   !!!DONE	
+6. To print the given character is vowel or consonant             
+
+Day Assignment:
+1. To find single digit Indian Rupee in word 
+    a. Use switch 
+    b. Use else..if ladder 
+    based on the choice 
+    
+Example:
+Input: 
+5
+Output:
+Five Rupees 
+
+Input: 
+0
+Output:
+Zero Rupee
+
+Input: 
+1
+Output:
+One Rupee
+
+Input: 
+7
+Output:
+Seven Rupees 
+
+Input: 
+10
+Output:
+Wrong Input 
+    
