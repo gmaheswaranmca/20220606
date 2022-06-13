@@ -1,0 +1,568 @@
+Control Statements 
+	1. Conditional 
+		Branching/Selection Statement 
+			if..
+			if..else
+			if..else if..else if..
+			
+		Iteration Statemetns 
+			while
+			do..while 
+			for 
+	
+	2. Unconditional 
+		break 
+		continue
+		goto
+		
+	3. Multi Way Branching 
+		switch..case 
+		
+		
+	Condition 
+		Relational/Comparison Operators
+			<			>			==			!=			<=			>=
+		Logical Operators 
+			to combine two/more conditions
+			&&		Logical AND 
+			||		Logical OR 
+			!		Logical NOT 
+			
+	What is result/value out of relational/logical expression?
+			0			FALSE 
+			or 
+			1			TRUE 
+			
+			
+			NOTE: 
+			if you do logical operations with numbers (>0)
+				then the non-zero will be treated as TRUE ie 1
+						 zero 								 0
+				
+				10 > 3 && 4
+				
+------------------------------------------------------------------------
+	if the control statement, what is the code ? 
+		if control statement, the sequential flow execution will not happen
+		
+	if no control statement, what is the code ? 	
+		if no control statement, the sequential flow execution will happen
+------------------------------------------------------------------------
+	Control Statements for Branching/Selection 
+		1. Condition "if" 
+		2. Multi way "switch" 
+		
+		to make some choice 
+	Examples:
+		1. To find maximum of salaries of the given two employees 
+			"greater than" 		>
+		2. To find maximum of salaries of the given three employees 
+			two conditions being joined with logical AND &&
+		3. To find maximum of salaries of the given N employees 
+			
+			Arrays of N employees 
+			First Employee salary will be assumed as the maximum salary 
+			
+			then every other employee's salary will be compared with maximum salary 
+			if employee's salary is maximum, then the "maximum salary" variable will be updated 
+					>     "simple if"
+					
+		4. To find the year is leap or not 
+			"Leap Year" is 
+				-> Year divisible by 4 
+				-> if century, Year should be divisible only by 400 
+				
+				
+				Assume "Year" input data 
+				((Year % 4 == 0) && (Year % 100 != 0))
+				|| (Year % 400 == 0)
+				
+		Multi way branching 
+			we can pick either switch statement or "else..if" ladder 
+			
+		5. To find single digit Indian Rupee in word 
+			0 -> Zero Rupee 					I
+			1 -> One Rupee 
+			2 -> Two Ruppees
+			
+			...
+			9 -> Nine Rupees 
+			
+			Two Digit 
+			43 
+			11 and 19 
+				
+			if < 20 
+				Rule I 
+				and extend till number 19 
+				
+			if >= 20 
+				4 (MSD)
+					Rule II 
+						2 -> Twenty 
+						3 -> Thirty 
+						...
+						9 -> Ninety 
+						
+				3 (LSD) Apply Rule I 
+				
+			Solve Rule I ie Single Digit Indian Rupee in Words
+				if 	
+				0 == Digit 	
+				1 == Digit 
+					...
+				9 == Digit 
+				switch (Digit) {
+					case 0:
+						//Do the converstion
+						break;
+					case 1:
+						//Do the converstion
+						break;
+					//...
+					case 9:
+						//Do the converstion
+						break;
+					default: 
+						//Wrong Input 
+				}
+					
+		6. To print the month name for given month number 
+		7. To print the day name for given day number 
+		8. To print the given character is vowel or consonant 
+			ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'i' ||
+			ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'I'
+			
+			switch(ch){
+				case 'a':
+				case 'e':
+				case 'i':
+				case 'o':
+				case 'u':
+				case 'A':
+				case 'E':
+				case 'I':
+				case 'O':
+				case 'U':
+					//Code for Concluding Vowel 
+					break;
+				defualt: 
+					//Code for Concluding Consonant 
+					break;
+			}
+			
+			
+			// In general, we have to write the "default" case at the end 
+			// But, if we shuffle, the compiler will compile 
+			switch(ch){
+				defualt: 
+					//Code for Concluding Consonant 
+					break;
+					
+				case 'a':
+				case 'e':
+				case 'i':
+				case 'o':
+				case 'u':
+				case 'A':
+				case 'E':
+				case 'I':
+				case 'O':
+				case 'U':
+					//Code for Concluding Vowel 
+					break;
+				
+			}
+------------------------------------------------------------------------
+Condition Selection "if statement" 
+Syntax: 
+	if(<condition>)
+		//codeForIf
+	[else 
+		//codeForElse]
+
+The flavours (use cases)
+    1. Simple if 
+        if(<condition>)
+            //codeForIf
+        
+    2. if..else 
+        if(<condition>)
+            //codeForIf
+        else 
+            //codeForElse
+    3. else..if 
+        if(<condition1>)
+            //codeForIf condition1
+        else if(<condition2>)
+            //codeForIf condition2
+        //...
+        else 
+            //defualtElseCode 
+        
+    4. nested if 
+        if can be nested within another if statement 
+                                        iteration statement 
+                                        switch statement 
+		
+Example: 
+	The given number is divisible by 5 
+	if(num % 5 == 0){
+		printf("Given number is Divisible by 5");
+	}
+	
+	//DONT USE without curly(flower) brackets { } ie "code block" 
+	if(num % 5 == 0)
+		printf("Given number is Divisible by 5");
+	
+	
+	To find maximum of two numbers: 
+	if(firstNumber > secondNumber){
+		maximum = firstNumber;
+	}else {
+		maximum = secondNumber;
+	}
+				
+				
+	To find maximum of three numbers:
+	if((firstNumber > secondNumber) && (firstNumber > thirdNumber)){
+		maximum = firstNumber;
+	}
+	else if(secondNumber > thirdNumber){
+		maximum = secondNumber;
+	}
+	else {
+		maximum = thirdNumber;
+	}
+	
+	Simple if:	(parellel)
+	maximum = firstNumber;
+	if(secondNumber > maximum){
+		maximum = secondNumber;
+	}
+	
+	if(thirdNumber > maximum){
+		maximum = thirdNumber;
+	}
+				
+Multi way 
+switch syntax:
+   switch(expression){
+       case labelExpression1:
+            //Code for labelExpression1
+            [break;]
+       [case labelExpression2:
+            //Code for labelExpression2]
+            [break;]
+       //....
+       [default:
+            //Code for Default 
+            [break;]
+   }
+   
+Points:
+    1. expression is any of the three C expressions 
+        numeric expression (integer / floating-point???)
+        
+        character expression 
+        
+        enumeration expression 
+    2. labelExpression1 or labelExpression2 may have one of three constant expression     
+        numeric expression (integer / floating-point???)
+        
+        character expression 
+        
+        enumeration expression 
+    
+------------------------------------------------------------------------
+   To find day name for given day number: 
+   if(1 == dayNumber){
+      printf("Monday");
+   }
+   else if(2 == dayNumber){
+      printf("Tuesday");
+   }
+   else if(3 == dayNumber){
+      printf("Wednesday");
+   }		
+   else if(4 == dayNumber){
+      printf("Thursday");
+   }   
+   else if(5 == dayNumber){
+      printf("Friday");
+   }
+   else if(6 == dayNumber){
+      printf("Saturday");
+   }
+   else if(7 == dayNumber){
+      printf("Sunday");
+   }
+   else {
+      printf("Wrong Day Number.");
+   }
+			
+
+   Same logic with switch statement 
+   switch(dayNumber){
+       case 1:
+            printf("Monday");
+            break;    
+       case 2:
+            printf("Tuesday");
+            break;
+       case 3:
+            printf("Wednesday");
+            break;
+       case 4:
+            printf("Thursday");
+            break;
+       case 5:
+            printf("Friday");
+            break;
+       case 6:
+            printf("Saturday");
+            break;
+       case 7:
+            printf("Sunday");
+            break;
+       default:
+            printf("Wrong Day Number.");
+            break;
+   }
+   
+   
+   The given character is vowel or not:
+   if..
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^       
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'i' ||
+			ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'I'){
+            printf("Given char is vowel.");    
+        }else{
+            printf("Given char is consonant.");    
+        }
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
+    switch...
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
+ 			switch(ch){
+				case 'a':
+				case 'e':
+				case 'i':
+				case 'o':
+				case 'u':
+				case 'A':
+				case 'E':
+				case 'I':
+				case 'O':
+				case 'U':
+					printf("Given char is vowel.");
+					break;
+                defualt: 
+					printf("Given char is consonant.");  
+					break;			
+			}  
+            
+            OR 
+            
+            
+			switch(ch){
+				defualt: 
+					printf("Given char is consonant.");  
+					break;
+					
+				case 'a':
+				case 'e':
+				case 'i':
+				case 'o':
+				case 'u':
+				case 'A':
+				case 'E':
+				case 'I':
+				case 'O':
+				case 'U':
+					printf("Given char is vowel.");
+					break;
+				
+			}            
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+Few Use Cases of switch
+    Assume char ch='A';
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^     
+    switch(ch + 5){
+        case 'A' + 5:
+            //Code Here
+            break;
+        case 'B' + 5:   
+            //Code Here
+            break;
+        //....
+    }
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^     
+          
+------------------------------------------------------------------------                    
+Solve:
+1. To find maximum of salaries of the given two employees 			
+2. To find maximum of salaries of the given three employees
+3. To find the given year is leap or not
+4. To print the month name for given month number
+5. To print the day name for given day number 
+6. To print the given character is vowel or consonant 
+------------------------------------------------------------------------
+Day Assignment:
+1. To find single digit Indian Rupee in word 
+    a. Use switch 
+    b. Use else..if ladder 
+    based on the choice 
+------------------------------------------------------------------------
+1. To find maximum of salaries of the given two employees 	
+------------------------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    double firstSalary=0.0, secondSalary=0.0, maximum=0.0;
+    printf("Enter first Salary:");
+    scanf("%lf",&firstSalary);
+    
+    printf("Enter second Salary:");
+    scanf("%lf",&secondSalary);
+	if(firstSalary > secondSalary){
+		maximum = firstSalary;
+	}else {
+		maximum = secondSalary;
+	}
+    
+    printf("The maximum of %.2lf and %.2lf is %.2lf",
+        firstSalary,
+        secondSalary,
+        maximum);
+        
+   return EXIT_SUCCESS; //EXIT_FAILURE
+}    
+
+//Command Line Arguments 
+int main(int argc, char*argv[]){
+}
+argc -> number of command line arguments we are suppling along with process name 
+    process/program name is the first argment
+    and other arguments are for user data 
+    
+argv -> array of strings [vectors]
+    at index 0, element will take the process name 
+    at index 1, element will take the first argument 
+    at index 2, element will take the second argument 
+    ....
+
+Significace of cmd line args:
+    1. To supply application level data to initiate the application 
+    2. We can think command line arguments 
+       as like linux commands 
+       "cd .."
+       "rm fileName"
+       "ls -l"
+    3. Dont supply your application's "app data" via the command line args 
+        1000 salaries via cmd line args ?    NOT GOOD APPROACH 
+        files 
+        stdin (keyboard input)
+
+//Command Line Arguments 
+#include<stdio.h>
+#include<stdlib.h>
+int main(int argc, char*argv[]){
+    if(argc < 3){
+	printf("No required salaries your supplied from Command Line\n");
+        return EXIT_FAILURE;
+    }
+    double firstSalary=0.0, secondSalary=0.0, maximum=0.0;
+    firstSalary = atof(argv[1]);
+    
+    secondSalary = atof(argv[2]);
+    
+	if(firstSalary > secondSalary){
+		maximum = firstSalary;
+	}else {
+		maximum = secondSalary;
+	}
+    
+    printf("The maximum of %.2lf and %.2lf is %.2lf\n",
+        firstSalary,
+        secondSalary,
+        maximum);
+        
+   return EXIT_SUCCESS; //EXIT_FAILURE
+}     
+
+
+$gcc example.c -o example
+$ ./example
+No required salaries your supplied from Command Line
+$ ./example 4500.50 6000.42
+The maximum of 4500.50 and 6000.42 is 6000.42
+$ ./example 6000.42 4500.50
+The maximum of 6000.42 and 4500.50 is 6000.42
+$ 
+
+------------------------------------------------------------------------		
+2. To find maximum of salaries of the given three employees		
+------------------------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    double firstSalary=0.0, secondSalary=0.0,thirdSalary=0.0, maximum=0.0;
+    printf("Enter first Salary:");
+    scanf("%lf",&firstSalary);
+    
+    printf("Enter second Salary:");
+    scanf("%lf",&secondSalary);
+
+    printf("Enter third Salary:");
+    scanf("%lf",&thirdSalary);
+
+	if((firstSalary > secondSalary) && (firstSalary > thirdSalary)){
+		maximum = firstSalary;
+	}else if(secondSalary > thirdSalary){
+		maximum = secondSalary;
+	}else{
+		maximum = thirdSalary;
+	}
+    
+    printf("The maximum of %.2lf, %.2lf and %.2lf is %.2lf\n",
+        firstSalary,
+        secondSalary,
+        thirdSalary,
+        maximum);
+        
+   return EXIT_SUCCESS; //EXIT_FAILURE
+}    
+   
+   
+$ gcc example.c -o example
+$ ./example
+Enter first Salary:4500
+Enter second Salary:5500
+Enter third Salary:6000
+The maximum of 4500.00, 5500.00 and 6000.00 is 6000.00
+$ ./example
+Enter first Salary:5500
+Enter second Salary:6000
+Enter third Salary:4500
+The maximum of 5500.00, 6000.00 and 4500.00 is 6000.00
+$ ./example
+Enter first Salary:6000
+Enter second Salary:4500
+Enter third Salary:5500
+The maximum of 6000.00, 4500.00 and 5500.00 is 6000.00
+$ 
+   
+------------------------------------------------------------------------		
+		
+
+
+
+
+				
+	
+				
+	
+	
+	
+			
