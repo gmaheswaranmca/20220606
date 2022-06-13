@@ -514,7 +514,7 @@ int main(){
     printf("Enter second Salary:");
     scanf("%lf",&secondSalary);
 
-    printf("Enter third Salary:");
+    printf("Enter third Salary:"); 
     scanf("%lf",&thirdSalary);
 
 	if((firstSalary > secondSalary) && (firstSalary > thirdSalary)){
