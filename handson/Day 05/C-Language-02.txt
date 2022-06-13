@@ -649,7 +649,48 @@ $ ./example
 Enter day number:1
 Monday
 $ 
-				
+	
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Extract into "function" the job of finding the day name for the day number
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#include<stdio.h>
+#include<stdlib.h>
+
+void printDayName(int dayNumber);
+
+int main(){
+	int dayNumber=0;
+	//read day number
+	printf("Enter day number:");
+	scanf("%d",&dayNumber);
+
+	printDayName(dayNumber);
+
+	return EXIT_SUCCESS;
+}
+
+void printDayName(int dayNumber){
+	//find day name for day number
+	if(1 == dayNumber){
+		printf("Monday\n");
+	}else if(2 == dayNumber){
+		printf("Tuesday\n");
+	}else if(3 == dayNumber){
+		printf("Wednesday\n");
+	}else if(4 == dayNumber){
+		printf("Thursday\n");
+	}else if(5 == dayNumber){
+		printf("Friday\n");
+	}else if(6 == dayNumber){
+		printf("Saturday\n");
+	}else if(7 == dayNumber){
+		printf("Sunday\n");
+	}else{
+		printf("Wrong Day Number\n");		
+	}
+}  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
 ------------------------------------------------------------------------
 To find dayName for given dayNumber using else..if ladder 			
 ------------------------------------------------------------------------
