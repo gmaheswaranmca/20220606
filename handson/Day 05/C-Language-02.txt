@@ -601,9 +601,58 @@ Generate Personal Access Token using github account
          Like "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"       
 ------------------------------------------------------------------------
 
-				
+------------------------------------------------------------------------
+To find dayName for given dayNumber using else..if ladder 			
+------------------------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int dayNumber=0;
+	printf("Enter day number:");
+	scanf("%d",&dayNumber);
 	
+	if(1 == dayNumber){
+		printf("Monday\n");
+	}else if(2 == dayNumber){
+		printf("Tuesday\n");
+	}else if(3 == dayNumber){
+		printf("Wednesday\n");
+	}else if(4 == dayNumber){
+		printf("Thursday\n");
+	}else if(5 == dayNumber){
+		printf("Friday\n");
+	}else if(6 == dayNumber){
+		printf("Saturday\n");
+	}else if(7 == dayNumber){
+		printf("Sunday\n");
+	}else{
+		printf("Wrong Day Number\n");		
+	}
+
+	return EXIT_SUCCESS;
+}	
+
+$ gcc example.c -o example
+$ ./example
+Enter day number:3
+Wednesday
+$ ./example
+Enter day number:-2
+Wrong Day Number
+$ ./example
+Enter day number:8
+Wrong Day Number
+$ ./example
+Enter day number:7
+Sunday
+$ ./example
+Enter day number:1
+Monday
+$ 
 				
+------------------------------------------------------------------------
+To find dayName for given dayNumber using else..if ladder 			
+------------------------------------------------------------------------
 	
 	
 	
