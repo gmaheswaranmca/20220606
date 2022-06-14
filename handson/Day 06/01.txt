@@ -1,0 +1,84 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Print the series 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    10, 14, 19, 25, 32, ... N Terms 
+Note: 
+Differences between Terms are 
+4,5,6,7,...
+
+Use: for, while, do..while loop 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int N=0;//Number of Terms
+    printf("Enter number of terms:");
+    scanf("%d",&N);//5
+    
+    int term=10;
+    int difference=4;
+    for(int I=1; I<= N; I++){//N=5 -> I:1T      2T          3T          4T          5T          6F
+        printf("%d,",term);       // 10         14          19          25          32
+        term = term + difference; // 10+4=14    14+5=19     19+6=25     25+7=32     32+8=40
+        //term += difference;
+        difference=difference+1;  // 4+1=5      5+1=6       6+1=7       7+1=8       8+1=9
+        //difference++
+    }
+    return EXIT_SUCCESS;
+}
+
+Output for N=5 
+10,14,19,25,32,
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int N=0;//Number of Terms
+    printf("Enter number of terms:");
+    scanf("%d",&N);
+    //Print the series 
+    int term=10;
+    int difference=4;
+    printf("The required series is:\n");	
+    for(int I=1; I<= N; I++){
+        printf("%d,",term);       
+        term = term + difference; 
+        //term += difference;
+        difference=difference+1;  
+        //difference++
+    }
+    printf("\n");
+    return EXIT_SUCCESS;
+}
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#include<stdio.h>
+#include<stdlib.h>
+
+void printSeries(int N);
+
+int main(){
+    int N=0;//Number of Terms
+    printf("Enter number of terms:");
+    scanf("%d",&N);
+    
+    printSeries(N);
+    
+    return EXIT_SUCCESS;
+}
+
+void printSeries(int N){
+    //Print the series 
+    int term=10;
+    int difference=4;
+    printf("(function)The required series is:\n");	
+    for(int I=1; I<= N; I++){
+        printf("%d,",term);       
+        term = term + difference; 
+        //term += difference;
+        difference=difference+1;  
+        //difference++
+    }
+    printf("\n");
+}
