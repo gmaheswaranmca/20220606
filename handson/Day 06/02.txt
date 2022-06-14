@@ -1,0 +1,86 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+2. Find N th Term in the series 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    10, 26, 51, 87, 136, ... N terms 
+Note: 
+Differences between Terms are 
+16, 25, 36, 49, ...
+=> Differences are 
+4^2,5^2,6^2,7%^2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+//Print the series 10, 26, 51, 87, 136, ... N terms 
+#include<math.h>
+#include<stdio.h>
+#include<stdlib.h>
+
+void printSeries(int N);
+
+int main(){
+    int N=0;//Number of Terms
+    printf("Enter number of terms:");
+    scanf("%d",&N);
+    
+    printSeries(N);
+    
+    return EXIT_SUCCESS;
+}
+
+void printSeries(int N){
+    //Print the series 
+    int term=10;
+    int difference=4;
+    printf("(function)The required series is:\n");	
+    for(int I=1; I<= N; I++){
+        printf("%d,",term);       
+        //term = term + (difference*difference); 
+        term = term + (int)pow((double)difference,2.0); 
+        
+        difference=difference+1; 
+    }
+    printf("\n");
+}
+
+$ gcc example.c -o example -lm
+$ ./example
+Enter number of terms:5
+(function)The required series is:
+10,26,51,87,136,
+$ 
+
+
+//Find Nth term in the series 10, 26, 51, 87, 136, ... N terms 
+#include<stdio.h>
+#include<stdlib.h>
+
+int findTermInSeries(int N);
+
+int main(){
+    int N=0;//Number of Terms
+    printf("Enter number of terms:");
+    scanf("%d",&N);
+    
+    printf("The %dth term is %d\n",N,findTermInSeries(N));
+    
+    return EXIT_SUCCESS;
+}
+
+int findTermInSeries(int N){
+    //Find Nth term in the series 
+    int result=-1;
+    int term=10;
+    int difference=4;
+    	
+    for(int I=1; I<= N; I++){
+        //printf("%d,",term);
+        result =  term;
+        term = term + (difference*difference); 
+        //term = term + (int)pow((double)difference,2.0); 
+        
+        difference=difference+1; 
+    }
+    
+    return result;   
+}
