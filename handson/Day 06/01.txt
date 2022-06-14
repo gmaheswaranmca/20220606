@@ -95,3 +95,87 @@ Enter number of terms:5
 (function)The required series is:
 10,14,19,25,32,
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//while loop 
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void printSeries(int N);
+
+int main(){
+    int N=0;//Number of Terms
+    printf("Enter number of terms:");
+    scanf("%d",&N);
+    
+    printSeries(N);
+    
+    return EXIT_SUCCESS;
+}
+
+void printSeries(int N){
+    //Print the series 
+    int term=10;
+    int difference=4;
+    printf("(function-while)The required series is:\n");	
+    int I=1;
+    while(I<= N){
+        printf("%d,",term);       
+        term = term + difference; 
+        //term += difference;
+        difference=difference+1;  
+        //difference++
+        I++;
+    }
+    printf("\n");
+}
+
+$ gcc example.c -o example
+$ ./example
+Enter number of terms:5
+(function-while)The required series is:
+10,14,19,25,32,
+$ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+//do..while loop 
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void printSeries(int N);
+
+int main(){
+    int N=0;//Number of Terms
+    printf("Enter number of terms:");
+    scanf("%d",&N);
+    
+    printSeries(N);
+    
+    return EXIT_SUCCESS;
+}
+
+void printSeries(int N){
+    //Print the series 
+    int term=10;
+    int difference=4;
+    printf("(function-do-while)The required series is:\n");	
+    int I=1;
+    do{
+        printf("%d,",term);       
+        term = term + difference; 
+        //term += difference;
+        difference=difference+1;  
+        //difference++
+        I++;
+    }while(I<= N);
+    printf("\n");
+}
+
+$ gcc example.c -o example
+$ ./example
+Enter number of terms:5
+(function-do-while)The required series is:
+10,14,19,25,32,
+$ 
