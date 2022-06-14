@@ -1,0 +1,153 @@
+---------------------------------------------------------------
+Loop/Itertive Statements: to repeat the code:
+***************Loops*************** 
+##########for Loop########## 
+
+Single Line for Loop 
+for(initialize;condition;update)
+    //CODE HERE 
+
+Multi Lines for Loop 
+for(initialize;condition;update){
+    //CODE HERE 
+}
+
+Main Purpose: Fixed number of iterations.
+Entry Controlled Loop
+
+##########while Loop##########
+Single Line while Loop 
+while(condition)
+    //CODE HERE 
+
+
+Multi Lines while Loop 
+while(condition){
+    //CODE HERE 
+}
+
+Specically for iterations other than fixed number of iterations
+Entry Controlled Loop
+    
+##########do..while Loop
+do
+{
+    //CODE HERE 
+}while(condition);   
+
+Specically for iterations other than fixed number of iterations
+Exit Controlled Loop
+Loop Code will be executel atleast once 
+ 
+---------------------------------------------------------------              
+
+
+
+
+---------------------------------------------------------------
+Forward Loop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+for(int I = 1; I <= N; I++){    //N=5 -> I : 1T 2T 3T 4T 5T 6F
+	//CODE HERE !!!to run N Times the CODE
+}
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+for(int I = 0; I < SIZE; I++){ //SIZE=3-> I:0T 1T 2T 3F
+	//TYPE E = ARRAYNAME[I];
+	//CODE HERE !!!to say "Hi" to every element of the array
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = 1;  
+while(I <= N){//N=5-> I:1T 2T 3T 4T 5T 6F
+	//CODE HERE !!!to run N Times the CODE
+	I++;
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = 0;
+while( I < SIZE){ //SIZE=3 -> I:0T 1T 2T 3F
+	//TYPE E = ARRAYNAME[I];
+	//CODE HERE !!!to say "Hi" to every element of the array
+	I++;
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = 1; 
+do{
+	//CODE HERE !!!to run N Times the CODE
+	I++;
+}while(I <= N);//N=5 -> I:2T 3T 4T 5T 6F
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = 0;
+do{
+	//TYPE E = ARRAYNAME[I];
+	//CODE HERE !!!to say "Hi" to every element of the array
+	I++;
+}while( I < SIZE);//SIZE=3->I:1T 2T 3F
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------
+
+
+
+
+
+
+---------------------------------------------------------------
+Backward Loop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+for(int I = N; I >= 1; I--){//N=5 -> I:5T 4T 3T 2T 1T 0F
+	//CODE HERE !!!to run N Times the CODE
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+for(int I = SIZE-1; I >= 0; I--){
+	//TYPE E = ARRAYNAME[I];
+	//CODE HERE !!!to say "Hi" to every element of the array
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = N;      //N=5
+while(I >= 1){  //5T 4T 3T 2T 1T 0F
+	//CODE HERE !!!to run N Times the CODE
+	I--;        
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = SIZE-1;
+while( I >= 0){ //SIZE=3;->I:2T 1T 0T -1F
+	//TYPE E = ARRAYNAME[I];
+	//CODE HERE !!!to say "Hi" to every element of the array
+	I--;
+}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = N; 
+do{
+	//CODE HERE !!!to run N Times the CODE
+	I--;
+}while(I >= 1);//N=5->I :4T 3T 2T 1T 0F 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+int I = SIZE-1;
+do{
+	//TYPE E = ARRAYNAME[I];
+	//CODE HERE !!!to say "Hi" to every element of the array
+	I--;
+}while( I >= 0);//SIZE=3->I:1T 0T -1F
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------
+
+
