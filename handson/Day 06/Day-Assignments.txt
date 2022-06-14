@@ -1,0 +1,4 @@
+Day Assignments:
+-----------------------------------------
+1. Print the prime numbers between 500 and 2000
+2. Print the Nth prime number between 500 and 2000
