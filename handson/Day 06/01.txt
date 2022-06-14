@@ -51,6 +51,12 @@ int main(){
     return EXIT_SUCCESS;
 }
 
+$gcc example.c -o example
+$./example
+Enter number of terms:5
+The required series is:
+10,14,19,25,32,
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #include<stdio.h>
@@ -82,3 +88,10 @@ void printSeries(int N){
     }
     printf("\n");
 }
+
+$gcc example.c -o example
+$./example
+Enter number of terms:5
+(function)The required series is:
+10,14,19,25,32,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
