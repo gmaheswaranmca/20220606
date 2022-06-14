@@ -1,4 +1,13 @@
-
+Prime Number Checking 
+ 1. Check between 2 and Before number divides the number 
+        !!! Low Performance Code 
+ OR 
+ 2. Check between 2 and (number/2) divides the number 
+        !!! Less Optimal 
+ OR 
+ 3. Check between 2 and (square root(number)) divides the number 
+        !!! Optimal 
+ 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 4. Check a given number is prime number or not 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
