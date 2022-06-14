@@ -1,0 +1,125 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Find Number of Odd Digits in a given number 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example:
+12345
+Odd Digits are 1, 3 and 5 So Number of Odd Digits is 3 
+Example:
+23456
+Odd Digits are 3 and 5 So Number of Odd Digits is 2
+
+Case 1:
+Input
+12345
+Output #Count "no of digits"
+3           
+Case 2:
+Input:
+23456
+Output:
+2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#include<stdio.h>
+#include<stdlib.h>
+
+int findNumberOfOddDigits(int N);
+
+int main(){
+    int N=0;
+    printf("Enter a number:");
+    scanf("%d",&N);
+    
+    printf("The number of odd digits of %d is %d\n",N,findNumberOfOddDigits(N));
+    //The number of odd digits of 12345 is 3\n
+    
+    return EXIT_SUCCESS;
+}
+
+int findNumberOfOddDigits(int N){//12345
+    //find Number Of Odd Digits for given number N
+    int numberOfOddDigits=0;
+    while(N > 0){               // 12345T  1234T   123T    12T  1T   0F
+        int Digit = N % 10;     // 5       4       3       2    1
+        if(Digit % 2 == 1){     // T       F       T       F    T   
+            numberOfOddDigits++;// 0+1=1           1+1=2        2+1=3
+        }
+        N = N / 10;             //1234     123     12      1    0
+    }
+    return numberOfOddDigits;   //3
+}
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int findNumberOfOddDigits(int N);
+
+int main(){
+    int N=0;
+    printf("Enter a number:");
+    scanf("%d",&N);
+    
+    printf("The number of odd digits of %d is %d\n",N,findNumberOfOddDigits(N));
+    
+    return EXIT_SUCCESS;
+}
+
+int findNumberOfOddDigits(int N){
+    //find Number Of Odd Digits for given number N
+    int numberOfOddDigits=0;
+    while(N > 0){               
+        int Digit = N % 10;     
+        if(Digit % 2 == 1){       
+            numberOfOddDigits++;
+        }
+        N = N / 10;             
+    }
+    return numberOfOddDigits;   
+}
+
+
+$ gcc example.c -o example
+$ ./example
+Enter a number:12345
+The number of odd digits of 12345 is 3
+$ ./example
+Enter a number:23456
+The number of odd digits of 23456 is 2
+$ 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#include<stdio.h>
+#include<stdlib.h>
+
+int findNumberOfOddDigits(int N);
+
+int main(){
+    int N=0;
+    printf("Enter a number:");
+    scanf("%d",&N);			//23456
+    
+    printf("The number of odd digits of %d is %d\n",N,findNumberOfOddDigits(N));
+    //The number of odd digits of 23456 is 2\n
+    
+    return EXIT_SUCCESS;
+}
+
+int findNumberOfOddDigits(int N){//23456
+    //find Number Of Odd Digits for given number N
+    int numberOfOddDigits=0;		
+    while(N > 0){            //23456T   2345T      234T  23T  2T   0F
+        int Digit = N % 10;  //    6      5        4     3         2
+        if(Digit % 2 == 1){  //    F      T        F     T         F
+            numberOfOddDigits++;          0+1=1         1+1=2
+        }
+        N = N / 10;          //2345     234       23     2     0
+    }
+    return numberOfOddDigits;   //2
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

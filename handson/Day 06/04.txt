@@ -1,0 +1,118 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4. Check a given number is prime number or not 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Case 1
+Input:
+5
+Output:
+Prime Number 
+
+Case 2
+Input:
+4
+Ouput:
+Not Prime Number 
+
+Case 3
+Input:
+59 
+Output:
+Prime Number 
+
+Case 4
+Input:
+60
+Output:
+Not Prime Number 
+
+
+prime number: The number which is divisible by either the number and "1"
+							    	Not divisible by inbetween 1 and the number 
+									
+									
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define TRUE 1
+#define FALSE 0
+#include<stdio.h>
+#include<stdlib.h>
+
+int isPrimeNumber(int N);
+
+int main(){
+    int N=0;
+    printf("Enter a number:");
+    scanf("%d",&N);			
+    
+    if(isPrimeNumber(N)){
+	printf("%d is Prime Number.\n",N);
+    }else{
+	printf("%d is not Prime Number.\n",N);
+    }
+    
+    return EXIT_SUCCESS;
+}
+
+int isPrimeNumber(int N){ //5
+    //Checks the given number is prime or not. If prime, returns 1. Else returns 0.
+    int isPrime=TRUE;  
+	for(int middleNumber=2; middleNumber < N; middleNumber++){ // 2T      3T      4T      5F
+		if(N % middleNumber==0){ 							   // 5%2=1F  5%3=2F  5%4=1F  
+		// N is divisible by middleNumber
+			isPrime = FALSE;
+			break;
+		}
+	}
+    return isPrime; //TRUE 
+}		
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
+
+#define TRUE 1
+#define FALSE 0
+#include<stdio.h>
+#include<stdlib.h>
+
+int isPrimeNumber(int N);
+
+int main(){
+    int N=0;
+    printf("Enter a number:");
+    scanf("%d",&N);			
+    
+    if(isPrimeNumber(N)){
+	printf("%d is Prime Number.\n",N);
+    }else{
+	printf("%d is not Prime Number.\n",N);
+    }
+    
+    return EXIT_SUCCESS;
+}
+
+int isPrimeNumber(int N){ 
+    //Checks the given number is prime or not. If prime, returns 1. Else returns 0.
+    int isPrime=TRUE;  
+	for(int middleNumber=2; middleNumber < N; middleNumber++){ 
+		if(N % middleNumber==0){ 							    
+		// N is divisible by middleNumber
+			isPrime = FALSE;
+			break;
+		}
+	}
+    return isPrime; 
+}					
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+#1 Pre processing 
+$gcc example.c -E 
+#Pre processed code !!! before compilation !!! the code to be submitted to the compiler 
+
+#2 Compilation 
+$gcc example.c -c 
+#example.o !!!The object file "example.o" for the source file "example.c" is generated 	
+
+#4 Build 
+$gcc example.o -o example 
+#example    !!! machine(executable) code will be generated after (3)linking (if required)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
