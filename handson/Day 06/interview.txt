@@ -3,6 +3,8 @@ Question 1:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 How to view one page at a time of a text file in Linux?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+more "textFileName"
+space key to have each page the view 
 ---------------------------------------------------------
 
 ---------------------------------------------------------
@@ -11,8 +13,32 @@ Question 2:
 What is the different between process and thread? 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ---------------------------------------------------------
+Manu Mohan
+process: program in execution 
+	code runs indepently 
+	--> resources for running code are unique 
+	for memory resource 
+	
+	multi processing 
+		each process runs in individual resources 
+		creation time/termination time will be more compared threads 
+		heavy-weight 
+	
+thread: segment of the process
+	code runs inside the process 
+	--> resources for running code is the same from process
+		process resource will be used by threads 
+		
+		threads they share the resources so light-weight 
+		
+		
+multi processing - no need 
 
+multi threading - no need  		
+		
 ---------------------------------------------------------
+
+
 Question 3:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 What is static variable?
@@ -66,5 +92,28 @@ Question 10:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 How will you clarify any doubts during work
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Arya
+	Linux 
+	--help
+	man function/command 
+	
+Vishal
+	cppreference 
+		creference 
+		
+	compiler documentation 
+
+Manu Mohan1
+	we can get the help from the collegues or seniors(reporting authority ie lead/manager)
+	
+Pratik Kumar
+	Discussed Forum like stackoverflow 
+	or just google it for the ready made solutions for our doubts 
+
+Revisit the task from the one who assigned it 	
+		POC(Proof of Concept)s we can do 
+		Read the specification one more time 
+		
+If agile or scrum, we can get clarified from "Operational Executive/Manager"	
 ---------------------------------------------------------
 
