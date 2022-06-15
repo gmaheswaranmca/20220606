@@ -1,0 +1,29 @@
+Lab Assessment - 1:
+
+Q1. 
+
+Total marks: 50marks
+Duratin: 45 minutes
+
+Write a bash script to find sum of N given numbers
+Note: Use array
+Test Case 1:
+Input
+Enter number of numbers: 5
+Enter numbers one by one:
+2
+5
+3
+8
+6
+Output
+24
+Test Case 2:
+Input
+Enter number of numbers: 3
+Enter numbers one by one:
+100
+8
+52
+Output
+160

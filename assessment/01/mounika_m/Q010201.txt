@@ -1,0 +1,35 @@
+Lab Assessment - 1:
+
+Q2. 
+
+Total marks: 50marks
+Duratin: 45 minutes
+
+Check difference between two given prime numbers is odd number 
+Test Case 1:
+Input 
+7
+5
+Output
+Not Odd Number
+Test Case 2:
+Input 
+59
+2
+Output
+Odd Number
+Test Case 3:
+Input 
+9
+2
+Output
+9 is not prime number 
+
+Test Case 4:
+Input 
+9
+12
+Output
+9 is not prime number 
+12 is not prime number 
+

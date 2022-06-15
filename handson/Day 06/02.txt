@@ -84,3 +84,9 @@ int findTermInSeries(int N){
     
     return result;   
 }
+
+$ gcc example.c -o example
+$ ./example
+Enter number of terms:5
+The 5th term is 136
+$ 
