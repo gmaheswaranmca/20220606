@@ -231,7 +231,23 @@ talk about multi-dimesional array.
 how will you pass an array to function as argument 
 ========================================================================
 
-N=5, numbers {10, 20, 15, 40, 30} 
+
+
+
+
+
+
+
+
+
+
+========================================================================
+1. Read the array of N numbers (long long) and print 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Read the array of N numbers (long long) and print 
 #define MAX_SIZE 1000
 #include<stdio.h>
@@ -269,7 +285,7 @@ int main(){
     
 	return EXIT_SUCCESS;
 }
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Enter number of numbers:5
 Enter numbers one by one:
 Enter number at 0:10
@@ -281,4 +297,660 @@ The given numbers are:
 10 15 12 40 30 
 The reverse of the numbers is:
 30 40 12 15 10 
+========================================================================
+
+
+========================================================================
+2. Read the array of N numbers (long long) and print
+   Refactor code using "Compose" Refactoring Technique -> Extract Method 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//Read the array of N numbers (long long) and print 
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+//void readNumbers(int N, long long* numbers){ //for array arg, "long long* numbers" is equal "long long numbers[]" for only the first dimension
+void readNumbers(int N, long long numbers[]){ //for array arg, first dimension can be empty 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void printNumbersBackward(int N, long long numbers[]){
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+    printNumbersBackward(N,numbers);
+    
+	return EXIT_SUCCESS;
+}
+========================================================================
+
+
+
+========================================================================
+3. Read the array of N numbers (long long) and print
+   1) sum of the numbers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+
+void readNumbers(int N, long long numbers[]){ 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void printNumbersBackward(int N, long long numbers[]){
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+long long sumOfNumbers(int N, long long numbers[]){
+    return 0LL;
+}
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+    printNumbersBackward(N,numbers);
+    
+    long long sum = 0LL;
+    sum = sumOfNumbers(N,numbers);
+    printf("The sum of the numbers is %lld\n",sum);
+    
+	return EXIT_SUCCESS;
+}
+========================================================================
+
+
+========================================================================
+4. Read the array of N numbers (long long) and print
+   1) sum of the odd numbers
+   2) sum of the even numbers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+int isOddNumber(long long num){
+    return ((num % 2) != 0);
+}
+
+int isEvenNumber(long long num){
+    return ((num % 2) == 0);
+}
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+
+void readNumbers(int N, long long numbers[]){ 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void printNumbersBackward(int N, long long numbers[]){
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+long long sumOfOddNumbers(int N, long long numbers[]){
+    return 0LL;
+}
+
+long long sumOfEvenNumbers(int N, long long numbers[]){
+    return 0LL;
+}
+
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+    printNumbersBackward(N,numbers);
+    
+    long long sumOdd = 0LL;
+    long long sumEven = 0LL;
+    sumOdd = sumOfOddNumbers(N,numbers);
+    sumEven = sumOfEvenNumbers(N,numbers);
+    
+    printf("The sum of the odd numbers is %lld\n",sumOdd);
+    printf("The sum of the even numbers is %lld\n",sumEven);
+    
+	return EXIT_SUCCESS;
+}
+========================================================================
+
+
+========================================================================
+5. Read the array of N numbers (long long) and print
+   1) count the odd numbers
+   2) count the even numbers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+int isOddNumber(long long num){
+    return ((num % 2) != 0);
+}
+
+int isEvenNumber(long long num){
+    return ((num % 2) == 0);
+}
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+
+void readNumbers(int N, long long numbers[]){ 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void printNumbersBackward(int N, long long numbers[]){
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+int countOddNumbers(int N, long long numbers[]){
+    return 0;
+}
+
+int countEvenNumbers(int N, long long numbers[]){
+    return 0;
+}
+
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+    printNumbersBackward(N,numbers);
+    
+    int countOdd = 0;
+    int countEven = 0;
+    countOdd = countOddNumbers(N,numbers);
+    countEven = countEvenNumbers(N,numbers);
+    
+    printf("The number of the odd numbers is %d\n",countOdd);
+    printf("The number of the even numbers is %d\n",countEven);
+    
+	return EXIT_SUCCESS;
+}
+========================================================================
+
+
+
+
+========================================================================
+6. Read the array of N numbers (long long) and print
+   1) sum of the prime numbers
+   2) count the prime numbers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define MAX_SIZE 1000
+#define TRUE 1
+#define FALSE 0
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int isPrimeNumber(long long num){
+    long long sqrtNum = (long long)sqrt((double)num);
+    for(long long middle=2; middle <= sqrtNum; middle++){
+        if((num % middle) == 0){
+            return FALSE;
+        }
+    }
+    
+    return TRUE;
+}
+
+
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+
+void readNumbers(int N, long long numbers[]){ 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void printNumbersBackward(int N, long long numbers[]){
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+long long sumOfPrimeNumbers(int N, long long numbers[]){
+    return 0LL;
+}
+
+int countPrimeNumbers(int N, long long numbers[]){
+    return 0;
+}
+
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+    printNumbersBackward(N,numbers);
+    
+    long long sumPrime = 0LL;
+    int countPrime = 0;
+    sumPrime = sumOfPrimeNumbers(N,numbers);
+    countPrime = countPrimeNumbers(N,numbers);
+    
+    printf("The sum of the prime numbers is %lld\n",sumPrime);
+    printf("The number of the prime numbers is %d\n",countPrime);
+    
+	return EXIT_SUCCESS;
+}
+========================================================================
+
+
+
+
+========================================================================
+7. Read the array of N numbers (long long) and print
+   1) maximum number
+   2) minimum number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+
+void readNumbers(int N, long long numbers[]){ 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void printNumbersBackward(int N, long long numbers[]){
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+long long findMaximum(int N, long long numbers[]){
+    return 0LL;
+}
+
+long long findMinimum(int N, long long numbers[]){
+    return 0LL;
+}
+
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+    printNumbersBackward(N,numbers);
+    
+    long long max = 0LL;
+    long long min = 0LL;
+    
+    max = findMaximum(N,numbers);
+    min = findMinimum(N,numbers);
+    
+    printf("The maximum of the numbers is %lld\n", max);
+    printf("The minimum of the numbers is %lld\n", min);
+    
+	return EXIT_SUCCESS;
+}
+========================================================================
+
+
+========================================================================
+7. Read the array of N numbers (long long) and print
+   1) Kth maximum number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input:
+N=5, 
+numbers {10, 20, 15, 40, 30} 
+
+For example, 3rd is maximum is 20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+
+void readNumbers(int N, long long numbers[]){ 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void printNumbersBackward(int N, long long numbers[]){
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+void selectionSortAscNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+
+long long findKthMaximum(int N, long long numbers[], int K){
+    return 0LL;
+}
+
+
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+    printNumbersBackward(N,numbers);
+    
+    int K;
+    printf("To find Kth maximum, Enter value for K:");
+    scanf("%d",&K);
+    
+    long long max = 0LL;
+    max = findKthMaximum(N,numbers,K);
+    
+    printf("The %th maximum of the numbers is %lld\n", K,max);
+    
+	return EXIT_SUCCESS;
+}
+========================================================================
+
+
+
+========================================================================
+Write the selection sort algorithm for descending order long long numbers 
+========================================================================
+void selectionSortDescNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+========================================================================
+Write the bubble sort algorithm for ascending order long long numbers 
+========================================================================
+void bubbleSortAscNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+========================================================================
+Write the bubble sort algorithm for descending order long long numbers 
+========================================================================
+void bubbleSortDescNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+========================================================================
+Write the insertion sort algorithm for ascending order long long numbers 
+========================================================================
+void insertionSortAscNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+========================================================================
+Write the insertion sort algorithm for descending order long long numbers 
+========================================================================
+void insertionSortDescNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+
+========================================================================
+Write the quick sort algorithm for ascending order long long numbers 
+========================================================================
+//Write the partition algorithm here
+
+void quickSortAscNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+========================================================================
+Write the quick sort algorithm for descending order long long numbers 
+========================================================================
+//Write the partition algorithm here
+
+void quickSortDescNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+========================================================================
+Write the merge sort algorithm for ascending order long long numbers 
+========================================================================
+//Write the merging algorithm here
+
+void mergeSortAscNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+========================================================================
+Write the merge sort algorithm for descending order long long numbers 
+========================================================================
+//Write the merging algorithm here
+
+void mergeSortDescNumbers(int N, long long numbers[]){
+    //CODE HERE
+}
+========================================================================
+
+
+
 
