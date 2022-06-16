@@ -270,4 +270,15 @@ int main(){
 	return EXIT_SUCCESS;
 }
 
+Enter number of numbers:5
+Enter numbers one by one:
+Enter number at 0:10
+Enter number at 1:15
+Enter number at 2:12
+Enter number at 3:40
+Enter number at 4:30
+The given numbers are:
+10 15 12 40 30 
+The reverse of the numbers is:
+30 40 12 15 10 
 
