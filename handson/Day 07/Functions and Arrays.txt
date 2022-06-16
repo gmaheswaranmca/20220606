@@ -1,0 +1,273 @@
+Functions
+• Modular Programming
+• void Functions
+• Calling a void Function
+• Parameters
+• Calling a function with arguments
+• Function returning a value
+• return statement
+• Calling a function that returns a value
+• Function Prototype
+• Local variables and global variables
+• Parameter Passing Methods
+o Call by value
+o Call by reference
+• Recursion
+• Library Functions
+
+
+Data Structures in C
+• Arrays
+o Creating and using arrays
+o Character arrays
+o 2 dimensional arrays
+o Passing arrays as arguments to functions
+
+========================================================================
+what is the "C" function?
+	Pratik
+	- group of statements (block of code) together to perform a task 
+	- every C Program has one function which is main only 
+	- it will run when it is called 
+	
+	four parts of the function 
+	1. function name 
+	2. parameters
+	3. function body 
+	4. return type 
+	
+	Vishal Pandya
+	- In function, operations on data passed as the arguments
+	
+	Sai Ram Challa
+		Based on return type 
+			void function 
+			non-void function
+		Base on argument 
+			void arguement - no argument function 
+			arguments function 
+		
+	Vishal Pandya
+	storages classes -> variables of the program 
+		inside the function / outside the function
+					visibility			lifetime 		storage media 
+	auto			function 			function 		stack 	
+	static 			function 			program 		data segment 
+	extern 			global 				program 		data segment 
+	register 		function 			function 		CPU register 
+	
+	With respect to functions 					!!!Trishala
+	1. Standard Library Functions
+		it will be available maximum in all compilers 
+		multithreading is now part of standard library 
+	2. User Defined Library Functions
+		it specific to the project 
+	3. Third Party Library Functions  
+		Like Windows Network such WinSocket 
+			 Win32 API
+		
+		Part of POSIX ie POSIX thread library API 
+		
+	
+	To use the library function, we have to include its header.
+	For example:
+	to use strcpy
+	we have to include "<string.h>" header 
+	
+	header file: declarations ie names such as variable name, function declaration, 
+		types struct/union/enum, typedef names 
+	source file: definitions such as function definitions, variable definitions 
+	
+	
+what is usage of function? why do you go for function?
+	- easy to understand												!!! SHRANUKUMAR
+	- reusability 														!!! SREEJA
+	- testable [easy to avoid bug]										!!! POOJA
+		-easy for debugging 											
+	- to perform the specifict task !!!									!!! SANDEEP
+	- if it main() starting point for the program execution 			!!! ARYA
+
+talk about arguments/parameters in function.
+	Base on argument 
+		void arguement - no argument function !!! MANU 
+		arguments function 
+
+	Based on the defintion or call 				!!! SHRANUKUMAR 
+		formal argument - arguments in the function definition 
+		actual argument - arguments in the function call 
+		
+	We can return multiple values from function 		!!! Manu Mohan 
+		via call by reference(pointer) using the arguments 
+		apart from the actual return value
+		
+		-- workaround
+
+	Arguments can be passed in two ways: 		!!!Mounika 
+	1. call by value / copy 
+	2. call by reference / pointer 
+	
+	Less precision value as argument is promoted as Higher precision value !!! VISHAL PANDYA
+	Example:
+		void f(int) 
+		call: f('A')
+		Here 'A' char is promoted as int 
+		
+	Command Line Arguments for the Program Process 
+	Example:
+		int main(int argc, char* argv[])	// Argument 
+		
+		int main(void)	// No Argument 
+		
+		void main(void)	// No Return Function 
+		
+		Return Value out of the main is -> STATUS CODE to the operating system 
+			STATUS CODE 0 -> EXIT_SUCCESS from <stdlib.h> - Successful code from the process 
+			STATUS CODE NON_ZER -> EXIT_FAILURE from <stdlib.h> - Unsuccessful code from the process 
+		
+
+talk about return type of the function.
+	Based on return type 
+		void function 
+		non-void function
+	
+	Through the return keyword,				!!! Sai Ram Challa 
+	we can return only one value 
+	
+what is recursion?		
+	The function calls itself is called recursion
+	
+	
+	exit condition from the recursion is called base condition 	!!!POOJA:
+		
+    if no exit condition, 
+		we will have infinitive loop (stackoverflow)
+	
+	Example: 
+		n! = n * (n-1)! mathematical expression 
+		base: n==1 -> 1! = 1
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	factorial of number using recursion 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	int fact(int num){
+		if(num == 1){
+			return 1;
+		}
+		return num * fact(num-1);
+	}
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+	Replace the recursive approach for the iterative approach 
+	
+	!!! TIME COMPLEXITY by using recursion is less than iterative  !!!VISHAL 
+	This depends on the problem									   !!!VISHAL 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Replace the iterative approach for the recursive approach 		!!! POOJA
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+
+when you will go for the recursion?
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Data Structure 
+		TREE 
+			BINARY TREE 
+				BREATH FIRST SEARCH 
+					to find the height of the tree 
+				DEPTH FIRST SEARCH 
+					PRE ORDER TRAVERSAL  - recursion two times	
+					POST ORDER TRAVERSAL - recursion two times 
+					IN ORDER TRAVERSAL   - recursion  two times
+		GRAPH 
+		
+		SORTING ALGORITHM 
+			quicksort 
+			mergesort 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Employee Hierarchies 
+			to find boss of the employee 
+			to find team lead of the employee 
+			to find project manager of the employee 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+what is alternative for the recursion? 
+	Dynamic Programming
+		memorization 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		alternative: Dynamic Programming 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+advantages and disadvantages of the recursion 
+	based on the problems 
+	
+	if there are performance issues, we can go for "DP"
+========================================================================	
+what is array?
+	- sequence of elements ie sequential data structure 
+	- collection of similar elements and each element is identified by array name and index !!! SREEJA
+	- array index starts at zero !!! SREEJA 
+	- In C language, the size of the static array is fixed. We cannot change. !!! POOJA
+		SIZE has to be mentioned at defintion (DECLARATION)  !!! MANU
+		MEMORY ALLOCATION is done by compiler !!! MANU
+			deallocated auto arrays automatically after the function execution is over 
+			deallocated global arrays automatically at the time of program process end 
+	- Provides "random access"  !!! VISHAL 
+		We can access any element by its index value with 
+		CONSTANT TIME ie O(1) Time Complexity 
+	- Values can be duplicated 											!!!SREEJA 
+	- Types of arrays: one dimensional, two dimensional 2D, 3D, 4D, ..... !!! POOJA 
+	- Array elements are stored in "contiguous memory" 
+		contigous : "next to next | side by side" 
+	- array name is the "constant pointer" 
+		ie array name holds address of the first element 
+		the adderess in the array name cannot be modified !!! SAI RAM 
+	- if we access beyond array size limit, that is illegal	!!! VISHAL 
+		there we may face "SEGMENTATION FAULT" -> "CORE DUMPED"
+	- static and global array can be returned from the fuction as "pointer" 	!!! VISHAL 
+	- Dimensions Depth / SIZE are constant expressions 
+========================================================================	
+what is string?
+========================================================================
+talk about multi-dimesional array.
+========================================================================
+how will you pass an array to function as argument 
+========================================================================
+
+N=5, numbers {10, 20, 15, 40, 30} 
+//Read the array of N numbers (long long) and print 
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+	int N;
+    long long numbers[MAX_SIZE];
+    
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",&N);
+    
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");
+    
+    //print numbers 
+    //backward traversal 
+    printf("The reverse of the numbers is:\n");
+    for(int I = N-1; I >= 0; I--){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");
+    
+	return EXIT_SUCCESS;
+}
+
+
