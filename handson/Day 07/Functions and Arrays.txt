@@ -864,7 +864,7 @@ int main(){
 
 
 ========================================================================
-Write the selection sort algorithm for descending order long long numbers 
+8.Write the selection sort algorithm for descending order long long numbers 
 ========================================================================
 void selectionSortDescNumbers(int N, long long numbers[]){
     //CODE HERE
@@ -873,7 +873,7 @@ void selectionSortDescNumbers(int N, long long numbers[]){
 
 
 ========================================================================
-Write the bubble sort algorithm for ascending order long long numbers 
+9.Write the bubble sort algorithm for ascending order long long numbers 
 ========================================================================
 void bubbleSortAscNumbers(int N, long long numbers[]){
     //CODE HERE
@@ -882,7 +882,7 @@ void bubbleSortAscNumbers(int N, long long numbers[]){
 
 
 ========================================================================
-Write the bubble sort algorithm for descending order long long numbers 
+10.Write the bubble sort algorithm for descending order long long numbers 
 ========================================================================
 void bubbleSortDescNumbers(int N, long long numbers[]){
     //CODE HERE
@@ -890,7 +890,7 @@ void bubbleSortDescNumbers(int N, long long numbers[]){
 ========================================================================
 
 ========================================================================
-Write the insertion sort algorithm for ascending order long long numbers 
+11.Write the insertion sort algorithm for ascending order long long numbers 
 ========================================================================
 void insertionSortAscNumbers(int N, long long numbers[]){
     //CODE HERE
@@ -899,7 +899,7 @@ void insertionSortAscNumbers(int N, long long numbers[]){
 
 
 ========================================================================
-Write the insertion sort algorithm for descending order long long numbers 
+12.Write the insertion sort algorithm for descending order long long numbers 
 ========================================================================
 void insertionSortDescNumbers(int N, long long numbers[]){
     //CODE HERE
@@ -909,7 +909,7 @@ void insertionSortDescNumbers(int N, long long numbers[]){
 
 
 ========================================================================
-Write the quick sort algorithm for ascending order long long numbers 
+13.Write the quick sort algorithm for ascending order long long numbers 
 ========================================================================
 //Write the partition algorithm here
 
@@ -920,7 +920,7 @@ void quickSortAscNumbers(int N, long long numbers[]){
 
 
 ========================================================================
-Write the quick sort algorithm for descending order long long numbers 
+14.Write the quick sort algorithm for descending order long long numbers 
 ========================================================================
 //Write the partition algorithm here
 
@@ -931,7 +931,7 @@ void quickSortDescNumbers(int N, long long numbers[]){
 
 
 ========================================================================
-Write the merge sort algorithm for ascending order long long numbers 
+15.Write the merge sort algorithm for ascending order long long numbers 
 ========================================================================
 //Write the merging algorithm here
 
@@ -942,7 +942,7 @@ void mergeSortAscNumbers(int N, long long numbers[]){
 
 
 ========================================================================
-Write the merge sort algorithm for descending order long long numbers 
+16.Write the merge sort algorithm for descending order long long numbers 
 ========================================================================
 //Write the merging algorithm here
 
