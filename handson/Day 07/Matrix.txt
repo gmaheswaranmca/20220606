@@ -1,0 +1,8 @@
+1. Read a M x N matrix, Print the matrix
+2. Read a M x N matrix, Print the matrix
+   Here, M >= 3
+   A) Find sum of odd numbers in first row 
+   B) Find sum of even numbers in second row 
+   C) Find count prime numbers in third row 
+   
+   
