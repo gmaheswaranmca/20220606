@@ -112,3 +112,98 @@ The frequence of 7 is 2.
 The frequence of 6 is 1.
 The frequence of 2 is 1.
 The frequence of 4 is 1.
+
+
+
+
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+
+
+void readNumberOfNumbers(int* N_Addr){
+    //read number of numbers 
+    printf("Enter number of numbers:");
+    scanf("%d",N_Addr);    
+}
+
+void readNumbers(int N, long long numbers[]){ 
+    //read numbers 
+    printf("Enter numbers one by one:\n");
+    for(int I = 0; I < N; I++){
+        printf("Enter number at %d:",I);
+        scanf("%lld",&numbers[I]);
+    }
+}
+
+void printNumbersForward(int N, long long numbers[]){
+    //print numbers 
+    //forward travesal
+    printf("The given numbers are:\n");
+    for(int I = 0; I < N; I++){
+        printf("%lld ", numbers[I]);
+    }
+    printf("\n");    
+}
+
+int findNumberPosition(int sizeOfDistinct,long long numbersDistict[], long long find){
+    //3,{9,7,6},9
+    for(int I = 0; I < sizeOfDistinct; I++){//I:0<3T 
+        if(numbersDistict[I] == find){      //9==9F
+            return I;                       //0
+        }
+    }
+    
+    return -1; 
+}
+
+void findFreq(int N, long long numbers[], int* sizeOfDistinctAddr,long long numbersDistict[], int freq[]){
+    //N=8,numbers {9, 7, 6, 9, 9, 2, 4, 7},&(sizeOfDistinct=0),{},{}
+    int sizeOfDistinct = (*sizeOfDistinctAddr);
+    
+    sizeOfDistinct = 0;
+    for(int I = 0; I < N; I++){//I:0T      1T           2T          3T    
+        int position = findNumberPosition(sizeOfDistinct,numbersDistict,numbers[I]);
+                               //9         7                        9
+                               //0,{},9    1,{9},7                  3,{9,7,6},9
+                               //-1        -1                       0
+        if(position != -1){    //-1F       -1F                      0T
+            freq[position] ++;              
+        }else{
+            numbersDistict[sizeOfDistinct] = numbers[I];
+            freq[sizeOfDistinct] = 1;
+            sizeOfDistinct++;
+                               //{9,7,6,2,4},{3,2,1,1,1},5
+        }
+    }
+    (*sizeOfDistinctAddr) = sizeOfDistinct;
+}
+
+void printNumFreq(int sizeOfDistinct,long long numbersDistict[], int freq[]){
+    //5,{9,7,6,2,4},{3,2,1,1,1}
+    printf("The frequency of the numbers is:\n");
+    for(int I = 0; I < sizeOfDistinct; I++){//I:0<5T  1<5T
+        printf("The frequence of %lld is %d.\n",numbersDistict[I],freq[I]);
+        //9->3      7->2        6->1        2->1        4->1
+    }
+}
+
+
+int main(){
+	int N;  //N=8, 
+    long long numbers[MAX_SIZE]; //numbers {9, 7, 6, 9, 9, 2, 4, 7} 
+    
+    readNumberOfNumbers(&N);
+    readNumbers(N,numbers);
+    printNumbersForward(N,numbers);
+       
+    long long numbersDistict[MAX_SIZE]{};   //{9,7,6,2,4}
+    int freq[MAX_SIZE]{};                   //{3,2,1,1,1}
+    int sizeOfDistinct=0;           //5
+    
+    findFreq(N,numbers,&sizeOfDistinct,numbersDistict,freq);
+    //N=8,numbers {9, 7, 6, 9, 9, 2, 4, 7},&(sizeOfDistinct=0),{},{}
+    printNumFreq(sizeOfDistinct,numbersDistict,freq);//5,{9,7,6,2,4},{3,2,1,1,1}
+    
+	return EXIT_SUCCESS;
+}
