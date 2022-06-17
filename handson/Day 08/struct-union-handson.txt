@@ -1,0 +1,362 @@
+-----------------------------------------------------------------------
+struct
+-----------------------------------------------------------------------
+	create user-defined data type
+	to define composite data of different type "heterogeneous data type"
+	
+	record | table row | tuple | structure | object | instance	
+	
+	scheme{scheme_name,max_loan_amount,...}
+	employee_payroll{empid,month,salary,...}
+	employee{empid,empName,dateOfBirth,jobTitle,deptId,basicSalary}
+Syntax Example:
+	
+	struct _Date{
+		int day;
+		int month;
+		int year;
+	};
+	typedef struct _Date Date;
+		
+	struct _Employee{
+		int empId;
+		char empName[256];
+		Date dateOfBirth;
+		char jobTitle[256];
+		int deptId;
+		double basicSalary;
+	};		
+	typedef struct _Employee Employee;
+	
+
+	Employee emp;
+	
+	Employee emp = {1001,"Maheswaran",{9,4,1979},"Trainer",10,200000};
+	
+	Employee emp = {.empName="Maheswaran"}; //"designator" 
+	
+//Read from keyboard
+Employee emp;
+//Read from keyboard
+printf("Enter Employee ID:"); scanf("%d",&emp.empId);
+printf("Enter Employee Name:"); scanf("%s",emp.empName);
+printf("Enter Date Of Birth(Space sperated day month year):"); 
+scanf("%d%d%d",&emp.dateOfBirth.day,&emp.dateOfBirth.month,&emp.dateOfBirth.year);
+printf("Enter Job Title:"); scanf("%s",emp.jobTitle);
+printf("Enter Department ID:"); scanf("%d",&emp.deptId);
+printf("Enter Basic Salary:"); scanf("%lf",&emp.basicSalary);
+//Print on console
+printf("Employee ID:%d",emp.empId);
+printf("Employee Name:%s",emp.empName);
+printf("Date Of Birth(Space sperated day month year):%d-%d-%d",emp.dateOfBirth.day,emp.dateOfBirth.month,emp.dateOfBirth.year);
+printf("Job Title:%s",emp.jobTitle);
+printf("Department ID:%d",emp.deptId);
+printf("Basic Salary:%lf",emp.basicSalary);	
+
+Employee employees[100];
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+union
+-----------------------------------------------------------------------
+	create user-defined data type
+    Here, memory for the union is allocated only for highest size attribute/member field.
+        ->We can access one attribute/member field at a time.
+		
+        
+    //Assumption int:4, char:1, double:8    
+	struct _Employee{
+		int empId;
+		char empName[256];
+		char jobTitle[256];
+		int deptId;
+		double basicSalary;
+	};		
+	typedef struct _Employee Employee;   
+    
+    sizeof Employee -> 4 + 256 + 256 + 4 + 8 = 528
+
+    union _EmployeeU{
+		int empId;
+		char empName[256];
+		char jobTitle[256];
+		int deptId;
+		double basicSalary;
+	};		
+	typedef union _EmployeeU EmployeeU;      
+    
+    sizeof EmployeeU -> max(4, 256, 256, 4, 8) = 256
+-----------------------------------------------------------------------
+
+    
+-----------------------------------------------------------------------
+Example for struct 
+-----------------------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+
+struct _Date{
+    int day;
+    int month;
+    int year;
+};
+typedef struct _Date Date;
+    
+struct _Employee{
+    int empId;
+    char empName[256];
+    Date dateOfBirth;
+    char jobTitle[256];
+    int deptId;
+    double basicSalary;
+};		
+typedef struct _Employee Employee;
+	
+int main(){
+    //Read from keyboard
+    Employee emp;
+    //Read from keyboard
+    printf("Enter Employee Details:\n");
+    printf("\tEnter Employee ID:"); scanf("%d",&emp.empId);
+    printf("\tEnter Employee Name:"); scanf("%s",emp.empName);
+    printf("\tEnter Date Of Birth(Space sperated day month year):"); 
+    scanf("%d%d%d",&emp.dateOfBirth.day,&emp.dateOfBirth.month,&emp.dateOfBirth.year);
+    printf("\tEnter Job Title:"); scanf("%s",emp.jobTitle);
+    printf("\tEnter Department ID:"); scanf("%d",&emp.deptId);
+    printf("\tEnter Basic Salary:"); scanf("%lf",&emp.basicSalary);
+    //Print on console
+    printf("\n\nGiven Employee Details:");
+    printf("\n\tEmployee ID:%d",emp.empId);
+    printf("\n\tEmployee Name:%s",emp.empName);
+    printf("\n\tDate Of Birth(Space sperated day month year):%d-%d-%d",emp.dateOfBirth.day,emp.dateOfBirth.month,emp.dateOfBirth.year);
+    printf("\n\tJob Title:%s",emp.jobTitle);
+    printf("\n\tDepartment ID:%d",emp.deptId);
+    printf("\n\tBasic Salary:%lf",emp.basicSalary);
+
+    return EXIT_SUCCESS;
+}
+
+
+-----------------------------------------------------------------------
+Example for union 
+-----------------------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+
+    
+struct _Employee{
+    int empId;
+    char empName[256];
+    char jobTitle[256];
+    int deptId;
+    double basicSalary;
+};		
+typedef struct _Employee Employee;
+	
+int main(){
+    //Read from keyboard
+    Employee emp;
+    //Read from keyboard
+    printf("Enter Employee Details:\n");
+    printf("\tEnter Employee ID:"); scanf("%d",&emp.empId);
+    printf("\tEnter Employee Name:"); scanf("%s",emp.empName);
+    printf("\tEnter Job Title:"); scanf("%s",emp.jobTitle);
+    printf("\tEnter Department ID:"); scanf("%d",&emp.deptId);
+    printf("\tEnter Basic Salary:"); scanf("%lf",&emp.basicSalary);
+    //Print on console
+    printf("\n\nGiven Employee Details:");
+    printf("\n\tEmployee ID:%d",emp.empId);
+    printf("\n\tEmployee Name:%s",emp.empName);
+    printf("\n\tJob Title:%s",emp.jobTitle);
+    printf("\n\tDepartment ID:%d",emp.deptId);
+    printf("\n\tBasic Salary:%lf",emp.basicSalary);
+
+    return EXIT_SUCCESS;
+}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+struct ====== to ===>  union
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#include<stdio.h>
+#include<stdlib.h>
+
+    
+union _Employee{
+    int empId;
+    char empName[256];
+    char jobTitle[256];
+    int deptId;
+    double basicSalary;
+};		
+typedef union _Employee Employee;
+	
+int main(){
+    //Read from keyboard
+    Employee emp;
+    //Read from keyboard
+    printf("Enter Employee Details:\n");
+    printf("\tEnter Employee ID:"); scanf("%d",&emp.empId);
+    printf("\tEnter Employee Name:"); scanf("%s",emp.empName);
+    printf("\tEnter Job Title:"); scanf("%s",emp.jobTitle);
+    printf("\tEnter Department ID:"); scanf("%d",&emp.deptId);
+    printf("\tEnter Basic Salary:"); scanf("%lf",&emp.basicSalary);
+    //Print on console
+    printf("\n\nGiven Employee Details:");
+    printf("\n\tEmployee ID:%d",emp.empId);
+    printf("\n\tEmployee Name:%s",emp.empName);
+    printf("\n\tJob Title:%s",emp.jobTitle);
+    printf("\n\tDepartment ID:%d",emp.deptId);
+    printf("\n\tBasic Salary:%lf",emp.basicSalary);
+
+    return EXIT_SUCCESS;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Rotate the attribute reading and check 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#include<stdio.h>
+#include<stdlib.h>
+
+    
+union _Employee{
+    int empId;
+    char empName[256];
+    char jobTitle[256];
+    int deptId;
+    double basicSalary;
+};		
+typedef union _Employee Employee;
+	
+int main(){
+    //Read from keyboard
+    Employee emp;
+    //Read from keyboard
+    
+    printf("Enter Employee Details:\n");
+    printf("\tEnter Department ID:"); scanf("%d",&emp.deptId);
+    printf("\tEnter Basic Salary:"); scanf("%lf",&emp.basicSalary);
+    printf("\tEnter Employee ID:"); scanf("%d",&emp.empId);
+    printf("\tEnter Employee Name:"); scanf("%s",emp.empName);
+    printf("\tEnter Job Title:"); scanf("%s",emp.jobTitle);
+    
+    
+    //Print on console
+    printf("\n\nGiven Employee Details:");
+    printf("\n\tEmployee ID:%d",emp.empId);
+    printf("\n\tEmployee Name:%s",emp.empName);
+    printf("\n\tJob Title:%s",emp.jobTitle);
+    printf("\n\tDepartment ID:%d",emp.deptId);
+    printf("\n\tBasic Salary:%lf",emp.basicSalary);
+
+    return EXIT_SUCCESS;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+where you have to use union is?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+choice based and 
+struct along with union 
+
+Example: 
+gate keeper is doing the job keep the logs of the gate entries
+    teacher
+    student 
+    parent 
+    
+
+1. 9:05am Teacher      Maheswaran                                   1
+2. 9:07am Student      3370                                         2
+3. 9:09am Student      3245 
+4. 9:30am Parent       ID Type:1, ID Number:232323232               3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+struct _LogEntry{
+    int sno;
+    char time[15];
+    int personType;
+    char teacherName[256];      //I
+    int studentRollNumber;      //II
+    int parentIdType;           //III
+    char parentId[50];          //III
+};
+
+typedef struct _LogEntry LogEntry;
+
+
+sizeof LogEntry = (4 + 15 + 4 + 256 + 4 + 4 + 50) = 337
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+struct _LogEntry{
+    int sno;
+    char time[15];
+    int personType;
+    union {
+        char teacherName[256];
+        int studentRollNumber;
+        struct {
+            int parentIdType;
+            char parentId[50];
+        } parent;
+    } person;
+};
+
+typedef struct _LogEntry LogEntry;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+struct _ParentT{
+    int parentIdType;
+    char parentId[50];
+};
+typedef struct _ParentT ParentT;
+
+union _PersonT{
+    char teacherName[256];
+    int studentRollNumber;
+    ParentT parent;
+};
+typedef union _PersonT PersonT;
+
+//sizeof PersonT = max(256,4,4+50) = 256  
+//        we saved 58 bytes 
+
+struct _LogEntry{
+    int sno;
+    char time[15];
+    int personType;
+    PersonT person;
+};
+
+typedef struct _LogEntry LogEntry;
+
+//sizeof LogEntry = (4 + 15 + 4 + max(256,4,4+50)) = 279
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+337 - 279 = 58 bytes less 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4 x 337 = 
+
+4 x 279 = 
+
+Saved = 4 x 58 = 212 bytes 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Develop the Log Book Application 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

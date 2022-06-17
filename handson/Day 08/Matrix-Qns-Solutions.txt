@@ -180,9 +180,46 @@ int main(){
     countPrime = countPrimeNumbers(colSize,numberMatrix[2]);
     
     printf("The sum of the odd numbers of the first row is %lld\n",sumOdd);
-    printf("The sum of the even numbers of the first row is %lld\n",sumEven);
-    printf("The number of the prime numbers of the first row is %d\n",countPrime);
+    printf("The sum of the even numbers of the second row is %lld\n",sumEven);
+    printf("The number of the prime numbers of the third row is %d\n",countPrime);
     
 	return EXIT_SUCCESS;
 }
+
+
+User@WINDOWS-9KGIOCA ~/c_learning
+$ gcc example.c -o example -lm
+
+User@WINDOWS-9KGIOCA ~/c_learning
+$ ./example
+Enter number of rows:3
+Enter number of columns:5
+Enter numbers for the matrix:
+Enter numbers for row index 0:
+Enter number at column 0:10
+Enter number at column 1:20
+Enter number at column 2:30
+Enter number at column 3:40
+Enter number at column 4:50
+Enter numbers for row index 1:
+Enter number at column 0:12
+Enter number at column 1:22
+Enter number at column 2:32
+Enter number at column 3:42
+Enter number at column 4:52
+Enter numbers for row index 2:
+Enter number at column 0:11
+Enter number at column 1:13
+Enter number at column 2:15
+Enter number at column 3:17
+Enter number at column 4:19
+The numbers matrix is:
+  10   20   30   40   50
+  12   22   32   42   52
+  11   13   15   17   19
+The sum of the odd numbers of the first row is 0
+The sum of the even numbers of the first row is 160
+The number of the prime numbers of the first row is 4
+
+User@WINDOWS-9KGIOCA ~/c_learning
 ---------------------------------------------

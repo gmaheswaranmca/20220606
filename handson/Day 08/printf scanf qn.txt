@@ -1,0 +1,49 @@
+What is the output of the statement if 25 is entered to num: 
+	printf("%d ",printf("%i ",scanf("%u",&num)));
+1, 2
+0, 25
+1, 25
+25, 25
+
+------------------------------------------------------
+
+return value of the printf 
+	printf("format",data,...)
+	
+	returns "number of characters written on stdout"
+
+return value of the scanf
+	scanf("format",reference,...)
+	
+	returns "number of data read from stdin"
+
+------------------------------------------------------
+printf("%i ",scanf("%u",&num))		-> 2
+1#
+
+printf("%d ",printf("%i ",scanf("%u",&num)));
+=>
+printf("%d ",2);
+2#
+
+1#2#
+
+------------------------------------------------------
+
+
+#include<stdio.h>
+int main(){
+ int x = printf("%d%f%c",100,2.5,'X');
+ printf("\n%d",x);
+ int a;
+ float b;
+ char ch;
+ printf("Enter an integer, float and char:\n");
+ int y = scanf("%d%f%c",&a,&b,&ch);
+ 
+ printf("\n%d",y);
+ return 0;
+} 
+
+
+------------------------------------------------------
