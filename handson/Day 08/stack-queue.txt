@@ -1,0 +1,174 @@
+1. Implement stack
+2. Implement queue 
+
+
+Assignment
+-----------------------------------------
+1. Implement queue using stack(s)
+	Alternate Qn Statement: Implement stack as queue 
+2. Implement stack using queue(s) 
+   Alternate Qn Statement: Implement queue as stack
+-----------------------------------------
+
+
+-----------------------------------------
+what is stack? 
+    Data Structure strictly follows "LIFO"
+    
+    stack       STACK_SIZE=5
+        double salaries[STACK_SIZE];
+        int topIndex;
+        int count;
+        
+        stack_init();
+        stack_isEmpty()       stack_push()
+        stack_size()          stack_pop()
+                              stack_top()
+        stack_isFull()                
+        
+    Implement stack by data 
+        STACK_SIZE=5
+        Data: 10 20 30 40 50
+                    {} topIndex=-1
+        Add 10      {10} topIndex=0
+        Add 20      {10 20} topIndex=1
+        Add 30      {10 20 30} topIndex=2
+        Add 40      {10 20 30 40} topIndex=3
+        Add 50      {10 20 30 40 50} topIndex=4
+        Add 60           -----stack is full----
+        Delete      {10 20 30 40} topIndex=3    50 is deleted
+        Delete      {10 20 30} topIndex=2    40 is deleted
+        Delete      {10 20} topIndex=1    30 is deleted
+        Delete      {10} topIndex=0    20 is deleted
+        Delete      {} topIndex=-1    10 is deleted
+        Delete           ------stack is empty-----
+-----------------------------------------    
+Implementation 
+-----------------------------------------    
+#define STACK_SIZE 5
+#include<stdio.h>
+#include<stdlib.h>
+
+struct _QGStack{
+    double salaries[STACK_SIZE];
+    int topIndex;
+    int count;
+};
+typedef struct _QGStack QGStack;
+
+void stack_init(QGStack* stackAddr);
+int stack_isEmpty(QGStack* stackAddr);
+int stack_size(QGStack* stackAddr);
+int stack_isFull(QGStack* stackAddr);
+double stack_top(QGStack* stackAddr);
+void stack_pop(QGStack* stackAddr);
+void stack_push(QGStack* stackAddr, double val);
+
+int main(){
+    int menu;
+    QGStack stack;
+    
+    stack_init(&stack);
+    
+    do{
+        printf("Choice(1-Add,2-Delete,3-Exit):");
+        scanf("%d",&menu);
+        
+        if(1==menu){
+            if(stack_isFull(&stack)){
+                printf("Stack is full.\n");
+            }else{
+                double salary;
+                printf("Enter Salary:");scanf("%lf",&salary);
+                stack_push(&stack,salary);
+                
+                printf("Size of the stack is %d\n",stack_size(&stack));
+            }
+        }else if(2==menu){
+            if(stack_isEmpty(&stack)){
+                printf("Stack is empty.\n");
+            }else{
+                printf("The last salary we processed is %lf\n",stack_top(&stack));
+                stack_pop(&stack);
+                
+                printf("Size of the stack is %d\n",stack_size(&stack));
+            }
+        }else{
+            printf("Shutdown the application!!!\n");
+        }
+    }while(1==menu || 2==menu);
+    
+    return EXIT_SUCCESS;
+}
+
+void stack_init(QGStack* stackAddr){
+    stackAddr->topIndex = -1;
+    stackAddr->count = 0;
+}
+int stack_isEmpty(QGStack* stackAddr){
+    return (stackAddr->count == 0);
+}
+int stack_size(QGStack* stackAddr){
+    return stackAddr->count;
+}
+int stack_isFull(QGStack* stackAddr){
+    return (stackAddr->count == STACK_SIZE);
+}
+double stack_top(QGStack* stackAddr){
+    return stackAddr->salaries[stackAddr->topIndex];
+}
+void stack_pop(QGStack* stackAddr){
+    if(stack_isEmpty(stackAddr)){
+        return;
+    }
+    //POP
+    stackAddr->topIndex--;
+    stackAddr->count--;
+}
+void stack_push(QGStack* stackAddr, double val){
+    if(stack_isFull(stackAddr)){
+        return;
+    }
+    //PUSH
+    stackAddr->topIndex++;
+    stackAddr->count++;
+    stackAddr->salaries[stackAddr->topIndex] = val;
+}
+
+-----------------------------------------    
+what is queue?    
+    Data Structure strictly follows "FIFO"
+    
+    
+    queue       QUEUE_SIZE=5
+        double salaries[QUEUE_SIZE];
+        int frontIndex;
+        int backIndex;
+        int count;
+        
+        queue_init()
+        queue_isEmpty()       queue_push()
+        queue_size()          queue_pop()
+                              queue_front()
+        queue_isFull()        xxxqueue_front()  
+    
+    
+    Implement queue by data 
+        QUEUE_SIZE=5
+        Data: 10 20 30 40 50
+                    frontIndex=-1 {} backIndex=-1
+        Add 10      frontIndex=0 {10} backIndex=0
+        Add 20      frontIndex=0 {10 20} backIndex=1
+        Add 30      frontIndex=0 {10 20 30} backIndex=2
+        Add 40      frontIndex=0 {10 20 30 40} backIndex=3
+        Add 50      frontIndex=0 {10 20 30 40 50} backIndex=4
+        Add 60      -------QUEUE is full -------
+        Delete      frontIndex=1 {20 30 40 50} backIndex=4      10 is deleted
+        Delete      frontIndex=2 {30 40 50} backIndex=4      20 is deleted
+        Delete      frontIndex=3 {40 50} backIndex=4      30 is deleted
+        Delete      frontIndex=4 {50} backIndex=4      40 is deleted
+        Delete      frontIndex=-1 {} backIndex=-1      50 is deleted
+        Delete      -----QUEUE is empty --------------    
+ -----------------------------------------
+
+----------------------------------------- 
