@@ -1,4 +1,4 @@
-1. Read a M x N matrix, Print the matrix
+1. Read a M x N matrix (long long), Print the matrix
 2. Read a M x N matrix, Print the matrix
    Here, M >= 3
    A) Find sum of odd numbers in first row 

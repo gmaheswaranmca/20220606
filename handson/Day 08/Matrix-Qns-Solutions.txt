@@ -1,0 +1,188 @@
+---------------------------------------------
+1. Read a M x N matrix (long long), Print the matrix
+10 20 30 40 50
+12 22 32 42 52
+13 15 17 19 21  3x5
+---------------------------------------------
+#define MAX_ROWS_SIZE 50
+#define MAX_COLS_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+void readMatrixSize(int* rowSizeAddr, int* colSizeAddr){
+    printf("Enter number of rows:");
+    scanf("%d",rowSizeAddr);    
+    
+    printf("Enter number of columns:");
+    scanf("%d",colSizeAddr);
+}
+
+void readRow(int colSize, long long row[]){ 
+    for(int I = 0; I < colSize; I++){
+        printf("Enter number at column %d:",I);
+        scanf("%lld",&row[I]);
+    }
+}
+void readMatrix(int rowSize, int colSize, long long matrix[][MAX_COLS_SIZE]){
+    printf("Enter numbers for the matrix:\n");
+    for(int I = 0; I < rowSize; I++){
+        printf("Enter numbers for row index %d:\n",I);
+        readRow(colSize,matrix[I]);
+    }
+}
+
+void printRow(int colSize, long long row[]){
+    for(int I = 0; I < colSize; I++){
+        printf("%4lld ", row[I]);
+    }
+    printf("\n");    
+}
+
+void printMatrix(int rowSize, int colSize, long long matrix[][MAX_COLS_SIZE]){
+    printf("The numbers matrix is:\n");
+    for(int I = 0; I < rowSize; I++){
+        printRow(colSize,matrix[I]);
+    }
+}
+
+int main(){
+	int rowSize;
+    int colSize;
+    long long numberMatrix[MAX_ROWS_SIZE][MAX_COLS_SIZE];
+    
+    readMatrixSize(&rowSize,&colSize);
+    readMatrix(rowSize,colSize,numberMatrix);
+    printMatrix(rowSize,colSize,numberMatrix);
+    
+	return EXIT_SUCCESS;
+}
+---------------------------------------------
+2. Read a M x N matrix, Print the matrix
+   Here, M >= 3
+   A) Find sum of odd numbers in first row 
+   B) Find sum of even numbers in second row 
+   C) Find count prime numbers in third row 
+10 20 30 40 50            -> 0  
+12 22 32 42 52            -> 160
+13 15 17 19 21  3x5       -> 3  
+---------------------------------------------   
+#define MAX_ROWS_SIZE 50
+#define MAX_COLS_SIZE 1000
+#define TRUE 1
+#define FALSE 0
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int isOddNumber(long long num){
+    return ((num % 2) != 0);
+}
+
+int isEvenNumber(long long num){
+    return ((num % 2) == 0);
+}
+
+int isPrimeNumber(long long num){
+    long long sqrtNum = (long long)sqrt((double)num);
+    for(long long middle=2; middle <= sqrtNum; middle++){
+        if((num % middle) == 0){
+            return FALSE;
+        }
+    }
+    
+    return TRUE;
+}
+
+void readMatrixSize(int* rowSizeAddr, int* colSizeAddr){
+    printf("Enter number of rows:");
+    scanf("%d",rowSizeAddr);    
+    
+    printf("Enter number of columns:");
+    scanf("%d",colSizeAddr);
+}
+
+void readRow(int colSize, long long row[]){ 
+    for(int I = 0; I < colSize; I++){
+        printf("Enter number at column %d:",I);
+        scanf("%lld",&row[I]);
+    }
+}
+void readMatrix(int rowSize, int colSize, long long matrix[][MAX_COLS_SIZE]){
+    printf("Enter numbers for the matrix:\n");
+    for(int I = 0; I < rowSize; I++){
+        printf("Enter numbers for row index %d:\n",I);
+        readRow(colSize,matrix[I]);
+    }
+}
+
+void printRow(int colSize, long long row[]){
+    for(int I = 0; I < colSize; I++){
+        printf("%4lld ", row[I]);
+    }
+    printf("\n");    
+}
+
+void printMatrix(int rowSize, int colSize, long long matrix[][MAX_COLS_SIZE]){
+    printf("The numbers matrix is:\n");
+    for(int I = 0; I < rowSize; I++){
+        printRow(colSize,matrix[I]);
+    }
+}
+
+long long sumOfOddNumbers(int N, long long numbers[]){
+    long long sum = 0LL;
+    for(int I = 0; I < N; I++){
+        if(isOddNumber(numbers[I])){
+            sum += numbers[I];
+        }
+    }
+    return sum;
+}
+
+long long sumOfEvenNumbers(int N, long long numbers[]){
+    long long sum = 0LL;
+    for(int I = 0; I < N; I++){
+        if(isEvenNumber(numbers[I])){
+            sum += numbers[I];
+        }
+    }
+    return sum;
+}
+
+int countPrimeNumbers(int N, long long numbers[]){
+    int count = 0;
+    for(int I = 0; I < N; I++){
+        if(isPrimeNumber(numbers[I])){
+            count++;
+        }
+    }
+    return count;
+}
+
+
+int main(){
+	int rowSize=0;//int rowSize={};
+    int colSize=0;
+    long long numberMatrix[MAX_ROWS_SIZE][MAX_COLS_SIZE]={};
+    
+    readMatrixSize(&rowSize,&colSize);
+    if(rowSize < 3){
+        printf("Matrix row size is less than 3.\n");
+        return EXIT_FAILURE;
+    }
+    readMatrix(rowSize,colSize,numberMatrix);
+    printMatrix(rowSize,colSize,numberMatrix);
+    
+    long long sumOdd = 0LL;
+    long long sumEven = 0LL;
+    int countPrime = 0;
+    
+    sumOdd = sumOfOddNumbers(colSize,numberMatrix[0]);
+    sumEven = sumOfEvenNumbers(colSize,numberMatrix[1]);
+    countPrime = countPrimeNumbers(colSize,numberMatrix[2]);
+    
+    printf("The sum of the odd numbers of the first row is %lld\n",sumOdd);
+    printf("The sum of the even numbers of the first row is %lld\n",sumEven);
+    printf("The number of the prime numbers of the first row is %d\n",countPrime);
+    
+	return EXIT_SUCCESS;
+}
+---------------------------------------------
