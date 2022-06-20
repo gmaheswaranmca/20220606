@@ -78,3 +78,70 @@ $
 
 =====================================================================
 
+//assumption is numbers is sorted 
+//alternate
+
+int i=0, j=size-1;
+for(int k=0;k<size;k++)
+{
+  if(k % 2 ==0){
+      result[k]=numbers[i++];
+  }else{
+      result[k]=numbers[j--];
+  }
+}
+
+
+=====================================================================
+Alternate Arrangement 
+    Full Code:
+=====================================================================
+#define MAX_SIZE 100
+#include<stdio.h>
+#include<stdlib.h>
+void swap(short *first, short *second){
+  short t = (*first);
+  (*first) = (*second);
+  (*second) = t;
+}
+void arrange(int size, short numbers[], short result[])
+{
+   //numbers = 40 12 30 18 15 34 20 36 43 10
+   //sorting  used selection (legacy)
+    for(int i = 0; i<size-1; i++)
+     for(int j = i+1; j<size;j++)
+       if(numbers[i]>numbers[j])
+          swap(&numbers[i], &numbers[j]);
+   //numbers = 10 12 15 18 20 30 34 36 40 43
+   //                       j  i
+   //result: 10 43 12 40 15 36 18 34 20 30
+   //                                      k=10
+   int i=0, j=size-1;
+	for(int k=0;k<size;k++)
+	{
+	  if(k % 2 ==0){
+		  result[k]=numbers[i++];
+	  }else{
+		  result[k]=numbers[j--];
+	  }
+	}
+}
+void printNumbers(int size, short numbers[]){
+    for(int i = 0; i<size; i++){
+		printf("%hd ", numbers[i]);
+	}
+	printf("\n");
+}
+
+int main(){
+   short numbers[MAX_SIZE] = {40, 12, 30, 18, 15, 34, 20, 36, 10};
+   int size = 9;
+   short result[MAX_SIZE] = {};
+   printf("Before arrangement numbers are:\n");
+   printNumbers(size,numbers);
+   arrange(size,numbers,result);  	
+   printf("After arrangement numbers are:\n");
+   printNumbers(size,result);
+   return EXIT_SUCCESS;
+}
+=====================================================================
