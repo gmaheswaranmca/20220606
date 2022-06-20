@@ -25,19 +25,15 @@ void swap(short *first, short *second){
 }
 void arrange(int size, short numbers[], short result[])
 {
-   //numbers = 40 12 30 18 15 34 20 36 43 10
-   //sorting  used selection (legacy)
+  
     for(int i = 0; i<size-1; i++)
      for(int j = i+1; j<size;j++)
        if(numbers[i]>numbers[j])
           swap(&numbers[i], &numbers[j]);
-   //numbers = 10 12 15 18 20 30 34 36 40 43
-   //                       j  i
-   //result: 10 43 12 40 15 36 18 34 20 30
-   //                                      k=10
+  
    int k = 0;
    int i, j;
-   for(i=0, j=size-1;i<j;i++,j--)//i<-first index:min number, j<-last index:max number
+   for(i=0, j=size-1;i<j;i++,j--)
    {
       
        result[k++]=numbers[i];
@@ -145,4 +141,102 @@ int main(){
    return EXIT_SUCCESS;
 }
 =====================================================================
+
+
+
+I am maheswaran and working as trainer cum developer for last twenty plus years.
+1 2   3          4   5       6  7      8    9        10  11   12     13   14  
+
+
+---------------------------------------------------------------------------
+Question:
+    Based on given index associated with the words, arrange the words to form the sentence.
+---------------------------------------------------------------------------
+Input 
+size=14
+maheswaran          3
+working             5
+and                 4
+trainer             7
+developer           9
+for                 10
+cum                 8
+twenty              12
+years               14
+plus                13
+as                  6
+I                   1
+am                  2
+last                11
+Output:
+I am maheswaran and working as trainer cum developer for last twenty plus years.
+---------------------------------------------------------------------------
+
+#define MAX_SIZE 100
+#include<stdio.h>
+#include<stdlib.h>
+
+struct _WordIndex{
+    char word[256];
+    int index;
+};
+typedef struct _WordIndex WordIndex;
+int main(){
+    int size=14;
+    WordIndex wordindices[MAX_SIZE]={
+{"maheswaran",          3},
+{"working",             5},
+{"and",                 4},
+{"trainer",             7},
+{"developer",           9},
+{"for",                 10},
+{"cum",                 8},
+{"twenty",              12},
+{"years",               14},
+{"plus",                13},
+{"as",                  6},
+{"I",                   1},
+{"am",                  2},
+{"last",                11}};
+    
+    //printf("Enter size of the sentence:"); scanf("%d",&size);
+    /*printf("Enter word and its index one by one:\n");
+    for(int I=0; I < size; I++){
+        printf("Enter word:"); scanf("%s",wordindices[I].word);
+        printf("Enter index associated:"); scanf("%d",&wordindices[I].index);
+    }*/
+    
+    //Arrangement 
+    printf("After arrangement:\n");
+    for(int I=0; I < size; I++){
+        printf("%s ",wordindices[I].word);
+    }
+    printf("\n");
+}
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
