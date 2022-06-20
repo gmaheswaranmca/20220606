@@ -51,34 +51,46 @@ The behavior is undefined if the value of ch is not representable as unsigned ch
 	int toupper( int ch );		converts a character to uppercase
 
 ------------------------------------------------------------------
+	//scanf("%s",text);         !!! ends in space / new line 
+    //gets(text);               !!! ends in new line !!! DEPRECATED 
+    fgets(text,MAX_SIZE,stdin); //!!! ends in new line -> file handling version 
+------------------------------------------------------------------
 0.
 read multiple words from the console till new line and find the length of the string by processing char by char
 ------------------------------------------------------------------
 //read multiple words from the console till new line and find the length of the string by processing char by char
+//length of alpha numberic characters in the string 
 #define MAX_SIZE 2000
 #include<stdio.h>
 #include<stdlib.h>
+#include<ctype.h>
 int main(){
 	char text[MAX_SIZE];
     printf("Enter text:\n");
-	//scanf("%s",text);
-    //gets(text);
-    fgets(text,MAX_SIZE,stdin);
+	//scanf("%s",text);       
+    //gets(text);             
+    fgets(text,MAX_SIZE,stdin); //included \n till \n
 
     int size=0;
+    int isalnumCount=0;
     for(int I=0; text[I] != '\0'; I++){
 		printf("%c",text[I]);
         size ++;
+        if(isalnum(text[I])){
+            isalnumCount++;
+        }
     }
 
+    printf("\n\n\nthe given string is %s",text);
 	printf("\nLenght of the string is %d\n",size);
+    printf("\nNumber of alpha numeric characters is %d\n",isalnumCount);
 
     return EXIT_SUCCESS;
 }	
 ------------------------------------------------------------------
 	
 	
-	
+------------------------------------------------------------------	
 1. 
 For given string
 Find 
@@ -86,8 +98,7 @@ Find
 	2) number of upper case alphabets
 	3) number of alphabets
 	4) number of digits
-	5) number of special characters
-	6) number of control characters 
+	
 	
 2. For given string 
 	1) convert first character to upper case 
@@ -98,5 +109,156 @@ Find
    b) number of words 
    c) number of characters 
 	
+4. Find first repeating character in a given string 
+Input:
+hi hello 
+Output:
+h
+Input:
+Welcome all
+Output: 
+e
+
+6. Find first non-repeating character in a given string 
+Input:
+hihello 
+Output:
+e
+Input:
+Welcome all
+Output: 
+W
+    
+    
+    
+    
+    
+    
+    
 4. String Functions example 
+    <string.h>
+    1. strcpy(s1,s2)        -> s1=s2                
+    2. strncpy(s1,s2,n)     -> s1=first n chars of "s3"  
+    3. strlen(s)            -> number of chars in "s" 
+    4. strcat(s1,s2)        -> s1=s1+s2  ie chars of "s1" followed by chars of "s2" into "s1"              
+    5. strncat(s1,s2,n)     -> s1=s1+n chars of s2 
+    6. strcmp(s1,s2)        -> s1<s2 -ve ; s1>s2 +ve; s1==s2 0
+    7. strncmp(s1,s2,n)     -> only "n chars of s1" with "n chars of n2"              
+    8. strchr(s,ch)         -> pointer from character "ch" in string "s"  [forward traversal]   
+    9. strrchr(s,ch)        -> pointer from character "ch" in string "s"  [backward traversal]   
+    10. strstr(s1,s2)       -> pointer from substring "s2" in string "s1"  
+    11. strtok              -> tokenizing       !!!! LATER
+            a) initialzing the tokening, then b) reading the tokens
+        1001,Maheswaran,300000.00    
+        1002,Vijay,200000.00
+        \n separated string 
+            where each line has comma separated
+------------------------------------------------------------------
+Example for strcpy and strlen 
+------------------------------------------------------------------
+#define MAX_SIZE 2000
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+	char first[256] = "Maheswaran";
+	char second[256] = "Govindarju";
+	char third[256];
+
+	//to copy first into third
+	strcpy(third,first);
+
+	//to find length of second
+	int len = strlen(second);
+	
+	printf("The value of third is %s\n",third);
+	printf("The len of %s is %d\n",second,len);
+
+    return EXIT_SUCCESS;
+}	
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+//To find full name for first name and last name 
+------------------------------------------------------------------
+#define MAX_SIZE 2000
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+	char first[256] = "Maheswaran";
+	char last[256] = "Govindarju";
+	char full[256];
+
+	//to copy first into third
+	strcat(first,last);
+
+	
+	printf("The full name is %s\n",first);
+
+    return EXIT_SUCCESS;
+}	
+------------------------------------------------------------------
+//To find full name for first name and last name 
+#define MAX_SIZE 2000
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+	char first[256] = "Maheswaran";
+	char last[256] = "Govindarju";
+	char full[256];
+
+	//to copy first into third
+	strcpy(full,first);
+	strcat(full," ");
+    strcat(full,last);
+
+	
+	printf("The full name of %s and %s is %s\n",first,last,full);
+
+    return EXIT_SUCCESS;
+}
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Example for strcmp
+------------------------------------------------------------------
+#define MAX_SIZE 2000
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+	char first[256] = "Maheswaran";
+	char last[256] = "Govindarju";
+	char full[256] = "Maheswaran";
+
+	printf("strcmp of %s and %s is %d\n",first,last,strcmp(first,last));
+	printf("strcmp of %s and %s is %d\n",last,first,strcmp(last,first));	
+    printf("strcmp of %s and %s is %d\n",first,full,strcmp(first,full));	
+
+    return EXIT_SUCCESS;
+}	
+------------------------------------------------------------------
+
+
+------------------------------------------------------------------
+strchr, strrchr, strstr examples 
+------------------------------------------------------------------
+#define MAX_SIZE 2000
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+	char first[256] = "Maheswaran";
+	char last[256] = "Govindarju";
+	char full[256] = "Maheswaran";
+
+	printf("strchr of %s and %c is %s\n",first,'a',strchr(first,'a'));
+	printf("strrchr of %s and %c is %s\n",first,'a',strrchr(first,'a'));
+	printf("strstr of %s and %s is %s\n",first,"hes",strstr(first,"hes"));	
+
+    return EXIT_SUCCESS;
+}	
+
 5. Sort the given N names in alphabetical order A-Z
