@@ -1,0 +1,10 @@
+------------------------------------------------------
+Expected Output for the given Input
+Input: 40 12 30 18 15 34 20 36 43 10
+Output: 10 43 12 40 15 36 18 34 20 30
+------------------------------------------------------
+Your understanding
+------------------------------------------------------
+void arrange(int size, short numbers[], short result[]){
+	//CODE HERE
+}

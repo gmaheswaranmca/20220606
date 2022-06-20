@@ -1,0 +1,16 @@
+1. 
+For given string
+Find 
+	1) number of lower case alphabets
+	2) number of upper case alphabets
+	3) number of alphabets
+	4) number of digits
+	5) number of special characters
+	6) number of control characters 
+	
+2. For given string 
+	1) convert first character to upper case 
+	2) 3rd character to lower case 
+	
+3. String Functions example 
+4. Sort the given N names in alphabetical order A-Z
