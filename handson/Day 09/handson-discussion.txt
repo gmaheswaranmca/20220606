@@ -181,6 +181,12 @@ struct _WordIndex{
     int index;
 };
 typedef struct _WordIndex WordIndex;
+
+void swap(WordIndex *first, WordIndex *second){
+  WordIndex t = (*first);
+  (*first) = (*second);
+  (*second) = t;
+}
 int main(){
     int size=14;
     WordIndex wordindices[MAX_SIZE]={
@@ -205,7 +211,17 @@ int main(){
         printf("Enter word:"); scanf("%s",wordindices[I].word);
         printf("Enter index associated:"); scanf("%d",&wordindices[I].index);
     }*/
-    
+    //Arrangement 
+    printf("Before arrangement:\n");
+    for(int I=0; I < size; I++){
+        printf("%s ",wordindices[I].word);
+    }
+    printf("\n");
+    //Sort Based index 
+     for(int i = 0; i<size-1; i++)
+        for(int j = i+1; j<size;j++)
+            if(wordindices[j].index < wordindices[i].index)
+                swap(&wordindices[i], &wordindices[j]);
     //Arrangement 
     printf("After arrangement:\n");
     for(int I=0; I < size; I++){
@@ -217,10 +233,77 @@ int main(){
 
 
 
+---------------------------------------------------------------------------
+I am maheswaran
+1 2  3
+---------------------------------------------------------------------------
+Without sorting
+    how to arrange the words as the sentence
+---------------------------------------------------------------------------
+#define MAX_SIZE 100
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct _WordIndex{
+    char word[256];
+    int index;
+};
+typedef struct _WordIndex WordIndex;
 
-
-
-
+void swap(WordIndex *first, WordIndex *second){
+  WordIndex t = (*first);
+  (*first) = (*second);
+  (*second) = t;
+}
+int main(){
+    int size=14;
+    WordIndex wordindices[MAX_SIZE]={
+{"maheswaran",          3},
+{"working",             5},
+{"and",                 4},
+{"trainer",             7},
+{"developer",           9},
+{"for",                 10},
+{"cum",                 8},
+{"twenty",              12},
+{"years",               14},
+{"plus",                13},
+{"as",                  6},
+{"I",                   1},
+{"am",                  2},
+{"last",                11}};
+    
+    printf("Enter size of the sentence:"); scanf("%d",&size);
+    printf("Enter word and its index one by one:\n");
+    for(int I=0; I < size; I++){
+        char word[256];
+        int index;
+        printf("Enter word:"); scanf("%s",word);
+        printf("Enter index associated:"); scanf("%d",&index);
+        strcpy(wordindices[index-1].word,word);
+        wordindices[index-1].index = index;
+    }
+    /*	
+    //Arrangement 
+    printf("Before arrangement:\n");
+    for(int I=0; I < size; I++){
+        printf("%s ",wordindices[I].word);
+    }
+    printf("\n");
+    //Sort Based index 
+     for(int i = 0; i<size-1; i++)
+        for(int j = i+1; j<size;j++)
+            if(wordindices[j].index < wordindices[i].index)
+                swap(&wordindices[i], &wordindices[j]);
+    */
+    //Arrangement 
+    printf("After arrangement:\n");
+    for(int I=0; I < size; I++){
+        printf("%s ",wordindices[I].word);
+    }
+    printf("\n");
+}
+---------------------------------------------------------------------------
 
 
 
