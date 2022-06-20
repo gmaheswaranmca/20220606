@@ -1,3 +1,84 @@
+String Handling Functions:
+
+<ctype.h>
+character functions
+	int isalnum(char ch) 		checks if a character is alphanumeric
+		a-z A-Z 0-9
+	isalpha						checks if a character is alphabetic
+		a-z A-Z 
+	islower						checks if a character is lowercase
+		a-z 
+	isupper						checks if a character is an uppercase character
+		A-Z 
+	isdigit						checks if a character is a digit
+		0-9
+	isxdigit					checks if a character is a hexadecimal character
+		0-9 a-f A-F 
+	iscntrl						checks if a character is a control character
+-----------------------------------------------	
+Checks if the given character is a control character as classified by the currently installed C locale. 
+In the default, "C" locale, the control characters are the characters with the codes 0x00-0x1F and 0x7F.
+
+The behavior is undefined if the value of ch is not representable as unsigned char and is not equal to EOF.
+-----------------------------------------------
+	
+	isgraph						checks if a character is a graphical character
+	isspace						checks if a character is a space character
+									whitespace character
+									' ', '\f', '\n', '\r', '\t', '\v'	
+	isblank(C++11)				checks if a character is a blank character
+	isprint						checks if a character is a printing character
+	ispunct						checks if a character is a punctuation character
+			punctuation characters (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)
+
+
+	Graph Characters
+		digits (0123456789)
+		uppercase letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)
+		lowercase letters (abcdefghijklmnopqrstuvwxyz)
+		punctuation characters (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)
+
+	
+
+	Printable Characters:
+		digits (0123456789)
+		uppercase letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)
+		lowercase letters (abcdefghijklmnopqrstuvwxyz)
+		punctuation characters (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)
+		space ( )
+	
+	int tolower( int ch );		converts a character to lowercase
+	int toupper( int ch );		converts a character to uppercase
+
+------------------------------------------------------------------
+0.
+read multiple words from the console till new line and find the length of the string by processing char by char
+------------------------------------------------------------------
+//read multiple words from the console till new line and find the length of the string by processing char by char
+#define MAX_SIZE 2000
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	char text[MAX_SIZE];
+    printf("Enter text:\n");
+	//scanf("%s",text);
+    //gets(text);
+    fgets(text,MAX_SIZE,stdin);
+
+    int size=0;
+    for(int I=0; text[I] != '\0'; I++){
+		printf("%c",text[I]);
+        size ++;
+    }
+
+	printf("\nLenght of the string is %d\n",size);
+
+    return EXIT_SUCCESS;
+}	
+------------------------------------------------------------------
+	
+	
+	
 1. 
 For given string
 Find 
@@ -11,6 +92,11 @@ Find
 2. For given string 
 	1) convert first character to upper case 
 	2) 3rd character to lower case 
+
+3. For given text (multiple paragraphs),
+   a) Find number of sentences 
+   b) number of words 
+   c) number of characters 
 	
-3. String Functions example 
-4. Sort the given N names in alphabetical order A-Z
+4. String Functions example 
+5. Sort the given N names in alphabetical order A-Z
