@@ -1,4 +1,5 @@
 String Handling Functions:
+    https://en.cppreference.com/w/c/string/byte
 
 <ctype.h>
 character functions
@@ -90,7 +91,9 @@ int main(){
 ------------------------------------------------------------------
 	
 	
-------------------------------------------------------------------	
+------------------------------------------------------------------
+Day Assignment/Handson Assignment	
+------------------------------------------------------------------
 1. 
 For given string
 Find 
@@ -123,7 +126,7 @@ e
 Input:
 hihello 
 Output:
-e
+i
 Input:
 Welcome all
 Output: 
@@ -260,5 +263,9 @@ int main(){
 
     return EXIT_SUCCESS;
 }	
+------------------------------------------------------------------
 
+------------------------------------------------------------------
+Day Assignment/Handson Assignment
+------------------------------------------------------------------
 5. Sort the given N names in alphabetical order A-Z
