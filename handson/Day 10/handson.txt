@@ -192,6 +192,131 @@ Better memory management
 2. Release the dynamic memory properly 
     ie. for every malloc/calloc use free function
 ========================================================    
+
+Summarize:
+   1. Two operators 
+        &
+        *
+   2. <stdlib> dynamic memory functions
+        malloc 
+        free 
+  
+Pointers  
+    1. pointer to array 
+    2. pointer arithmetic 
+        pointer addition to number 
+        pointer subtraction with number 
+        pointer increment 
+        pointer decrement 
+        subtraction between two pointers / addresses 
+    3. pointer to structure 
+    
+========================================================
+1. Read N salaries(double) and print forward and backward 
+
+Define "salaries" as static array 
+pass "salaries" as array 
+    -> subscripted variable vs subscripted argument 
+========================================================
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+void readArrayData(int size, double arrayData[]){
+    for(int I=0; I < size; I++){
+        scanf("%lf",&arrayData[I]);
+    }
+}
+void printArrayData(int size, double arrayData[]){
+    for(int I=0; I < size; I++){
+        printf("%.2lf ",arrayData[I]);
+    }
+    printf("\n");
+}
+void printArrayDataBackward(int size, double arrayData[]){
+    for(int I=size-1; I >= 0; I--){
+        printf("%.2lf ",arrayData[I]);
+    }
+    printf("\n");
+}
+int main(){
+    int N=0;
+    printf("Enter number of salaries:"); scanf("%d",&N);
+    double salaries[MAX_SIZE];
+    
+    printf("Enter salaries one by one:");
+    readArrayData(N,salaries);
+    
+    printf("salaries are:\n");
+    printArrayData(N,salaries);
+    
+    printf("reverse of the salaries are:\n");
+    printArrayDataBackward(N,salaries);
+    
+    return EXIT_SUCCESS;
+}
+========================================================
+
+
+
+========================================================
+Example for pointer arithmetic 
+    pointer addition with number 
+    xxxpointer substraction with number 
+    pointer increment 
+    pointer decrement 
+    
+    
+    synonymous:
+    arrayName[index]            <---
+    (*(arrayName+index))
+    (*(index+arrayName))        -->
+    index[arrayName]
+========================================================
+#define MAX_SIZE 1000
+#include<stdio.h>
+#include<stdlib.h>
+void readArrayData(int size, double arrayData[]){
+    for(int I=0; I < size; I++){
+        //scanf("%lf",&arrayData[I]);
+		//scanf("%lf",(arrayData+I));
+		//scanf("%lf",(I + arrayData));
+		scanf("%lf",&I[arrayData]);
+    }
+}
+void printArrayData(int size, double arrayData[]){//double arrayData[] -> double* arrayData
+    for(int I=0; I < size; I++){
+        printf("%.2lf ",(*arrayData));
+	arrayData++;
+    }
+    printf("\n");
+}
+void printArrayDataBackward(int size, double arrayData[]){
+    //for(int I=size-1; I >= 0; I--){
+	arrayData = arrayData + (size - 1);
+	for(int I=0; I < size; I++){
+        printf("%.2lf ",(*arrayData));
+		arrayData--;
+    }
+    printf("\n");
+}
+int main(){
+    int N=0;
+    printf("Enter number of salaries:"); scanf("%d",&N);
+    double salaries[MAX_SIZE];
+    
+    printf("Enter salaries one by one:");
+    readArrayData(N,salaries);
+    
+    printf("salaries are:\n");
+    printArrayData(N,salaries);
+    
+    printf("reverse of the salaries are:\n");
+    printArrayDataBackward(N,salaries);
+    
+    return EXIT_SUCCESS;
+}
+
+
     
 
 			
