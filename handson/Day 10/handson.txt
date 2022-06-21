@@ -326,5 +326,127 @@ int main(){
 ========================================================
 
     
+========================================================
+Read N salaries(double) and print forward and backward 
 
-			
+Define "salaries" as dynamic array 
+
+Application of 
+    pointer arithmetic 
+        pointer addition with number 
+        xxxpointer substraction with number 
+        pointer increment 
+        pointer decrement 
+        pass array to function as pointer 
+    
+    synonymous:
+        arrayName[index]            <---
+        (*(arrayName+index))
+        (*(index+arrayName))        -->
+        index[arrayName]
+========================================================
+
+#include<stdio.h>
+#include<stdlib.h>
+void readArrayData(int size, double* arrayData){
+    for(int I=0; I < size; I++){
+        scanf("%lf",&arrayData[I]);
+    }
+}
+void printArrayData(int size, double* arrayData){
+    for(int I=0; I < size; I++){
+        printf("%.2lf ",arrayData[I]);
+    }
+    printf("\n");
+}
+void printArrayDataBackward(int size, double* arrayData){
+	for(int I=size-1; I >= 0; I--){
+        printf("%.2lf ",arrayData[I]);
+    }
+    printf("\n");
+}
+int main(){
+    int N=0;
+    printf("Enter number of salaries:"); scanf("%d",&N);
+    double* salaries = NULL;
+    //salaries = (double*)malloc(N * sizeof(double)); 
+    salaries = (double*)calloc(N, sizeof(double));
+    
+    printf("Enter salaries one by one:");
+    readArrayData(N,salaries);
+    
+    printf("salaries are:\n");
+    printArrayData(N,salaries);
+    
+    printf("reverse of the salaries are:\n");
+    printArrayDataBackward(N,salaries);
+    
+    free(salaries);
+    salaries = NULL;
+    
+    return EXIT_SUCCESS;
+}
+========================================================
+
+
+static memory is created in stack memory 
+
+<stdlib.h> dynamic memory functions 
+
+    dynamic memory is created in heap memory 
+
+malloc, calloc, realloc will gets memory directly from operating system by system calls
+
+malloc(bytes) ->  receives one argument ie no of bytes required for dynamic memory creation
+                  ->  returns address of void*
+                  
+    - non-contiguous memory blocks 
+    Example
+    double* salaries;
+    salaries = (double*)malloc(10 * sizeof(double));
+    
+    Here, the cast (double*) will do two jobs:
+        1. Dividing void* one block into multiple double* blocks 
+        2. returns address of first block 
+        
+calloc(sizeOfBlocks, NumberOfBytesPerBlock)        
+    -> Receives two arguments 
+    -> returns void* one block address 
+        
+    - contiguous memory blocks 
+    Example
+    double* salaries;
+    salaries = (double*)calloc(10, sizeof(double));
+    
+    Here, the cast (double*) will do two jobs:
+        1. Dividing void* one block into multiple double* blocks 
+        2. returns address of first block 
+        
+free(pointer)    
+    -> Receives pointer to dynamic memory 
+       Deallocates the memory 
+       ie give back the memory to operating system 
+
+
+realloc(oldPointerToDynamicMemory, newSizeOfBlocks * numberOfBytesPerBlock)
+    -> receives two arguments 
+        first one -> pointer to the already created dynamic array 
+        second one -> new size for reallocation 
+        
+    -> returns void* one block address
+
+    reallocation by preserving old data 
+        
+    Will Do:
+    1. copies data of dynamic array pointed by "oldPointerToDynamicMemory" to buffer
+    2. free(oldPointerToDynamicMemory)
+    3. malloc/calloc for newSize 
+    4. if newSize > oldSize 
+        "oldSize" number of data will be copied to "oldSize" new blocks 
+        newSize-oldSize extra blocks will take default values 
+       if newSize < oldSize 
+        "newSize" number of data will be copied to "newSize" new blocks 
+========================================================    
+        
+    
+    
