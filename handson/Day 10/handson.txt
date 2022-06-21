@@ -447,6 +447,157 @@ realloc(oldPointerToDynamicMemory, newSizeOfBlocks * numberOfBytesPerBlock)
        if newSize < oldSize 
         "newSize" number of data will be copied to "newSize" new blocks 
 ========================================================    
+double ptr = (double*)calloc(5,sizeof(double))
+ptr=realloc(ptr,7*sizeof(double))
+
+
+========================================================
+https://www.geeksforgeeks.org/g-fact-88/        
+========================================================
+    
+
+1. Diff bt array and linked list 
+    array           -> static structure / dy
+                       random access 
+                       operations on array: 
+                            addition, deletion, modification 
+                               O(N)      O(N)       O(1)
+                       ::similarity:: sequential list, collection/container of data
+    linked list     -> dynamic structure 
+                       no-random access 
+                            addition, deletion, modification
+                                once we ve position 
+                                O(1)    O(1)      O(1)
+                        ::similarity:: sequential list, collection/container of data
+
+2. Difference between stack and heap wrt memory 
+   stack 
+        storage for static memory 
+        compiler will handle stack 
+        stack memory is depending on the scope of the block / function 
+        compiler's memory management 
+   heap 
+        storage for dynamic memory 
+        programmer system calls using stdlib library malloc,calloc,realloc, free 
+        scope throughout the program 
+        comes under memory management
+
+3. Memory leak 
+   the pointer points to dynamic memory 
+   if the pointing by the pointer is going to be changed, 
+   we have to release the memory pointed by the pointer 
+   before changing the pointing 
+   
+   otherwise, there may become memory leak 
+   
+   3.1 How will you fix the issue?
+        calling stdlib library free function can fix the memory leak 
         
+4. static variable 
+   difference   global variable and static variable 
+   global variable :  
+         scope      throughout the program 
+         visible    global to all the functions 
+   static variable :  
+         scope      throughout the program 
+         visible    local to the function where it is defined 
+   
+   **********global variable**********
+   #include<stdio.h>
+    double salary = 3000.0;
+    double maheshSalary(){
+         salary += 500;
+         
+         return salary;
+    }
+    double trishalaSalary(){
+         salary += 500;
+         
+         return salary;
+    }    
+    int main(){
+        double sal = maheshSalary();
+        printf("The salary is %.2lf\n",sal); // 3500
+        sal = maheshSalary();
+        printf("The salary is %.2lf\n",sal); // 4000
+        sal = trishalaSalary();
+        printf("The salary is %.2lf\n",sal); // 4500
+        sal = trishalaSalary();
+        printf("The salary is %.2lf\n",sal); // 5000
+        
+        return 0;
+    }        
+
+    ***********static variable**********
+    #include<stdio.h>
+    double maheshSalary(){
+         static double salary = 3000.0;
+         
+         salary += 500;
+         
+         return salary;
+    }
+    double trishalaSalary(){
+         static double salary = 3000.0;
+         
+         salary += 500;
+         
+         return salary;
+    }
+        
+    int main(){
+        double sal = f();
+        printf("The salary is %.2lf\n",sal); // 3500
+        sal = f();
+        printf("The salary is %.2lf\n",sal); // 4000
+        sal = g();
+        printf("The salary is %.2lf\n",sal); // 3500
+        sal = g();
+        printf("The salary is %.2lf\n",sal); // 4000
+        return 0;
+    }        
+        
+!!!Vishal        
+5. DMA - Dynamic Memory Allocation 
+    runtime 
+        manages the memory properly 
+    stdlib functions malloc, calloc, realloc, free 
+        malloc - non contiguos memory "not like array"
+        calloc - contiguos memory "like array"
+            two params: 
+                first:  no of blocks -> contiguous
+                second: no of bytes  -> contiguous
+        realloc - two params 
+            - first: allocated pointer 
+            - second: no of bytes we want to change 
+            oldMemory is less newMemory 
+            80                      100             memcpy  will happen for 80 blocks
+            80 bytes will deallocated       !!!Mahesh
+            100 new bytes will allocated    !!!Mahesh
+            100                     80              memcpy  will happen for 80 blocks
+            
+                
+                
+            | salaries1 100 blocks |    salaries2 120 blocks | 
+             salaries1 new size 400 blocks 
+             double* salaries1 = (double*)malloc(100*sizeof(double));
+             
+             
+             //....
+             salaries1 = (double*)realloc(salaries1, 400*sizeof(double));
+             /*
+             **********realloc**********
+                void* temp = salaries1;
+                salaries1 = (double*)malloc(400*sizeof(double));
+                memcpy temp into salaries1 
+                free(temp);
+             */
+         free - call free to release the memory out of malloc, calloc, realloc 
+                to avoid memory leak 
+            
+                
+                
+             
+    
     
     
