@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------
+Pointers in C
+• Pointers
+o Declaring and using a pointer
+o * operator
+o & operator
+o Array of pointers
+o Passing pointers as arguments to functions
+o Pointer to an array
+▪Pointer arithmetic
+o Pointer to a structure
+▪The -> operator
+o Pointer to a pointer
+o Returning a pointer
+
+ADVANCED POINTERS	
+•	Double pointers (pointer to a pointer) 
+•	Double pointers (pointer to a pointer) Part 2 
+•	(Challenge) Double pointers 
+•	(Demonstration) Double pointers 
+•	Function pointers 
+•	(Challenge) Function pointers 
+•	(Demonstration) Function pointers
+•	void pointers
+
+Dynamic Memory Allocation
+▪malloc function
+▪calloc function
+▪ralloc function
+▪free function
+▪Using malloc/calloc and free with arrays
+---------------------------------------------------------------------------

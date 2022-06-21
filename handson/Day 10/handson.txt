@@ -1,0 +1,197 @@
+pointer:
+	special variable 
+		to hold address of data variable 
+	
+	there is data variable. why pointer?
+		!!! Suma VummadSingh 
+		Good attempt. 
+		Advantabe of pointer:
+			pointer - it reduces the complexity of the program 
+			it will increase the speed of the execution.
+			
+			int firstNumber = 10;
+			int* firstNumberAddr = &firstNumber;
+			
+			printf("The value is %d\n",firstNumber);	//I 	slower than II 
+			printf("The value is %d\n",(*firstNumber));	//II 	little speeder than I
+			
+			!!!studied from the article.
+		
+	there is data variable. why pointer?
+		!!! Pooja
+		without how can I access the dynamic memory I am creating.
+		
+		dynamic memory will have name but we can get the address of the dynamic memory 
+		
+		to store the address of the dynamic memory, we require special variable called "pointer" 
+		
+		pointer can point address of dynamic memory as well as static memory 	
+		
+	Is there any pointer to point another pointer?
+		"pointer to poitner"								Yes		
+		"pointer to 'pointer to pointer'"					Yes
+		"pointer to `pointer to 'pointer to pointer'`"		Yes
+		....												Yes
+		
+		Maximum problems can be solved via the pointer
+			Suppose the requirement is extended then double pointer is enough.
+--------------------------------------------------------
+	Two operators to process the pointer:
+		&	"address of"
+		*	"indirection" 
+		
+	To access the element using the pointer for array:
+		[] subscript operator 
+		
+	To access the member of the struct/union using struct/union object pointer:
+		->	member access using object pointer 
+--------------------------------------------------------
+
+
+
+========================================================
+Question
+find sum and product of the two numbers using the below function:
+	void findSumAndProduct(long first, long second, long* sumAddr, long* productAddr);
+
+1. Define the function "findSumAndProduct" to find sum and product of two numbers 
+2. In main(), Read two numbers, call "findSumAndProduct", and print sum and product 
+========================================================
+#include<stdio.h>
+#include<stdlib.h>
+void findSumAndProduct(long first, long second, long* sumAddr, long* productAddr);
+int main(){
+    long firstNumber=0L;
+    long secondNumber=0L;
+    printf("Enter first number:"); scanf("%ld",&firstNumber);
+    printf("Enter second number:"); scanf("%ld",&seconNumber);
+    long sum=0L;
+    long product=0L;
+    findSumAndProduct(firstNumber, secondNumber, &sum, &product);
+    printf("sum and product of %ld and %ld are %ld and %ld\n",
+        firstNumber, secondNumber,
+        sum, product);
+        
+    return EXIT_SUCCESS;
+}
+void findSumAndProduct(long first, long second, long* sumAddr, long* productAddr){
+    long sum = first + second;
+    long product = first * second;
+    (*sumAddr) = sum;           
+    (*productAddr) = product;   
+
+}
+
+mahesh@maheshubuntu:~/c_learnings$ gcc sum_product_using_pointer.c -o sum_product_using_pointer
+mahesh@maheshubuntu:~/c_learnings$ ./sum_product_using_pointer
+Enter first number:20
+Enter second number:3
+sum and product of 20 and 3 are 23 and 60
+mahesh@maheshubuntu:~/c_learnings$ 
+========================================================
+
+----------------------------------------- 
+    !!!Shranu Kumar
+    (*sumAddr)++;
+-----------------------------------------    
+    
+    *(sumAddr++)
+    
+    sumAddr++
+    *(sumAddr)
+    
+    (*sumAddr)++;
+-----------------------------------------    
+
+
+========================================================
+Question
+find sum and product of the two numbers using the below function:
+	void findSumAndProduct(long first, long second, long* sumAddr, long* productAddr);
+
+1. Define the function "findSumAndProduct" to find sum and product of two numbers 
+2. In main(), Read two numbers, call "findSumAndProduct", and print sum and product 
+Use dynamic memory for input data and processed data
+
+========================================================
+#include<stdio.h>
+#include<stdlib.h>
+void findSumAndProduct(long* firstAddr, long* secondAddr, long* sumAddr, long* productAddr);
+int main(){
+    long* firstNumberAddr=NULL;     // if NOT NULL, WILD PTR
+    long* secondNumberAddr=NULL;
+    
+    firstNumberAddr=(long*)malloc(1*sizeof(long));
+    secondNumberAddr=(long*)malloc(1*sizeof(long));
+    
+    printf("Enter first number:"); scanf("%ld",firstNumberAddr);
+    printf("Enter second number:"); scanf("%ld",secondNumberAddr);
+    
+    long* sumAddr=NULL;
+    long* productAddr=NULL;
+    
+    sumAddr=(long*)malloc(1*sizeof(long));
+    productAddr=(long*)malloc(1*sizeof(long));
+    
+    findSumAndProduct(firstNumberAddr, secondNumberAddr, sumAddr, productAddr);
+    printf("sum and product of %ld and %ld are %ld and %ld\n",
+        (*firstNumberAddr), (*secondNumberAddr),
+        (*sumAddr), (*productAddr));
+        
+    free(firstNumberAddr);   //DANGLING PTR 
+    firstNumberAddr = NULL;
+    
+    free(secondNumberAddr);
+    secondNumberAddr = NULL;
+    
+    free(sumAddr);
+    sumAddr = NULL;
+    
+    free(productAddr);
+    productAddr = NULL;
+     
+    return EXIT_SUCCESS;
+}
+void findSumAndProduct(long* firstAddr, long* secondAddr, long* sumAddr, long* productAddr){
+    long sum = (*firstAddr) + (*secondAddr);
+    long product = (*firstAddr) * (*secondAddr);
+    (*sumAddr) = sum;           
+    (*productAddr) = product;   
+}
+========================================================
+
+ISSUES/PROBLEMS connected with memory management
+
+****************ILLEGAL MEMORY MANAGEMENT****************
+
+processing WILD PTR 
+or
+processing DANGLING PTR 
+are illegal
+
+
+****************MEMORY HOLE /MEMORY LEAK****************
+The pointers pointing the Dynamically Allocated memory 
+    if changed the pointing to other memory blocks 
+    here, Dynamically Allocated memory was not released.
+    
+    100 x 4 long blocks will be dynamically created 
+    not released to operating system 
+    
+If we are not releasing the dynamic memory properly,
+leads to "memory hole/memory leak"
+
+To fix for "memory hole/memory leak",
+we have to release the dynamic memory properly.
+This we have to ensure for better "memory management"    
+    
+========================================================    
+
+Better memory management
+1. Dont use illegal memory 
+2. Release the dynamic memory properly 
+    ie. for every malloc/calloc use free function
+========================================================    
+    
+
+			

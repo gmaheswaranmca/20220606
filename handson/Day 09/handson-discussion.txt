@@ -182,7 +182,8 @@ struct _WordIndex{
 };
 typedef struct _WordIndex WordIndex;
 
-void swap(WordIndex *first, WordIndex *second){
+void swap(WordIndex *first, WordIndex *second){ //first -> {"maheswaran", 3}, 
+    //second -> {"working", 5}
   WordIndex t = (*first);
   (*first) = (*second);
   (*second) = t;
