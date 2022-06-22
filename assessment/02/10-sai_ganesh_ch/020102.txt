@@ -1,0 +1,29 @@
+==================================================================== 
+Q 1
+Duration: 30 minutes
+Marks: 60 marks
+---------------------------------------------------------------------
+Sort N given ages(short type) ascending order using one of sorting algorithm
+
+Test Case 1:
+Input    
+Enter value for N: 5
+Enter age at index 0: 15
+Enter age at index 1: 12
+Enter age at index 2: 18
+Enter age at index 3: 14
+Enter age at index 4: 13
+Output
+Sorted ages are: 12 13 14 15 18
+
+
+Test Case 2:
+Input    
+Enter value for N: 4
+Enter age at index 0: 15
+Enter age at index 1: 12
+Enter age at index 2: 18
+Enter age at index 3: 13
+Output
+Sorted ages are: 12 13 15 18
+====================================================================

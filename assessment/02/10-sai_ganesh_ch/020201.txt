@@ -1,0 +1,39 @@
+==================================================================== 
+Q 2.
+Duration: 30 minutes
+Marks: 40 marks
+---------------------------------------------------------------------
+Read N given employees(user-defined type) of attributes name(string type) and salary(double) 
+and find employee who is getting 3rd maximum salary 
+
+Test Case 1:
+Input    
+Enter value for N: 5
+Enter name at index 0: Rahul
+Enter salary at index 0: 1500.0
+Enter name at index 1: Dhoni
+Enter salary at index 1: 1200.0
+Enter name at index 2: Kohli
+Enter salary at index 2: 1800.0
+Enter name at index 3: Pant
+Enter salary at index 3: 1400.0
+Enter name at index 4: Harshal
+Enter salary at index 4: 1300.0
+Output
+The 3rd maximum salary getter is Pant
+
+
+Test Case 2:
+Input    
+Enter value for N: 5
+Enter name at index 0: Rahul
+Enter salary at index 0: 1500.0
+Enter name at index 1: Dhoni
+Enter salary at index 1: 1200.0
+Enter name at index 2: Kohli
+Enter salary at index 2: 1800.0
+Enter name at index 3: Harshal
+Enter salary at index 3: 1300.0
+Output
+The 3rd maximum salary getter is Harshal
+====================================================================

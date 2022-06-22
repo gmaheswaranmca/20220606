@@ -1,0 +1,41 @@
+==================================================================== 
+Q 2.
+Duration: 30 minutes
+Marks: 40 marks
+---------------------------------------------------------------------
+Read N given employees(user-defined type) of attributes name(string type) and salary(double) 
+and concatenate 
+	1) name of employee of getting maximum salary and 
+	2) name of employee of getting minimum salary 
+
+Test Case 1:
+Input    
+Enter value for N: 5
+Enter name at index 0: Rahul
+Enter salary at index 0: 1500.0
+Enter name at index 1: Dhoni
+Enter salary at index 1: 1200.0
+Enter name at index 2: Kohli
+Enter salary at index 2: 1800.0
+Enter name at index 3: Pant
+Enter salary at index 3: 1400.0
+Enter name at index 4: Harshal
+Enter salary at index 4: 1300.0
+Output
+The concatenated names of Kohli (salary 1800.00) and Dhoni (salary 1200.00) is Kohli Dhoni
+
+
+Test Case 2:
+Input    
+Enter value for N: 5
+Enter name at index 0: Rahul
+Enter salary at index 0: 1500.0
+Enter name at index 1: Dhoni
+Enter salary at index 1: 1400.0
+Enter name at index 2: Kohli
+Enter salary at index 2: 1800.0
+Enter name at index 3: Harshal
+Enter salary at index 3: 1300.0
+Output
+The concatenated names of Kohli (salary 1800.00) and Harshal (salary 1300.00) is Kohli Harshal
+====================================================================

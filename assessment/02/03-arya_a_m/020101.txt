@@ -1,0 +1,32 @@
+==================================================================== 
+Q 1
+Duration: 30 minutes
+Marks: 60 marks
+---------------------------------------------------------------------
+Find kth maximum salary(double) from N given salaries
+
+Test Case 1:
+Input    
+Enter value for N: 5
+Enter value for K: 3
+Enter salary at index 0: 1500.0
+Enter salary at index 1: 1200.0
+Enter salary at index 2: 1800.0
+Enter salary at index 3: 1400.0
+Enter salary at index 4: 1300.0
+Output
+The 3rd maximum salary is 1400.00
+
+
+Test Case 2:
+Input    
+Enter value for N: 4
+Enter value for K: 2
+Enter salary at index 0: 1500.0
+Enter salary at index 1: 1200.0
+Enter salary at index 2: 1800.0
+Enter salary at index 3: 1300.0
+Output
+The 2nd maximum salary is 1500.00
+====================================================================
+
