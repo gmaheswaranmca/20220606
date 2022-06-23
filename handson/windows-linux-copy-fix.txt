@@ -1,0 +1,7 @@
+Windows to Ubuntu Vbox 
+       Birectional 
+
+if any issue:
+Run the following two commands in the ubuntu:
+    $sudo apt install virtualbox-guest-x11
+    $sudo VBoxClient --clipboard   
