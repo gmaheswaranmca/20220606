@@ -1,3 +1,21 @@
+
+--------------------------------------------------------------
+void swap(SLL_node_t* firstAddr, SLL_node_t* secondAddr){
+    SLL_node_t temp = (*firstAddr);
+    (*firstAddr) = (*secondAddr);
+    (*secondAddr) = temp;
+}
+
+SLL_node_t nodes[1024];
+//
+scanf("%lf",&nodes[I].data); //I<- 1 .. N
+
+for(int I=0; I<N-1; I++)
+	for(int J=I+1; J<N; J++)
+		if(nodes[J].data < nodes[I].data)
+			swap(&nodes[I],&nodes[J]);
+--------------------------------------------------------------
+
 Linked List (user-defined)
 	-Sequencial List 
 		Sequence of data nodes 
@@ -300,5 +318,24 @@ int main(){
     return EXIT_SUCCESS;
 }
 -------------------------------------------------------------
-
-
+    10 20 30 40 50
+    
+    [.]->10 -> <- 20 -> <- 30 -> <- 40 -> <- 50 <-[.]
+                        front[x] [x]bac
+	Add Back 10 		front[.]-> [x,10,x] <-[.]back
+    Add Back 20 		front[.]-> [x,10,.]-> <-[.,20,x]<-[.]back    1.construct node [x,20,x] "back -> next = node;node->prev = back;back = node"
+    Add Back 30 		front[.]-> [x,10,.]-> <-[.,20,.]-> <-[.,30,x]<-[.]back
+	Add Back 40 		front[.]-> [x,10,.]-> <-[.,20,.]-> <-[.,30,.]-> <-[.,40,x]<-[.]back                                  
+	Add Back 50 		front[.]-> [x,10,.]-> <-[.,20,.]-> <-[.,30,.]-> <-[.,40,.]-> <-[.,50,x]<-[.]back  
+	
+	Delete Back 		front[.]-> [x,10,.]-> <-[.,20,.]-> <-[.,30,.]-> <-[.,40,.]-> <-[.,50,x]<-[.]back
+                        node = back
+                        
+                        {back->prev->next = null;
+                        back = back->prev} back->prev!=null otherwise 
+                        back = null front=null
+                        
+                        delete node 
+	Delete Back 		
+	....
+-------------------------------------------------------------			
