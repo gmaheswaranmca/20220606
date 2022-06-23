@@ -1,0 +1,18 @@
+Member Access Operator
+
+Member access operators allow access to the members of their operands.
+
+--------------------------------------------------------------------------------
+Operator	Operator name			Example		Description
+--------------------------------------------------------------------------------
+[]			array subscript			a[b]		access the bth element of array a
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*			pointer dereference		*a			dereference the pointer a to access the object or function it refers to
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+&			address of				&a			create a pointer that refers to the object or function a
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.			member access			a.b			access member b of struct or union a
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+->			member access 
+			through pointer			a->b		access member b of struct or union pointed to by a
+--------------------------------------------------------------------------------
