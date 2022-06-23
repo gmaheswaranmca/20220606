@@ -1,0 +1,69 @@
+Dynamic Memory Allocation 
+	header <stdlib.h>
+----------------------------------------
+heap allocator 
+stack allocator 
+----------------------------------------
+
+1. malloc
+
+	Syntax:
+	void* malloc( size_t size );
+		!!! Allocates "size" bytes of 'uninitialized storage'.
+		
+		1. If allocation succeeds, returns a pointer of the allocated memory 
+		2. otherwise, NULL pointer
+		
+	To avoid a memory leak, the returned pointer must be deallocated with free()
+
+2. calloc 
+
+	Syntax: 
+	void* calloc( size_t num, size_t size );
+		!!!Allocates memory for an array of "num" objects of "size" and 
+			initializes all bytes in the allocated storage to zero.
+
+		1. If allocation succeeds, returns a pointer of the allocated memory 
+		2. otherwise, NULL pointer
+		
+	To avoid a memory leak, the returned pointer must be deallocated with free()	
+	
+3. free 
+		!!! To avoid a memory leak, we call "free" towards "deallocator"
+	Syntax: 
+	void free( void* ptr );
+		!!!Deallocates the space previously allocated 
+			by 
+				malloc(), 
+				calloc(), 
+				aligned_alloc(), (since C11) or 
+				realloc()
+
+		a. If ptr is a null pointer, the function does nothing.
+	
+			
+4.realloc 
+	Syntax:				
+		void *realloc( void *ptr, size_t new_size );
+		!!! Reallocates the given area of memory. 
+		Note:
+			It must be previously allocated by malloc(), calloc() or realloc() and 
+			'not yet freed' with a call to free or realloc. 
+			Otherwise, the results are undefined.
+			
+	reallocation is by 
+	1. 	a. allocating a new memory block of size "new_size" bytes, 
+		b. copying memory area with size equal the lesser of the new and the old sizes, and 
+		c. freeing the old block.
+	2. expanding or contracting the existing area pointed to by "ptr", 'if possible'. 
+	   The contents of the area remain unchanged up to the lesser of the new and old sizes. 
+	   If the area is expanded, the contents of the new part of the array are undefined	
+	To avoid a memory leak, the returned pointer must be deallocated with free()
+		
+		
+
+
+
+
+		
+
