@@ -1,0 +1,22 @@
+-------------------------------------------
+1. double pointer 
+2. function pointer 
+-------------------------------------------
+pointer holds address of data/value variable
+double pointer holds address of pointer 
+-------------------------------------------
+
+#include<stdio.h>
+#include<stdlib.h>
+void f(long *dataAddr){
+	long anotherData = 200L;
+	dataAddr = &anotherData;
+	(*dataAddr) = (*dataAddr) + 100L;
+}
+int main(){
+	long data = 100L;
+	long ptrToData = &data;
+	f(ptrToData);
+	printf("%ld",(*ptrToData));
+	retrun EXIT_SUCCESS;
+}

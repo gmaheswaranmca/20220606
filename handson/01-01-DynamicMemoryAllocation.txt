@@ -45,6 +45,8 @@ void* calloc( size_t num, size_t size );
 	
 Point:		
 	To avoid a memory leak, the returned pointer must be deallocated with free()	
+Point:
+	calloc is thread-safe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -67,6 +69,8 @@ void free( void* ptr );
 			realloc()
 
 	a. If ptr is a null pointer, the function does nothing.
+Point:
+	free is thread-safe	
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 
 
