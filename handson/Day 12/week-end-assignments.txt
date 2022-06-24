@@ -1,0 +1,6 @@
+Week End Assignments:
+	1. Doubly Liked List 
+	2. Circular Singly Linked List 
+	3. Circular Doubly Linked List 
+	
+	
