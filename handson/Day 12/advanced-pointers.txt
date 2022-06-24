@@ -4,6 +4,7 @@
     to pass the address of pointer use double pointer 
     
 2. function pointer 
+
 -------------------------------------------
 pointer holds address of data/value variable
 double pointer holds address of pointer 
