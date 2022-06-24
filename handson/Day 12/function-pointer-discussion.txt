@@ -1,0 +1,39 @@
+function pointer 
+	each function will have address 
+	we can have pointer to function whose prototype/signature has to match the function 
+	for which we create the function pointer 
+	
+syntax:
+	returnType (*nameOfPtrToFunction)(argumentDefintion);	
+	
+	
+Example:	
+---------------------------------------------------	
+	For the function of prototype:
+		double square(double val);
+---------------------------------------------------		
+	The function pointer definition for the function "square" is:
+		double (*squareAddr)(double val);
+	squareAddr = &square; 
+	or
+	squareAddr = square; 
+---------------------------------------------------	
+	With function pointer, how to call the function:
+	double squareOfThree = (*squareAddr)(3.0);
+	or 
+	double squareOfThree = squareAddr(3.0);	
+---------------------------------------------------	
+
+---------------------------------------------------
+Explore two library functions:
+	1. qsort 
+	2. bsearch 
+	functions of stdlib.h header
+---------------------------------------------------
+	
+void qsort( void *ptr, size_t count, size_t size,
+            int (*comp)(const void *, const void *) );	
+	
+void* bsearch( const void *key, const void *ptr, size_t count, size_t size,
+               int (*comp)(const void*, const void*) );	
+---------------------------------------------------			   

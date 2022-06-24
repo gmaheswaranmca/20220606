@@ -1,22 +1,105 @@
 -------------------------------------------
 1. double pointer 
+    to pass the address of value object use pointer 
+    to pass the address of pointer use double pointer 
+    
 2. function pointer 
 -------------------------------------------
 pointer holds address of data/value variable
 double pointer holds address of pointer 
 -------------------------------------------
 
-#include<stdio.h>
-#include<stdlib.h>
-void f(long *dataAddr){
-	long anotherData = 200L;
-	dataAddr = &anotherData;
-	(*dataAddr) = (*dataAddr) + 100L;
-}
-int main(){
-	long data = 100L;
-	long ptrToData = &data;
-	f(ptrToData);
-	printf("%ld",(*ptrToData));
-	retrun EXIT_SUCCESS;
-}
+double pointer
+    ----------------------------------------
+    to swap two double data via function 
+    ----------------------------------------
+    #include<stdio.h>
+    void swap(double* firstAddr, double* secondAddr);
+    void swap(double* firstAddr, double* secondAddr){
+        double t = (*firstAddr);
+        (*firstAddr) = (*secondAddr);
+        (*secondAddr) = t;
+    }
+
+    int main(){
+        double f = 1.0;
+        double s = 1.1;
+        swap(&f,&s);
+        printf("%.2lf %.2lf\n",f,s); //1.10 1.00
+        return 0;
+    }
+    
+    
+    to swap two primitive data, 
+    we need to pass addresses of those two data variables 
+    to the swap function 
+    
+    we use indirection inside swap to read the pointing data variables 
+    then we do change data variables which are passed as addresses
+    ----------------------------------------
+    
+    ----------------------------------------
+    to find sum using void function 
+    ----------------------------------------
+    #include<stdio.h>
+    void findSum(short first, short second, short *sumAddr){
+        (*sumAddr) = first + second;
+    }
+    int main(){
+        short one = 10;
+        short two = 11;
+        short sum;
+        findSum(one,two,&sum);
+        printf("%hd\n",sum); //21
+        return 0;
+    }
+    ----------------------------------------
+    
+    
+    ----------------------------------------
+    to find sum using void function 
+    ----------------------------------------
+    #include<stdio.h>
+    void findSum(short first, short second, short** sumAddrAddr){
+        short *sumAddr = (*sumAddrAddr);
+        (*sumAddr) = first + second;
+    }
+    int main(){
+        short one = 10;
+        short two = 11;
+        short sum;
+        short* sumAddr = &sum;
+        findSum(one,two,&sumAddr);
+        printf("%hd\n",sum); //21
+        return 0;
+    }
+    ----------------------------------------
+    
+    ----------------------------------------
+    To swap two addresse of two pointers
+    we have to pass addresses of two pointers 
+    as parameters to the swap function 
+    
+    then parameters are pointer to pointer 
+    ----------------------------------------
+    #include<stdio.h>
+    void swapAddr(double** firstAddrAddr, double** secondAddrAddr);
+    void swapAddr(double** firstAddrAddr, double** secondAddrAddr){
+        double* t = (*firstAddrAddr);
+        (*firstAddrAddr) = (*secondAddrAddr);
+        (*secondAddrAddr) = t;
+    }
+
+    int main(){
+        double f = 1.0;
+        double s = 1.1;
+        
+        double* addrOne = &f;
+        double* addrTwo = &s;
+        
+        printf("%p %p %.2lf %.2lf\n",addrOne,addrTwo,(*addrOne),(*addrTwo)); //addr1 addr2 1.00 1.10
+        swapAddr(&addrOne,&addrTwo);
+        printf("%p %p %.2lf %.2lf\n",addrOne,addrTwo,(*addrOne),(*addrTwo)); //addr2 addr1 1.10 1.00
+        return 0;
+    }
+    ----------------------------------------
