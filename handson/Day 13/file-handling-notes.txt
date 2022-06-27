@@ -17,21 +17,21 @@ stdio.h
 	sscanf		int sscanf(const char* buffer, const char* format, ...)		//args are addresses
 	sprintf		int sprintf(const char* buffer, const char* format, ...)	//args are value 
 	
-	fscanf
-	fprintf
+	fscanf		int fscanf(FILE *stream, const char* format, ...) //args are addresses 
+	fprintf		int fprintf(FILE *stream, const char* format, ...) //args are value 
 	
 	fread
 	fwrite 
 	
-	fputs
-	fgets 
+	fputs		int fputs(const char *str, FILE *stream);
+	fgets 		char* fgets(char *str, int count, FILE *stream)
 	putchar -> stdout 
 	puts -> stdout 
 	
-	fgetc 
+	fgetc 		int fgetc(FILE* stream);
 	 getc 
 	 
-	fputc 
+	fputc 		int fputc(int ch, FILE* stream);
      putc    
 ----------------------------------------------------------------------	 
 
