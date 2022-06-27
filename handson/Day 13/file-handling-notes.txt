@@ -20,8 +20,10 @@ stdio.h
 	fscanf		int fscanf(FILE *stream, const char* format, ...) //args are addresses 
 	fprintf		int fprintf(FILE *stream, const char* format, ...) //args are value 
 	
-	fread
-	fwrite 
+	fread		size_t fread (void* buffer,       size_t size, size_t count, FILE *stream );
+	fwrite 		size_t fwrite(const void *buffer, size_t size, size_t count, FILE *stream );
+				buffer -> address of object, size -> number of objects, count -> number of bytes per object 
+				
 	
 	fputs		int fputs(const char *str, FILE *stream);
 	fgets 		char* fgets(char *str, int count, FILE *stream)
@@ -34,7 +36,32 @@ stdio.h
 	fputc 		int fputc(int ch, FILE* stream);
      putc    
 ----------------------------------------------------------------------	 
+fopen / fclose - file resource management 
+	fopen	FILE *fopen( const char *filename, const char *mode );
+	fclose 	int fclose( FILE *stream );
+	
+	mode	-  "w" "a" "r" "w+" "a+" "r+" 
+			   "wb" "ab" "rb" "wb+" "ab+" "rb+" 
+----------------------------------------------------------------------
 
+File access flags
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+File access				Meaning				Explanation							Action if file			Action if file
+mode string 																	already exists			does not exist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"r"						read				Open a file for reading				read from start			failure to open
+"w"						write				Create a file for writing			destroy contents		create new
+"a"						append				Append to a file					write to end			create new
+"r+"					read extended		Open a file for read/write			read from start			error
+"w+"					write extended		Create a file for read/write		destroy contents		create new
+"a+"					append extended		Open a file for read/write			write to end			create new
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+----------------------------------------------------------------------
 
+CRUD operations 
+	- Create Operation 
+	- Read Opeartion 
+	- Update !!! LATER
+	- Delete !!! LATER 
 
