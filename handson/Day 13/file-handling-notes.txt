@@ -1,0 +1,40 @@
+----------------------------------------------------------------------
+Files
+	•	Input and Output File Handling
+	•	Opening & Closing a File
+	•	Modes of File Opening
+	•	Detection End of File
+	•	File Pointers & Their Manipulation
+	•	Text and Binary Files
+	•	Sequential Files
+	•	Random Access Files
+----------------------------------------------------------------------	
+stdio.h
+	scanf
+	printf
+	fgets_s	
+----------------------------------------------------------------------
+	sscanf		int sscanf(const char* buffer, const char* format, ...)		//args are addresses
+	sprintf		int sprintf(const char* buffer, const char* format, ...)	//args are value 
+	
+	fscanf
+	fprintf
+	
+	fread
+	fwrite 
+	
+	fputs
+	fgets 
+	putchar -> stdout 
+	puts -> stdout 
+	
+	fgetc 
+	 getc 
+	 
+	fputc 
+     putc    
+----------------------------------------------------------------------	 
+
+
+
+
