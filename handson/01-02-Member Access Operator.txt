@@ -1,4 +1,4 @@
-Member Access Operator
+Member Access Operator 
 
 Member access operators allow access to the members of their operands.
 
