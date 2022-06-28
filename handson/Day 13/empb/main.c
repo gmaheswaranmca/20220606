@@ -39,18 +39,27 @@ void emp_ui_list_emp(){
         printf("salary:%.2lf\n\n\n",employees[I].salary);
     }
 }
+
+void learn_random_access(){
+	employee_t employees[1000];
+    int count = 0;
+    emp_bdb_random_access(employees,&count);
+	
+}
 int main(){
     int menu;
     do{
-        printf("Choice(1-Create Employee, 2-Read, 0-Exit):"); scanf("%d",&menu);
+        printf("Choice(1-Create Employee, 2-Read, 3-Learning, 0-Exit):"); scanf("%d",&menu);
         if(1==menu){
              emp_ui_create_emp();
         }else if(2==menu){
              emp_ui_list_emp();
+        }else if(3==menu){
+             learn_random_access();
         }else{
             printf("Shutting down the app....\n");
         }
     }
-    while((1<=menu) && (menu<=2));
+    while((1<=menu) && (menu<=3));
 	return EXIT_SUCCESS;
 }

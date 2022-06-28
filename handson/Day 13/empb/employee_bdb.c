@@ -33,3 +33,22 @@ void emp_bdb_readAll(employee_t* employees, int* countAddr){
     (*countAddr) = I;
 }
 
+void emp_bdb_random_access(employee_t* employees, int* countAddr){
+    //CODE for reading from the flat file db "emp.dat"
+    int I=0;
+    employee_t emp;
+    
+    char fileName[] = "emp.dat";
+    FILE* in = fopen(fileName,"rb");
+    if(in == NULL){
+        printf("FILE ERROR.\n");
+        return;
+    }
+    while(fread(&emp,1,sizeof(employee_t),in)){
+        employees[I] = emp;
+        I++;
+    }
+    fclose(in);
+    (*countAddr) = I;
+}
+
