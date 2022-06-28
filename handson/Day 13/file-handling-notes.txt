@@ -142,4 +142,14 @@ How to delete and edit/update the text file for business object manipulation:
 	==>
 	emptemp.txt as emp.txt
 	---------------------------------------------
-===================================================	
+===================================================
+binary file:
+
+abcefabcefabcefabcefabcefabcefabcef
+-    -    -    -    -    -    -
+
+
+
+
+
+	

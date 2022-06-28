@@ -1,0 +1,40 @@
+Task:
+1. Read n salaries from keyboard and 
+   write into the file "salaries.txt/salaries.data"
+
+	Menu:
+	1. Write N salaries into file 
+	2. Read the salaries from file 
+	3. Check a given salary is in the file 
+	4. Count number of times occured in the file 
+	5. Delete a salary based on its index number (1-based index)
+	0. Exit 
+Test Case:
+Menu: 1
+Number of salaries: 3
+Enter salaries: 
+2000 1500 3000
+Menu: 2
+Salaries are:
+2000 1500 3000
+Menu: 3
+Salary to find: 1500
+Yes salary 1500 is at index 2 
+Menu: 4
+Salary to find: 3000
+Number of times 3000 is occured is 1
+Menu: 5
+Salary to delete: 1500
+Deleted successfully 
+Menu: 2
+Salaries are:
+2000 3000
+Menu: 0
+Shutting Down the app....
+
+
+
+
+	
+	
+   
