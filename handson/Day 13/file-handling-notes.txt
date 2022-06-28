@@ -58,10 +58,20 @@ mode string 																	already exists			does not exist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ----------------------------------------------------------------------
+date_t: day, month, year
+employee_t: empId, empName, dateOfJoining, jobTitle, deptId, salary
 
+		user						db functions 
+		interface 
+		
+		emp_ui_create_emp			emp_db_insert 
+		emp_ui_edit_emp				emp_db_update
+		emp_ui_delete_emp			emp_db_delete
+		emp_ui_searchById			emp_db_read 
+----------------------------------------------------------------------		
 CRUD operations 
 	- Create Operation 
 	- Read Opeartion 
 	- Update !!! LATER
 	- Delete !!! LATER 
-
+----------------------------------------------------------------------
