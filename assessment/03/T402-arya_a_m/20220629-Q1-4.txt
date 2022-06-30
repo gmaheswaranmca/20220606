@@ -1,0 +1,33 @@
+Q1				20220629-4
+Duration : 1hr 30mins
+Score: 100 marks
+
+Question:
+Data Object Class:
+	BankAccount{accountNumber, accountType, accountHolderName, 
+		phoneNumber, aadhaarNumber, balance}
+		
+Read N objects from the keyboard. 
+Construct a doubly linked list by adding object nodes at tail. 
+Do traversal of linked list and write object of each node into file during traversal. 
+The name of the file is class name followed by .dat extension. 
+Read the objects from the file and construct the linked list of nodes by adding at tail. 
+Do traversal of list and print all objects on console/screen. 
+Conclude that the program is written without memory leak using valgrind memcheck tool.
+
+
+Note:
+Marks Distribution:
+	1. struct Definition 10 marks
+	2. Heap allocator deallocator 20 marks
+	3. Linked List 20 marks
+	4. File Handling read/write 30 marks
+	5. 'Pointer to Pointer' usage 5 marks
+	6. function pointer usage 5 marks
+	7. If no memory leak 5 marks
+	8. Using valgrind 5 marks
+
+Note:
+	1. For Timely completion 100% of marks you scored.
+	2. For each extra half an hour, 10% of marks you scored will be reduced.
+	Coding standard will also be considered.
