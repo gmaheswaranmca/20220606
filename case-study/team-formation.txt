@@ -1,8 +1,38 @@
+Team 1				Team 2							Team 3					Team 4
 Manu Mohan			Sharanukumar Gorantli			Trishala Dhavare		Sai Ram Challa
 Sreeja G Nair		Sai Avulakunta					Vishal Pandya			Arya A M
 Pooja Balu Yeole	Narosh Mathew					Arjun K Dev				Mounika M				
 Suma Vummadsingh	Sandeep Paswan					Pratik Kumar			Aniprada Mohapatra
 sai Ganesh ch		Vikas Pedda Nagireddy			easwar					harish
+
+Billing 			Library							Cab / Finance			Bank
+
+1. whats app 
+2. stream s/w web ex/gmeet after training tim3
+3. git hub repo / git 
+
+ECommerce amazon/flipkart/ajio
+Billing Application 
+Airline Reservation
+Train Reservation 
+(State Transport) Bus Reservation
+(Private) Bus Reservation - redbus, ticketgoose
+Cab management System - ola, uber 
+Bank Management System
+	- Core Banking 
+		Transactions for account type : savings/current/fixed deposit/recurring deposit 
+Finance Management System 
+	- Loan Approval 
+		Loan Application to approval 
+Trip Planner myTrip
+Bug / Issue Tracking System 
+Library Management System 
+
+
+	Go multiprocessing with threads 
+	data processing with multithreaded
+
+	Socket - Client/Server 
 
 
 	
