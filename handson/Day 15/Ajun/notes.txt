@@ -1,0 +1,25 @@
+double salary = 20000;
+double *salaryAddr = &salary;
+
+double salary = 20000;
+const double *salaryAddr = &salary; //salaryAddr is the pointer to 'const double' or 'double const'.
+(*salaryAddr) = 30000; //Compile time error. We can change the address but cant change the value.
+
+double salary = 20000;
+double *const salaryAddr = &salary; // salaryAddr is constant pointer
+double secondSalary = 30000; 
+salaryAddr = &secondSalary; // Compile time error.We cant change the address but can change the value.
+
+double salary = 20000;
+double const *const salaryAddr = &salary; // constant pointer salaryAddr is the pointer to 'const double' 							//or 'double const'
+Here We cant change the address and cant change the value.
+
+
+
+char *strcpy( char *dest, const char *src ); // const given not to change the value of src.
+char *strstr( const char* str, const char* substr );
+	 	
+char *strchr( const char *str, int ch );
+int strcmp( const char *lhs, const char *rhs );
+	
+
