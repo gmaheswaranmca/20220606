@@ -1,0 +1,163 @@
+//doubly linked list - debugging 
+//understanding the working of DLL 
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct _node_t{
+    double data;
+    struct _node_t* prev;    
+    struct _node_t* next;
+};
+typedef struct _node_t node_t;
+
+//List
+node_t *head;
+node_t *tail;
+
+//Node constructor
+void node_init(node_t* node, double val);
+
+//List op
+void push_front(double val);
+void pop_front();
+double front();
+
+//List traversal
+void traversal();
+
+//List destructor
+void destroy();
+
+int main(){                                        
+    int menu;
+    do{
+        printf("Pick Choice\n");
+        printf("\t1-Add Front, 2-Delete Front\n");
+        printf("\t3-Traversal\n");
+        printf("\t0-Exit\n");
+        printf("Your Choice:"); scanf("%d",&menu);
+        
+        if(1 == menu){
+            double salary = 0.0;
+            printf("Enter data:"); scanf("%lf",&salary);
+            push_front(salary);
+        }else if(2 == menu){
+            if(head == NULL){
+                printf("List is empty.\n");
+            }else{
+                double salary = front();
+                pop_front();
+                printf("%.2lf is Deleted.\n",salary);
+            }
+        }else if(3 == menu){
+            traversal(head);
+        }else{
+            printf("Application is shutting down....\n");    
+        }
+    }while((1 <= menu) && (menu <= 3));
+    
+    destroy();
+    return EXIT_SUCCESS;
+}
+
+
+
+
+void node_init(node_t* node, double val){
+    node->data = val;
+    node->prev = NULL;
+    node->next = NULL;    
+}
+
+void push_front(double val){
+    node_t* node = (node_t*)malloc(1*sizeof(node_t));
+    node_init(node,val);//{50,x}
+    //adjust
+    if(head == NULL){
+        //empty list 
+        head = node;
+        tail = node;
+    }else{
+        //list of atleast one node
+        head->prev = node; 
+        node->next = head;
+        head = node;
+    }
+}
+void pop_front(){
+    if(head == NULL){
+        printf("List is empty.\n");
+        return;
+    }
+    
+    node_t* node = head;
+    //adjust
+    if(node->next == NULL){
+        head = NULL;
+        tail = NULL;
+    }else{
+        head = node->next;
+    }
+    
+    //deallocator
+    node->next = NULL;
+    free(node);
+    node = NULL;
+}
+double front(){
+    if(head == NULL){
+        printf("List is empty.\n");
+        return -1.0;
+    }
+    return head->data;
+}
+
+void printNode(node_t *node){
+	//printf("%.2lf ",node->data);
+	printf("<-[addr=%p,prev=%p,data=%.2lf,next=%p]-> ",node,node->prev,node->data,node->next);
+}
+void traversal(){
+    node_t* node = head;
+    printf("The salaries are:\n");
+	printf("[head=%p]-> ",head);
+    while(node != NULL){
+        printNode(node);
+        node = node->next;
+    }
+	printf("<-[tail=%p]",tail);
+    printf("\n");
+}
+void destroy(){    
+    while(head != NULL){
+        printf("%.2lf is deleted.\n",front(head));
+        pop_front(&head);
+    }
+}
+
+
+
+[head=0x55e5ef99bac0]-> <-[addr=0x55e5ef99bac0,prev=(nil),data=50.00,next=(nil)]-> <-[tail=0x55e5ef99bac0]
+
+
+
+[head=0x55e5ef99bae0]-> <-[addr=0x55e5ef99bae0,prev=(nil),data=40.00,next=0x55e5ef99bac0]-> <-[addr=0x55e5ef99bac0,prev=0x55e5ef99bae0,data=50.00,next=(nil)]-> <-[tail=0x55e5ef99bac0]
+
+
+
+
+[head=0x55e5ef99bb00]-> <-[addr=0x55e5ef99bb00,prev=(nil),data=30.00,next=0x55e5ef99bae0]-> <-[addr=0x55e5ef99bae0,prev=0x55e5ef99bb00,data=40.00,next=0x55e5ef99bac0]-> <-[addr=0x55e5ef99bac0,prev=0x55e5ef99bae0,data=50.00,next=(nil)]-> <-[tail=0x55e5ef99bac0]
+
+
+
+---------------------------------------------
+[h=(nil)]-> <-[t=(nil)]
+
+
+[h=bac0]-> <-[addr=bac0,prev=(nil),data=50.00,next=(nil)]-> <-[tail=bac0]
+
+
+
+[h=bae0]-> <-[addr=bae0,prev=(nil),data=40.00,next=bac0]-> <-[addr=bac0,prev=bae0,data=50.00,next=(nil)]-> <-[t=bac0]
+
+[h=bb00]-> <-[addr=bb00,prev=(nil),data=30.00,next=bae0]-> <-[addr=bae0,prev=bb00,data=40.00,next=bac0]-> <-[addr=bac0,prev=bae0,data=50.00,next=(nil)]-> <-[tail=bac0]
