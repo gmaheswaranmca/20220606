@@ -4,8 +4,26 @@ Sreeja G Nair		Sai Avulakunta					Vishal Pandya			Arya A M
 Pooja Balu Yeole	Narosh Mathew					Arjun K Dev				Mounika M				
 Suma Vummadsingh	Sandeep Paswan					Pratik Kumar			Aniprada Mohapatra
 sai Ganesh ch		Vikas Pedda Nagireddy			easwar					harish
+Maheswaran			Maheswaran						Maheswaran				Maheswaran
 
-Billing 			Library							Cab / Finance			Bank
+Billing 			Library							Finance					Bank
+
+ProductCatalog 		Book							Scheme					Customer 
+	id, 				id 								id						yesterday 
+	name,				title							scheme_name
+	price,				author							max_loan_amt
+	stock_qty			isbn							interest_rate
+						publication 					tenure [no of months]
+						price 
+						numberOfCopies
+
+Proof of Concept (Code)
+	Business Object (Both narraow character file handling / wide char file handling)
+		1. read all object from file 
+		2. read one object by record-id
+		3. add object into file 
+		4. update object using record-id 
+		5. delete object using record-id 
 
 1. whats app 
 2. stream s/w web ex/gmeet after training tim3
