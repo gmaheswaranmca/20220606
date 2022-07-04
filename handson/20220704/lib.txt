@@ -1,0 +1,30 @@
+##static lib ###
+
+ar rcs lib_findb.a scheme_file_operations.o  //to creat .a
+
+gcc *.o -o finanApp -L. lib_findb.a  //to use .a
+
+
+gcc *.o -o finanApp -L. -l_findb
+
+------------------------------------------------------------------
+
+##dynamic lib ##
+gcc -I../header *.c -c -fpic   // (pic: position independent code) to create object file
+
+gcc *.o -shared -o libfinancedb.so  // to create .so
+
+
+gcc *.o -o finanApp -L. libfinancedb.so  //to use .so
+
+./finanApp: error while loading shared libraries: libfinancedb.so: cannot open shared object file: No such file or directory
+
+sudo cp libfinancedb.so /usr/lib  //sudo to get permission to copy in shared lib
+
+rm libfinancedb.so  //can be removed from project folder
+
+gcc *.o -o finanApp -L. libfinancedb.so
+
+
+
+

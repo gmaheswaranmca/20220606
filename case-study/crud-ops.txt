@@ -1,0 +1,57 @@
+------------------------------------------------------------------------------------
+ProductCatalog 		Book							Scheme					Customer 
+------------------------------------------------------------------------------------
+
+
+ProductCatalog_t [- diary products / packaged ]
+	product_id
+	product_name : {1 ltr milk packet} {500 ml milk packet} 
+	stock_qty
+	price
+	
+	
+CRUD operations (narrow char / wide char) 	
+
+db [product_catalog.dat]
+	void prd_db_insert(ProductCatalog_t val);
+	int prd_db_find(int product_id);
+	void prd_db_update(int index, ProductCatalog_t val);
+	void prd_db_read(int index, ProductCatalog_t* addr);
+	int prd_db_count();
+	void prd_db_read_all(int count, ProductCatalog_t* products);
+	void prd_db_delete(int index);
+	
+ui
+	void ui_product_create(ProductCatalog_t* addr);
+		scanf for addr->[product_id/product_name/stock_qty/price]
+	void ui_product_update(ProductCatalog_t* addr);
+		scanf for addr->[price]
+	void ui_product_delete(ProductCatalog_t* addr, int *is_confirmed_addr); // confirmation 
+		print addr->{attr} / confirmation 
+	void ui_product_show_all(ProductCatalog_t* products, int size, int* action_type_addr, int* index_addr);
+		print all the products in tabular column 
+		update | delete by index of display order 
+
+ui_controller
+	void action_product_create();
+		ProductCatalog_t val={};
+		ui_product_create(&val);
+		prd_db_insert(val);
+		//Successful message you print 
+		//Ask to go further?
+		action_product_show_all();
+	void action_product_show_all()
+		int size =  prd_db_count();
+		products = () malloc(size * sizeof(ProductCatalog_t))
+		prd_db_read_all(size, products)
+		ui_product_show_all()
+	......
+	
+1 hour to 1.5 hour		
+	
+	
+		
+	
+	
+	
+	
