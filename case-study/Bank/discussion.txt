@@ -1,0 +1,51 @@
+Banking
+	Accounts
+		Customer 
+			- Customer ID 
+			- Login Password 
+			- Transaction Password 
+		1. Savings
+		2. Current
+		3. Fixed Deposit 
+		4. Recurring Deposit 
+		Account
+			- Customer ID
+			- Account Number
+			- Account Type = 1
+			- PAN Number 
+			- Aadhaar Number 
+			- Address
+			- Phone Number 
+			- Account Holder Name 
+			- Date of Birth
+			- mail id 
+			- Interest Rate = 4.5
+			- Maturity Duration = 0
+			- Is Approved = No
+	Transactions 
+		1. Withdraw 2. Deposit 3. Transfer 
+	Preference
+		Single Object 	
+			- Interest Rate for Savings Account = 4.5
+			-                   Current 
+			- Interest			Fixed De 8.5
+			- Maturity Duration FD 		60 months 
+			- Interest 			RD 		7.95
+			- Maturity Duration RD 		36 months
+			- Account Number - Sequence Number 	Prefix SBI000001
+			- Customer ID - Sequence Number 	Prefix SBI
+			- Transaction Number - Sequence 
+			sprintf(acc->account_number,"SBI%06d",pref->acc_no);
+	Customer Application
+		Register Customer 
+			At Registration		R0001 
+				Details
+				   plus
+				Account Opening Details 
+					Initial Balance 
+		Login 
+			
+	Bank Application
+		Customer Account 
+		R0001 Opening Approve Deny 
+			Approve will generate 
