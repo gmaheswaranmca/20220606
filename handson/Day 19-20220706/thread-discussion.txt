@@ -1,0 +1,47 @@
+References:
+	1. Concurrency support library (c/cpp standard)
+		https://en.cppreference.com/w/c/thread
+	2. pthreads tutorial 
+		https://hpc-tutorials.llnl.gov/posix/
+	3. Introduction to Parallel Computing Tutorial
+		https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial
+
+multi-threading
+	windows - multi-tasking
+	unix-family-linux - multi-processing 
+	
+	process ? 
+		program become executable 
+		"executable program in running"
+	thread ? 
+		---------------------------------
+		API for multithreading 
+		POSIX - multithreading 
+		now, c 11/c+ 11 // Concurrency support library
+			POSIX like multithreading API is rewritten for c / c++ users 
+			now, multi-threading is part of the c / c++ stanandard
+			
+		---------------------------------
+		thread 
+			- execution model 
+			- "routine runs independently"
+		----------------------------------
+		every process will have atleast one thread 
+		
+		
+		suppose programmer wants to make a routine(function) 
+		as another thread 
+		
+		now two threads - multithreading 
+			one is default(process) thread 
+			another one is programmer defined thread 
+		
+		multithreading will be handled by operating system 
+----------------------------------
+
+1. Two routines(functions) - non-threaded
+2. Two routines(functions) - threaded
+
+
+
+	
