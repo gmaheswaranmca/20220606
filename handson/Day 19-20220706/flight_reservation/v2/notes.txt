@@ -1,0 +1,8 @@
+app.c
+	flight_controller.c 
+			action - create	// controller function bridge bt view and model -> model view controller 
+					(design pattern)
+				read flight attributes from key board
+				write flight into db 
+		flight_db.c		data/model
+		flight_ui.c		user interface/view
