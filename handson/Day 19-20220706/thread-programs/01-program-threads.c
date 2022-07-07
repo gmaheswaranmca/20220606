@@ -1,18 +1,27 @@
 //non-threaded vs threaded two routines(many test cases)
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<threads.h>
-#include <time.h>
+#include<time.h>
+void sleep_ms(int milliseconds){ 
+    struct timespec ts;
+    ts.tv_sec = milliseconds / 1000;
+    ts.tv_nsec = (milliseconds % 1000) * 1000000;
+    nanosleep(&ts, NULL);
+}
+
+
 void parentSayHi(){
 	for(int I=1; I<=10; I++){
 		printf("Parent says Hi#%d\n",I);
-		thrd_sleep(&(struct timespec){.tv_nsec=100000}, NULL);
+		sleep_ms(300);
 	}
 }
 void childSayHello(){
 	for(int I=1; I<=10; I++){	
 		printf("Child says Hello#%d\n",I);
-		thrd_sleep(&(struct timespec){.tv_nsec=100000}, NULL);
+		sleep_ms(300);
 	}
 }
 
@@ -29,7 +38,7 @@ void mainNonThreaded(){
 }
 
 
-void mainThreaded(){
+void mainThreaded(){ 
 	thrd_t childThr;
 	int tc_code = thrd_create(&childThr,&childRoutine,NULL); //thread is defined and ready to run	
 	parentSayHi();

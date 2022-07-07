@@ -1,0 +1,20 @@
+void production_pack(production_t* factory){
+    int isPickingIsNotOver = 0;
+	do{
+	    isPickingIsNotOver = factory->pickedQty < factory->orderedQty;
+	    int isPickNotStarted = (factory->pickedQty == 0);
+	    int isNoNewPick = (factory->packedQty == factory->pickedQty);
+		while(isPickNotStarted || isNoNewPick){
+			//wait for pick 
+			printf("waiting for pick...\n");
+			cnd_wait(&pref.COND_VAR,&pref.MUTX); //NON-WAKE-UP
+			isNoNewPick = (factory->packedQty == factory->pickedQty);
+		}
+		int isThereToPack = (factory->packedQty < factory->pickedQty);
+		printf("(pack)packedQty=%d pickedQty=%d\n",factory->packedQty,factory->pickedQty);
+		while(isThereToPack){
+			production_pack_one(factory);
+			isThereToPack = (factory->packedQty < factory->pickedQty);
+		}
+	}while(isPickingIsNotOver);
+}

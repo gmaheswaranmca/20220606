@@ -62,6 +62,13 @@ Variaous models/methods for threads
 	1. manager-worker 
 	2. peer-peer 
 -----------------------------------------------------------	
+//childThr -1   					JOB  worker   peer-peer 
+//default/process/main thread-2 	JOB  worker 
+
+// childThr - 1					JOB worker		manager-worker 
+// childThr - 2					JOB worker 
+// manager off the job 			manager
+-----------------------------------------------------------
 thrd_t childThr;
 int tc_code = thrd_create(&childThr,&childRoutine,NULL); 
 thrd_t childThr2;
