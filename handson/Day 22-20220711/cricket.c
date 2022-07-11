@@ -7,7 +7,7 @@
 #include<threads.h>
 #endif
 
-#define STADIUM_CAPACITY 75000000UL
+#define STADIUM_CAPACITY 7500000UL
 unsigned long AttendanceCount=0UL;
 
 unsigned long EntranceOneCount=0UL;
@@ -29,16 +29,16 @@ int isStadiumFull(){
 
 void doCountAtEntranceOne(){
 	while(!isStadiumFull()){		
-		//AttendanceCount++;
-		//attendeesOne[EntranceOneCount] = AttendanceCount;
+		AttendanceCount++;
+		attendeesOne[EntranceOneCount] = AttendanceCount;
 		EntranceOneCount++;
 		//printf(" %lu ", EntranceOneCount);
 	}
 }
 void doCountAtEntranceTwo(){
 	while(!isStadiumFull()){		
-		//AttendanceCount++;
-		//attendeesTwo[EntranceTwoCount] = AttendanceCount;
+		AttendanceCount++;
+		attendeesTwo[EntranceTwoCount] = AttendanceCount;
 		EntranceTwoCount++;
 		//printf(" %lu ", EntranceOneCount);
 		
@@ -46,16 +46,16 @@ void doCountAtEntranceTwo(){
 }
 void doCountAtEntranceThree(){
 	while(!isStadiumFull()){
-		//AttendanceCount++;
-		//attendeesThree[EntranceThreeCount] = AttendanceCount;
+		AttendanceCount++;
+		attendeesThree[EntranceThreeCount] = AttendanceCount;
 		EntranceThreeCount++;
 		//printf(" %lu ", EntranceOneCount);
 	}
 }
 void doCountAtEntranceFour(){
 	while(!isStadiumFull()){
-		//AttendanceCount++;
-		//attendeesFour[EntranceFourCount] = AttendanceCount;
+		AttendanceCount++;
+		attendeesFour[EntranceFourCount] = AttendanceCount;
 		EntranceFourCount++;
 		//printf(" %lu ", EntranceOneCount);
 	}
@@ -63,14 +63,15 @@ void doCountAtEntranceFour(){
 void doDisplayCounter()
 {
 	while(!isStadiumFull()){
-		printf("\r%-60s",
+		printf("\r%-70s",
 			"");
-		printf("\r%-10lu%-10lu%-10lu%-10lu%-10lu",
+		printf("\r%-10lu%-10lu%-10lu%-10lu%-10lu%-10lu",
 			AttendanceCount,
 			EntranceOneCount,
 			EntranceTwoCount,
 			EntranceThreeCount,
-			EntranceFourCount);
+			EntranceFourCount,
+			findSumOfCounters());
 	}
 }
 #if defined(IS_THREADED) && IS_THREADED==1
@@ -95,7 +96,7 @@ int doDisplayCounter_routine(void* arg){
 	return EXIT_SUCCESS;
 }
 void app(){
-	printf("%-10s%-10s%-10s%-10s%-10s\n","attendance","counter1","counter2","counter3","counter4");
+	printf("%-10s%-10s%-10s%-10s%-10s%s\n","attendance","counter1","counter2","counter3","counter4","sum");
 	thrd_t thr_one;
 	thrd_t thr_two;
 	thrd_t thr_three;
@@ -112,16 +113,34 @@ void app(){
 	thrd_join(thr_three,NULL);
 	thrd_join(thr_four,NULL);
 	thrd_join(thr_disp,NULL);
+	printf("\r%-60s",
+			"");
+	printf("\r%-10lu%-10lu%-10lu%-10lu%-10lu%-10lu",
+		AttendanceCount,
+		EntranceOneCount,
+		EntranceTwoCount,
+		EntranceThreeCount,
+		EntranceFourCount,
+		findSumOfCounters());
 	printf("\nCricket is started.\n");
 }
 #else
 void app(){
-	printf("%-10s%-10s%-10s%-10s%-10s\n","attendance","counter1","counter2","counter3","counter4");
+	printf("%-10s%-10s%-10s%-10s%-10s%s\n","attendance","counter1","counter2","counter3","counter4","sum");
 	doCountAtEntranceOne();
 	doCountAtEntranceTwo();
-	doCountAtEntranceThree();
-	doCountAtEntranceFour();
+	doCountAtEntranceThree();	
+	doCountAtEntranceFour();	
 	doDisplayCounter();
+	printf("\r%-60s",
+			"");
+	printf("\r%-10lu%-10lu%-10lu%-10lu%-10lu%-10lu",
+		AttendanceCount,
+		EntranceOneCount,
+		EntranceTwoCount,
+		EntranceThreeCount,
+		EntranceFourCount,
+		findSumOfCounters());
 	printf("\nCricket is started.\n");
 }
 #endif
