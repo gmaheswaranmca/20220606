@@ -1,0 +1,113 @@
+Q:One process tool multiple threads
+Q:With respect to C programming, what is a pointer?
+Q:What is the advantage. Why would you want to use a pointer?
+Q:Difference between array and linkedlist
+Q:Describe difference between stack and a heap, w.r.t memory
+Q:What is a deadlock, or describe a specific situation of deadlock
+Q:Difference between calloc and malloc
+Q:Tell about a memory leak
+Q:How did you fix the issue?
+Q:using free()
+Q:how can you find leaks
+Q:using valgrid tool
+Q:What is the different between process and thread? 
+Q:What is static variable?
+Q:Discuss about storage classes 
+Q:What will you do if you have a bug 
+Q:How much have you worked on Linux
+Q:Talk about Segmentation fault
+Q:Talk about Stackoverflow
+Q:Talk about Core Dump
+
+
+
+Q:One process vs multiple threads
+	process: program in execution or 
+			executable after compilation of the program 
+		its own resources memory - example: stack/heap 
+	thread:
+		default/main/process thread 
+		single execution path 
+			shared the process memory space 
+	multiple threads in a process - multithreaded process
+	
+	Q from Sharanukumar: Debug threads using gdb | visual studio 
+	
+Q:With respect to C programming, what is a pointer?
+	pointer: variable holds address of another variable 
+	
+	advantage: call function with argument by pointer 
+		multiple updates from the function via the pointer to the where we called the function 
+		for example: swap two number - call by pointer 
+	
+			strcpy(destStr, srcStr) // strStr is copied destStrt 
+			its syntax: 
+			char* strcpy(chat* destStr, const char* srcStr)
+	
+Q:What is the advantage. Why would you want to use a pointer?
+	1
+	advantage: call function with argument by pointer 
+		multiple updates from the function via the pointer to the where we called the function 
+		for example: swap two number - call by pointer 
+	
+			strcpy(destStr, srcStr) // strStr is copied destStrt 
+			its syntax: 
+			char* strcpy(chat* destStr, const char* srcStr)
+	2
+	without pointer, we cannot go for dynamic memory allocation (DMA)
+	
+	we have to careful in dynamic memory management 
+		dynamic memory dismanagement is possible like memory leak 
+		illegal access (segmentation fault - core dump)
+	
+Q:Difference between array and linkedlist
+	array and linked list are sequential list 
+
+	array - (static/stack) array size is fixed
+		contiguous storage 
+		random access 
+		operations add / delete will take at worst case O(N)
+		search with indext is O(1)
+		
+		array of similar data of same type 
+		
+		data: primitive, structure 		
+			struct emp_t emp[100];		
+			emp[0].empId = 1001;
+			...
+
+	linked list - (heap)dynamic size
+		nodes will be dynamically added not contiguous 
+		no random access possible 
+		
+		operations add / delete will take at worst case O(1)
+		search with index is O(N) for worst case 
+		
+		list of similar data of same type
+
+		data: primitive, structure 		
+		
+		node itself the structure where data is an attribute 
+	
+Q:Describe difference between stack and a heap, w.r.t memory
+	stack - static alloc'd / by compiler 
+		grows downwards (based on architecture / implemention)
+	heap  - dynamic alloc'd / by programmer 
+		grows upwards  (based on architecture / implemention)
+	both head and stack can meet at one point - stack overflow / heap overflow 
+	
+Q:What is a deadlock, or describe a specific situation of deadlock
+Q:Difference between calloc and malloc
+Q:Tell about a memory leak
+Q:How did you fix the issue?
+Q:using free()
+Q:how can you find leaks
+Q:using valgrid tool
+Q:What is the different between process and thread? 
+Q:What is static variable?
+Q:Discuss about storage classes 
+Q:What will you do if you have a bug 
+Q:How much have you worked on Linux
+Q:Talk about Segmentation fault
+Q:Talk about Stackoverflow
+Q:Talk about Core Dump
