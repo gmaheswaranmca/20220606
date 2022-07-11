@@ -6,10 +6,8 @@
 #define MAX_WORKERS 10000000
 #define BATCH_SIZE 10000
 long sum = 0;
-long sum2 = 0;
+atomic_long sum2 = 0;
 
-//atomic_long sum2 = 0;
- //_Thread_local long sum2 = 0;
 mtx_t MUTX;
 clock_t t1,t2;
 
@@ -68,9 +66,9 @@ void doSum_v2(long *array)
         temp_sum +=  array[i];
         } 
         
-        mtx_lock(&MUTX);      
-        sum2 += temp_sum; /**** RACE****/
-        mtx_unlock(&MUTX);
+             
+        sum2 += temp_sum; /**** RACE****/   
+        
 }
 int dosum_routine_v2(void* arg)
 {
