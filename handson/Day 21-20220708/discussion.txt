@@ -1,0 +1,38 @@
+sum of salaries/numbers in a large array.
+divide array into batches.
+sum of the numbers in the batch into shared global variable sum 
+each batch will be delegated to a worker thread
+all the workers will be synchronized 
+---------------------------------------------------------------------------
+100000L numbers 
+---------------------------------------------------------------------------
+	sum 
+	
+0 - N-1 numbers 
+Batch 1 - (0 based index) 
+			doFindBatchSum	doFindBatchSum_routine	
+	argument: batch_t *batch_addr = arg;
+			  for(int I=batch_addr->start_index; I < (batch_addr->start_index + 1000); I++){
+				sum = sum + array[I];
+			  }
+Batch 2 - 1000 - 1999					
+	  3 - 2000 - 2999
+	  ..
+	  100- 99000-99999
+	  
+double array[100000];
+	  
+typedef struct {
+	int start_index;
+} batch_t;
+
+batch_t batches[1000] = {};
+int batch_count = 0;
+double sum = 0;	  
+
+	for(int K=0; K<batch_count;K++)
+		doFindBatchSum_routine - create thread, and join
+
+
+
+

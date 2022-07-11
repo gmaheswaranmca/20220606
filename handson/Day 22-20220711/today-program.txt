@@ -1,0 +1,87 @@
+In a newly constructed cricket stadium of capacity of 75 lack seaters, 
+there are four entrance poins to count the attendance,
+and two exit points to zero the attendance.
+Before start to count print the message 
+"Cricket is going to get started."
+Then start to count using four entrance point counters
+using the C language functions
+void doCountAtEntranceOne();
+void doCountAtEntranceTwo();
+void doCountAtEntranceThree();
+void doCountAtEntranceFour();
+These four functions must run concurrently 
+till the attendance reaches to the stadium capacity.
+Raju wrote 
+1) no-threaded function calls
+2) threaded four routines where he uses C 11 standard threads.h header
+   (not pthread)
+These two options can be configured via MACRO constance IS_THREADED
+if IS_THREADED is defined, then he should have no-threaded application 
+else threaded application.
+
+Each counter routine has its own counter variable for example "EntranceOneCount"
+so each counter updates it counter variable. 
+And each counter has an attendees array of maximum size "Stadium Capacity"
+to store the AttendanceCount as the id to each attendees. 
+For example, "attendeesOne" will store its first element 
+the value of "AttendanceCount" variable if it counter become 1
+and second element if 2 and so on. 
+And also all counters update th variable "AttendanceCount".
+After attendance reached to the capacity, print the message
+"Cricket has started."
+Note: Counter will stop their process if "isStadiumFull()" function call 
+returns true. 
+This function will do sum of each counters' individual count 
+and if the sum reaches the stadium capacity it will return true value 
+else false value. 
+To find and return sum of counters' individual count 
+write the function "long findSumOfCounters()". 
+And use findSumOfCounters inside the function "isStadiumFull"
+
+Add a routine "void doDisplayCounter()" in concurrent with entrance point counter routine 
+This will display values such as value at "AttendanceCount" 
+and return value of function "findSumOfCounters()"
+and each counter's count values.
+
+After 2 minutes from Cricket started fans will go out of stadium.
+Now use doCountAtExitOne, doCountAtExitTwo to run concurrently
+along with doDisplayCounter(). 
+The functions doCountAtExitOne, doCountAtExitTwo will
+have their own counters "ExitOneCount", "ExitTwoCount" variables to count.
+exitCounters will decrement the "AttendanceCount"
+and stores each decremented value of "AttendanceCount" into 
+"exitOneIds","exitTwoIds" arrays.
+This time  doDisplayCounter() will display "AttendanceCount", "findSumOfExitCounters()"
+and each exitCounter.
+
+
+Dont use any lock or atomic operation
+at update "AttendanceCount".
+
+Check is there any "RACE" with respect to multiple threads 
+write at "AttendanceCount".
+
+
+This you do by running the app atleast 25 times.
+
+If so,
+Have a MACRO constant "NO_RACE" to go for "no-race"
+to include mutex lock or atomic operation.
+
+If "NO_RACE" is not defined dont use "mutex lock" or "atomic operation"
+
+class day assignment:
+1.
+Analyse the arrays 
+"attendeesOne","attendeesTwo","attendeesThree","attendeesFour"
+have togethere have duplicates
+and if duplicates count the frequency of duplicates 
+2.
+Analyse the arrays 
+"exitOneIds","exitTwoIds"
+have togethere have duplicates
+and if duplicates count the frequency of duplicates 
+
+
+ 
+

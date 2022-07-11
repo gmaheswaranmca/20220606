@@ -1,0 +1,89 @@
+----------------------------------------------------------	
+Q 1. 
+Score: 30 marks
+Duration: 20 minutes
+----------------------------------------------------------
+***********Problem Statement:***********
+Form dynamic array of 3 elements 
+and print the elements.
+Check any memory leak
+Validate memory leak by using valgrind 
+use gdb to print first 2 elements address
+by using breakpoint and continue
+
+************Outcomes:************
+1. Use of gdb
+2. Use of valgrind 
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+Q 2. 
+Score: 40 marks
+Duration: 40 minutes
+----------------------------------------------------------
+***********Problem Statement:***********
+Count to big number. 
+Each of two threads will count the  
+global variable "counter" 10 lack times.
+make sure these two threads will exit in synchroized.
+The print the value at "counter".
+
+check is there any "RACE" problem.
+if so use mutex lock. 
+
+after race fix check "speed" by printing time taken by multi-threaded. 
+before race fix and after race fix.
+
+if any speed issue, fix that also. 
+
+Note: 
+	You can use either "C 11 threads.h" or "POSIX pthread"
+ 
+************Outcomes:************
+1. ability to use threads 
+2. ability to identify race problem 
+3. ability to fix race problem 
+4. ability to speed up after race is fixed 
+----------------------------------------------------------
+
+---------------------------------------------------------- 
+Q 3. 
+Score: 30 marks
+Duration: 30 minutes
+----------------------------------------------------------
+***********Problem Statement:***********
+Define dynamic array of N numbers 
+and remove duplicates from array into another dynamic array 
+and then sort the distinct numbers 
+then form the linked list for distinct numbers 
+and print the linked list using forward traversal 
+
+The sorting feature
+will be enabled by macro constant "DO_SORT_YES"
+If "DO_SORT_YES" is not defined 
+then just print the non-sorted distinct numbers dynamic array.
+
+If you use linked list, you will get 100% marks.
+Otherwise, you will get 80% marks.
+
+Test Case: if "DO_SORT_YES" defined 
+Input
+N=5
+Array=10 30 10 20 20
+Output
+10 20 30
+Test Case: if "DO_SORT_YES" not defined 
+Input
+N=5
+Array=10 30 10 20 20
+Output
+10 30 20	
+
+************Outcomes:************
+1. ability to use dynamic array  
+2. ability to write code without memory leak  
+3. ability to use linked list 
+4. ability to use macro constant 
+5. ability to use conditional preprocessor
+----------------------------------------------------------
