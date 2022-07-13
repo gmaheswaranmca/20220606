@@ -1,0 +1,15 @@
+gcc -g cricket.c -o main
+gdb ./main 
+info functions doCount
+info threads
+break 		!!! break points at routines or/and routines' function 
+continue
+next 
+
+gcc -pg -g cricket.c -o main
+./main
+gprof ./main gmon.out
+gprof ./main gmon.out --brief
+gprof ./main gmon.out --flat-profile --brief
+gprof ./main gmon.out --graph --brief
+
