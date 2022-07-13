@@ -1,3 +1,5 @@
+Q1:
+
 In a newly constructed cricket stadium of capacity of 75 lack seaters, 
 there are four entrance poins to count the attendance,
 and two exit points to zero the attendance.
@@ -20,7 +22,7 @@ if IS_THREADED is defined, then he should have no-threaded application
 else threaded application.
 
 Each counter routine has its own counter variable for example "EntranceOneCount"
-so each counter updates it counter variable. 
+so each counter updates its counter variable. 
 And each counter has an attendees array of maximum size "Stadium Capacity"
 to store the AttendanceCount as the id to each attendees. 
 For example, "attendeesOne" will store its first element 
@@ -70,6 +72,9 @@ to include mutex lock or atomic operation.
 
 If "NO_RACE" is not defined dont use "mutex lock" or "atomic operation"
 
+Note:
+all the arrays have to be dynamic array.
+
 class day assignment:
 1.
 Analyse the arrays 
@@ -81,6 +86,8 @@ Analyse the arrays
 "exitOneIds","exitTwoIds"
 have togethere have duplicates
 and if duplicates count the frequency of duplicates 
+
+
 
 
  
