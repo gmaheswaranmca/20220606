@@ -1,0 +1,36 @@
+void emp_bdb_insert(employee_t* employeeAddr){
+	char fileName[] = "emp.dat";
+    FILE* out = fopen(fileName,"ab");
+    if(out == NULL){
+        printf("FILE ERROR.\n");
+        return;
+    }
+    
+    fwrite(employeeAddr,1,sizeof(employee_t),out);
+    
+    fclose(out);
+}
+
+
+==> 
+
+void emp_bdb_insert(employee_t* employeeAddr){char fileName[] = "emp.dat";FILE* out = fopen(fileName,"ab");if(out == NULL){printf("FILE ERROR.\n");return;}fwrite(employeeAddr,1,sizeof(employee_t),out);fclose(out);}
+
+
+==> 
+
+
+void NAME(TYPE* OBJNAME){char fileName[] = "FILENAME";FILE* out = fopen(fileName,"ab");if(out == NULL){printf("FILE ERROR.\n");return;}fwrite(OBJNAME,1,sizeof(TYPE),out);fclose(out);}
+
+/*
+Code to generate emp_bdb_insert function 
+*/
+#include<stdio.h>
+#include<stdlib.h>
+#define GIVE_CODE_DB_INSERT(NAME,TYPE,OBJNAME,FILENAME) void NAME(TYPE* OBJNAME){char fileName[] = FILENAME;FILE* out = fopen(fileName,"ab");if(out == NULL){printf("FILE ERROR.\n");return;}fwrite(OBJNAME,1,sizeof(TYPE),out);fclose(out);}
+
+GIVE_CODE_DB_INSERT(emp_bdb_insert,employee_t,employeeAddr,"emp.dat")
+
+int main(){
+	return EXIT_SUCCESS;
+}
