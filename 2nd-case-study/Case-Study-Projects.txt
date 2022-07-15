@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------
 AIRLINE RESERVATION SYSTEM
-	Arjun, Pooja, Suma, Sai Ram
+	Arjun, Pooja, Suma, Sai Ram, Trishala
 ---------------------------------------------------------------------------------
 Airline Reservation System aims to automate the flight ticketing/seat booking
 and confirmation system of an Airline company. The software is providing options for
@@ -18,7 +18,7 @@ Use of C language concepts such as pointers, dynamic array using DMA(no-memory l
 
 ---------------------------------------------------------------------------------
 EMPLOYEE - PROJECT MANAGEMENT SYSTEM
-	Sharanukumar, Narosh Mathew, Sai Avulakunta, Mounica
+	Sharanukumar, Narosh Mathew, Sai Avulakunta, Mounica, Pratik
 ---------------------------------------------------------------------------------
 Goals of the project are:
 The employee-project management system has been designed and developed to manage the
@@ -48,7 +48,7 @@ Use of C language concepts such as pointers, dynamic array using DMA(no-memory l
 
 ---------------------------------------------------------------------------------
 CAB BOOKING
-	Aniprada, Sai Ram, Mounica, Arya 
+	
 ---------------------------------------------------------------------------------
 Online Cab Booking System is developed to manage all cab hiring work online.
 Using this system it is very easy for customer to book a car. It is an online system through
