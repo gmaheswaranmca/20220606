@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------
 AIRLINE RESERVATION SYSTEM
-	Arjun, Easwar, Pooja, Sreeja, Suma
+	Arjun, Pooja, Suma, Sai Ram
 ---------------------------------------------------------------------------------
 Airline Reservation System aims to automate the flight ticketing/seat booking
 and confirmation system of an Airline company. The software is providing options for
@@ -18,7 +18,7 @@ Use of C language concepts such as pointers, dynamic array using DMA(no-memory l
 
 ---------------------------------------------------------------------------------
 EMPLOYEE - PROJECT MANAGEMENT SYSTEM
-	Sharanukumar, Narosh Mathew, Sandeep, Sai Avulakunta
+	Sharanukumar, Narosh Mathew, Sai Avulakunta, Mounica
 ---------------------------------------------------------------------------------
 Goals of the project are:
 The employee-project management system has been designed and developed to manage the
