@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------
+AIRLINE RESERVATION SYSTEM
+	Arjun, Easwar, Pooja, Sreeja, Suma
+---------------------------------------------------------------------------------
+Airline Reservation System aims to automate the flight ticketing/seat booking
+and confirmation system of an Airline company. The software is providing options for
+viewing different flights available at different timing for a specific day. That provides
+customers within the facility with the ability to book tickets smoothly. The customers can
+modify and are able to cancel the ticket for any reason. That prepares within a role and
+policies. The software should provide an option for checking the availability of the tickets.
+That is important for the customers to get messages if the ticket is unavailable. That will be
+displayed to customers. The customers should be noted when the change has been made or
+any further changes. He or she can book accommodation if required.
+
+Note:
+Use of C language concepts such as pointers, dynamic array using DMA(no-memory leak), advanced pointers such as double pointer, function pointer, static library, macro constant, macro function, macro oprators, conditional preprocessor, binary file streams, linked list, mutli threading (threads, RACE FIX, MUTEX, COND VAR). And use effectively development tools such as makefile, gcc, gdb, valgrind, gprof, splint, UML tool such as draw.io, and git/github.
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+EMPLOYEE - PROJECT MANAGEMENT SYSTEM
+	Sharanukumar, Narosh Mathew, Sandeep, Sai Avulakunta
+---------------------------------------------------------------------------------
+Goals of the project are:
+The employee-project management system has been designed and developed to manage the
+process project details{project id, project name, start date, end date, no of resources required, no
+of resources allocated, project status} and employee details{emp id, emp name, emp status,
+gender, basic salary, bonus, project details}. In the employee object, the number of projects being
+allocated are a maximum of three projects with allocation information{project id, allocation start
+date, allocation end date, role, percentage allocated).
+In order to add / delete the employee, the administrator has a built-in login id and password set.
+There may be any number of administrators. Here, in the employee details entry, the employee id
+is auto generated. All employee details should be captured. The administrator is allowed to add
+projects.The project id is auto generated. All project details should be captured. The end date
+should be atleast one month after the start date. The administrator is allowed to allocate the
+projects to the resource(employee). Once a resource is allocated to a project, update the count.
+The project status is by default active. It will be set as "closed" manually. Resources
+cannot be allocated to closed projects. An employee can be allocated to a max of 3 projects. The
+sum of allocation percentage of all the projects should be 100. As soon as an employee is
+allocated to 3 projects or allocation percentage sum is 100, the employee is marked as allocated.
+The employee is given a user id and password. The employee can login and see his/her details
+including employment and project
+
+
+Note:
+Use of C language concepts such as pointers, dynamic array using DMA(no-memory leak), advanced pointers such as double pointer, function pointer, static library, macro constant, macro function, macro oprators, conditional preprocessor, binary file streams, linked list, mutli threading (threads, RACE FIX, MUTEX, COND VAR). And use effectively development tools such as makefile, gcc, gdb, valgrind, gprof, splint, UML tool such as draw.io, and git/github.
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+CAB BOOKING
+	Aniprada, Sai Ram, Mounica, Arya 
+---------------------------------------------------------------------------------
+Online Cab Booking System is developed to manage all cab hiring work online.
+Using this system it is very easy for customer to book a car. It is an online system through
+which customers can view available cabs; register the cabs, view profile and book cabs.
+Mostly peoples use cab service for their daily transportations need. Cab booking can also
+check which car is free for booking and which cars are on booking at present time. The
+objective and scope of my project Online Cab booking System is to record the details
+various activities of user. It will simplify the task and reduce the paper work. Using this cab
+booking management system car owner can also become partner of car booking agency by
+giving their car for booking. Online Cab management system is a web based application that
+allow users to book a car online. User can book cars and admin can confirm the booking and
+cancel the booking on the basis of availability of the cars and drivers.
+The booking order and to call the car driver to check their availability with their car if
+they manage to find a car for booking they confirm the order otherwise they cancel the order
+as they have no car for the booking.
+This process waste a lot of time of customer and also of car booking agency and it
+also give bad name to the agency but with our system car agency can confirm the order
+within a minute by checking the availability of cars for booking. So this car booking system
+is helpful to ease customer’s task whenever they need to rent a cab or hire a cab.
+
+Note:
+Use of C language concepts such as pointers, dynamic array using DMA(no-memory leak), advanced pointers such as double pointer, function pointer, static library, macro constant, macro function, macro oprators, conditional preprocessor, binary file streams, linked list, mutli threading (threads, RACE FIX, MUTEX, COND VAR). And use effectively development tools such as makefile, gcc, gdb, valgrind, gprof, splint, UML tool such as draw.io, and git/github.
+---------------------------------------------------------------------------------
+
+Implementation strategy will be discussed in 11am meeting today.
