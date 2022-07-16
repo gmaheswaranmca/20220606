@@ -1,0 +1,56 @@
+Advantages of Online Airline Reservation System over Manual system of reservation:
+1. The online system makes it possible for customers to book the flights as when they require.
+   Therefore Customers make reservations, modify reservations and cancel reservations.
+   It should be a self-contained product.
+   This was possible after published the following information by airlines in large books:
+   o routes, o aircrafts, o schedules and o fares about flights	
+   American Airline was the first to build the computerized system to allow access to real time data to all its offices.
+2. An improved airline reservation system enable passengers 
+   o book available flights, 
+   o select seats for their flights, 
+   o print boarding passes, 
+   o access aircraft maintenance report, 
+   o check-in online for their flight
+   a good airline reservation should have the features 
+   o a search engine that returns sufficient number of flights, 
+   o facilities for selecting seats, 
+   o printing tickets and boarding passes and 
+   o facilities for making notifications was explored.
+
+
+Challenges of Airline Reservation System and Possible Solutions
+
+Problem 1. Inability of passengers to select seat(s) for their chosen flight(s) from the existing reservation
+system. This has ultimately resulted in time being wasted at the check-in counter in assigning seats to
+passengers before they are allowed to board the airplane.
+Solution: 
+	The system should provide the customer to 
+	o search and book available flights
+	o select seats for their flights
+
+Problem 2. No option of passengers printing their boarding pass from the existing system
+Solution: 
+	The system should provide the customer to 
+	o pay for the booking
+    o print their boarding pass only after payment has been made
+
+Problem 3. Non notification of passengers in the event of flight cancellation or delays 
+Solution: 
+	The system should provide the customer to
+	o be notified of flight cancellation or delays
+
+Problem 4. No access to aircraft maintenance reports to ease passenger fears as regards to air travel and its disasters
+Solution: 
+	The system should provide the customer to	
+	o access aircraft maintenance reports
+
+Scope of improved Airline Reservation System:
+1. search and book available flights
+2. select seats for their flights
+3. pay for the booking
+4. print their boarding pass only after payment has been made
+5. access aircraft maintenance reports 
+6. be notified of flight cancellation or delays
+
+References: 
+1. https://www.mecs-press.org/ijitcs/ijitcs-v9-n1/IJITCS-V9-N1-5.pdf

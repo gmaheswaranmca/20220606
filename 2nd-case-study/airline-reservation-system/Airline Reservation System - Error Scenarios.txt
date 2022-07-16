@@ -1,0 +1,25 @@
+Challenges of Airline Reservation System and Possible Solutions
+
+Problem 1. Inability of passengers to select seat(s) for their chosen flight(s) from the existing reservation
+system. This has ultimately resulted in time being wasted at the check-in counter in assigning seats to
+passengers before they are allowed to board the airplane.
+Solution: 
+	The system should provide the customer to 
+	o search and book available flights
+	o select seats for their flights
+
+Problem 2. No option of passengers printing their boarding pass from the existing system
+Solution: 
+	The system should provide the customer to 
+	o pay for the booking
+    o print their boarding pass only after payment has been made
+
+Problem 3. Non notification of passengers in the event of flight cancellation or delays 
+Solution: 
+	The system should provide the customer to
+	o be notified of flight cancellation or delays
+
+Problem 4. No access to aircraft maintenance reports to ease passenger fears as regards to air travel and its disasters
+Solution: 
+	The system should provide the customer to	
+	o access aircraft maintenance reports

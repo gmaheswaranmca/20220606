@@ -1,0 +1,72 @@
+Wrike is the tool, here we replace the term with our case study project.
+
+1. Poor team communication
+Problem:
+Did you know that 63% of people have missed a message or important piece of information that went into a colleague’s inbox while that colleague was away or absent? Poor team communication can create unnecessary confusion and misunderstanding that may impact the success of a project. 
+
+Solution: Swap disorganized email threads for Wrike’s work management capabilities, many of which allow users to chat about projects, attach relevant documents all in one place, and monitor changes in the deadline, scope, or anything else. 
+
+2. Vague goal setting
+Vague goal setting is one of the more common project management issues that can leave employees feeling unmotivated when faced with a mountain of assignments. Giving them something to aim for will help keep work focused and productive. 
+
+Solution: When creating tasks, add details such as deadlines and approval requests to each step so each team member knows what to aim for. 
+
+3.Inaccurate time management
+Neglecting to keep track of each individual’s time spent on tasks can lead to poor planning and performance. Understanding how long a task takes or how much billable work an employee is logging helps with setting project duration in the future and measuring employee productivity. 
+
+Solution: Automatically document how your teams spend time for more accurate billing and increased productivity with "NewSystem"'s Timelog feature. 
+
+4. Costly scope creep
+Almost 50% of projects experience scope creep which leads to overused resources, missed timelines, and overspending. 
+
+Solution: Communicate your vision clearly by plotting out phases, timelines, and task dependencies with Wrike’s visual planning tools to discover possible obstacles before they come up. 
+
+5. Lack of accountability
+Team members sometimes get confused about who is responsible for what at various stages of a project, especially if they’re working on multiple projects at the same time. 
+
+Solution: Task assignees, @ mentions, and dashboards all make it simple to assign and monitor team progress. These tools also eliminate awkward “who was working on X” and “why hasn’t Y been completed” questions because all the details are in one place. 
+
+6. Uneven workload distribution
+Some assignees may be overworked while others might be underutilized, creating an imbalance that can have a negative impact on your team long term. 
+
+Solution: Use Wrike’s workload charts to see individual team member availability across all active projects in real-time. Assign or reassign tasks to employees with more wiggle room in their schedule. 
+
+7. Overplanning
+Project planning can take anywhere from 10% to 50% of your project timeline. 
+
+Solution: Use Wrike to duplicate the workflows of past successful projects so that you don’t waste time reinventing the wheel for every new assignment. 
+
+8. Poor risk assessment
+Unexpected risks slow down projects because they take time to discover, assess, and remedy. 
+
+Solution: Map out all of your projects in Wrike to see what risks each may face. Then, determine which risks are worth managing, call out key triggers, and create a plan for each one. 
+
+9. Confusing expectations
+Employees may know what to do but not when to do it or who they should collaborate with, which can lead to unnecessary back and forths or other time-wasting activities. 
+
+Solution: Use Wrike to record all assignments, deadlines, and objectives so that everyone on your team knows what needs to happen when. 
+
+10. No backup plans
+To properly manage risks for project management issues, you need to make sure you know what to do if something goes wrong — which it inevitably will. 
+
+Solution: Create a contingency plan within Wrike that details who is responsible and what needs to happen. Apply this planning for every risk you identify in the process.
+
+11. Ineffective resource management
+Running out of time or other vital project resources (such as budget and materials) could create roadblocks for your clients or the project as a whole. 
+
+Solution: Use Wrike’s workload charts, task duration settings, and Gantt charts to see what and how many resources are needed.
+
+12. Too little client engagement
+Clients who don’t know what’s going on throughout the project can often feel dissatisfied with their experience, regardless of the project outcome. 
+
+Solution: Keep your key stakeholders in the loop with Wrike’s client view which allows designated users to review specific projects, folders, or tasks and see what progress has been made at any point. 
+
+13. Forgetting the big picture
+If you manage more than one project or team at a time, there’s a chance you may overlook key issues that, when they arise, have the potential to derail entire assignments. 
+
+Solution: Track all of your active projects in Wrike to get a bird’s eye view of potential conflicts between all open assignments at a glance. 
+
+14. Poor team collaboration
+Teams that lack the proper space to chat about projects and come up with creative ideas have a harder time accomplishing even the most basic of assignments. 
+
+Solution: Use Wrike to loop in team members using @mention for assignees, stakeholders, and followers of any folder or task. Any updates made to task descriptions or progress will be seen by all relevant parties and everyone involved has a place where they can brainstorm ideas together. 
